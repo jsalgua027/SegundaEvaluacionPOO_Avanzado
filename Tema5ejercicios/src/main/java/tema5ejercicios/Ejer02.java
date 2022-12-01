@@ -4,6 +4,7 @@
  */
 package tema5ejercicios;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -23,53 +24,108 @@ public class Ejer02 {
      * guardará en una estructura de almacenamiento. Si la altura leída no es
      * positiva, el programa la pasará a número positivo. También es necesario
      * saber cuántas personas tienen una altura superior a la media e inferior a
-     * la media.      *
+     * la media. *
      *
      *
      *
      */
-    public static void main(String[] args) {
-        
-        Scanner teclado= new Scanner(System.in);
-      int numeroPersonas=0;
-      int alturaPersona=0;
-      int  totalAlturas=0;
-      int [] alturasDeCadaPersona={};
-      int mediaTotal=0;
-      int contadorPorEncima=0;
-      int contadorPorDebajo=0;
-        System.out.println("Indica cuantas personas van a participar");
-        numeroPersonas=teclado.nextInt();
-        if(numeroPersonas>0){
-            for (int i = 0; i < numeroPersonas; i++) {
-                System.out.println("Indica la altura de la persona " + i);
-                alturaPersona=teclado.nextInt();
-                if (alturaPersona<0){
-                alturaPersona= Math.abs(alturaPersona);
-                    alturasDeCadaPersona[i]=alturaPersona;
-                totalAlturas+=alturaPersona;
-            
+    private static Scanner teclado = new Scanner(System.in);
+
+    public static int leerEnteroSinErroresScanner() {
+        int num = 0;
+        boolean repetir = true;
+
+        do {
+            do {
+
+                System.out.println("Introduce el numero entero");
+                try {
+
+                    num = teclado.nextInt();
+                    repetir = false;
+
+                } catch (InputMismatchException ime) {
+                    System.out.println("No has introducido un numero entero");
+                    //limpio buffer
+                    teclado.nextLine();
                 }
-            }
-         mediaTotal=totalAlturas/numeroPersonas;
-        }else{
-            System.out.println("El numero de personas es erroneo");
+            } while (num <= 0);
+
+        } while (repetir);
+
+        return num;
+    }
+
+    public static double leerDecimalesSinErroresScanner() {
+        double num = 0.0;
+        boolean repetir = true;
+
+        do {
+            do {
+                System.out.println("Introduce el numero entero");
+                try {
+
+                    num = teclado.nextDouble();
+                    repetir = false;
+
+                } catch (InputMismatchException ime) {
+                    System.out.println("No has introducido un numero entero");
+                    //limpio buffer
+                    teclado.nextLine();
+                }
+            } while (num <= 0);
+
+        } while (repetir);
+
+        return num;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner teclado2 = new Scanner(System.in);
+        int numeroPersonas = 0; // para saber el tamaño del array 
+       
+        int totalAlturas = 0; // para poder hacer los calculos de la media 
+
+        int mediaTotal = 0;
+        int contadorPorEncima = 0; // contadores
+        int contadorPorDebajo = 0;
+
+        System.out.println("Indica cuantas personas van a participar");
+        numeroPersonas =leerEnteroSinErroresScanner();
+        int[] alturasDeCadaPersona = new int[numeroPersonas];
         
-        }
-      
+            for (int i = 0; i < numeroPersonas; i++) {
+                System.out.println("Indica la altura de la persona " + (i + 1));
+                alturasDeCadaPersona[i] = leerEnteroSinErroresScanner();
+
+                totalAlturas += alturasDeCadaPersona[i];
+
+           
+            mediaTotal = totalAlturas / numeroPersonas;
+            }
+        System.out.println("La media es: " + mediaTotal);
+        System.out.println(" ");
+
+        System.out.println("Las alturas indicadas por persona son: ");
+
         for (int i = 0; i < alturasDeCadaPersona.length; i++) {
-            
-            if (alturasDeCadaPersona[i]>mediaTotal){
-              contadorPorEncima++;
-            }else{
-            contadorPorDebajo++;
-            }
-            
-            
+            System.out.println("la persona " + ( i+1 ) + " tiene una altura de: " + alturasDeCadaPersona[i]);
         }
-      
-        
-      
+
+        for (int i = 0; i < alturasDeCadaPersona.length; i++) {
+
+            if (alturasDeCadaPersona[i] > mediaTotal) {
+                contadorPorEncima++;
+            } else {
+                contadorPorDebajo++;
+            }
+
+        }
+
+        System.out.println(" las personas por encima de la media son: " + contadorPorEncima);
+        System.out.println(" las personas por debajo de la media son: " + contadorPorDebajo);
+
     }
 
 }
