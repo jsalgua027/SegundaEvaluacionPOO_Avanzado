@@ -84,7 +84,7 @@ public class Ejer02 {
 
         Scanner teclado2 = new Scanner(System.in);
         int numeroPersonas = 0; // para saber el tamaño del array 
-       
+
         int totalAlturas = 0; // para poder hacer los calculos de la media 
 
         int mediaTotal = 0;
@@ -92,27 +92,27 @@ public class Ejer02 {
         int contadorPorDebajo = 0;
 
         System.out.println("Indica cuantas personas van a participar");
-        numeroPersonas =leerEnteroSinErroresScanner();
+        numeroPersonas = leerEnteroSinErroresScanner();
+        // inicializo el array cone l tipo de valor y con el tamaño de numero de personas
         int[] alturasDeCadaPersona = new int[numeroPersonas];
-        
-            for (int i = 0; i < numeroPersonas; i++) {
-                System.out.println("Indica la altura de la persona " + (i + 1));
-                alturasDeCadaPersona[i] = leerEnteroSinErroresScanner();
-
-                totalAlturas += alturasDeCadaPersona[i];
-
-           
+        //bucle del tamaño del array para asignar valores(AlturasDeCadaPersona)
+        for (int i = 0; i < numeroPersonas; i++) {
+            System.out.println("Indica la altura de la persona " + (i + 1));
+            alturasDeCadaPersona[i] = leerEnteroSinErroresScanner();
+            // sumo los valores por cada repetición del bucle
+            totalAlturas += alturasDeCadaPersona[i];
+            // obtengo la media
             mediaTotal = totalAlturas / numeroPersonas;
-            }
+        }
         System.out.println("La media es: " + mediaTotal);
         System.out.println(" ");
 
         System.out.println("Las alturas indicadas por persona son: ");
 
         for (int i = 0; i < alturasDeCadaPersona.length; i++) {
-            System.out.println("la persona " + ( i+1 ) + " tiene una altura de: " + alturasDeCadaPersona[i]);
+            System.out.println("la persona " + (i + 1) + " tiene una altura de: " + alturasDeCadaPersona[i]);
         }
-
+        // bucle for para recorrer las alturas y mirar cual esta por encima de la media o por debajo.
         for (int i = 0; i < alturasDeCadaPersona.length; i++) {
 
             if (alturasDeCadaPersona[i] > mediaTotal) {
@@ -122,7 +122,7 @@ public class Ejer02 {
             }
 
         }
-
+        // imprimo los contadores
         System.out.println(" las personas por encima de la media son: " + contadorPorEncima);
         System.out.println(" las personas por debajo de la media son: " + contadorPorDebajo);
 
