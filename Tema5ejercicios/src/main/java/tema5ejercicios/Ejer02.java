@@ -79,6 +79,49 @@ public class Ejer02 {
 
         return num;
     }
+    
+    //método que devulve los que están por encima
+
+    public static int estaPorEncima(int[] aux, int media) {
+        int contador = 0;
+        for (int i = 0; i < aux.length; i++) {
+
+            if (aux[i] > media) {
+                contador++;
+
+            }
+
+        }
+        return contador;
+    }
+
+    public static int estaPorDebajo(int[] aux, int media) {
+        int contador = 0;
+
+        for (int altura : aux) {
+
+            if (altura < media) {
+                contador++;
+
+            }
+
+        }
+
+        return contador;
+    }
+
+    public static int[] media(int[] origen, int media) {
+
+        int[] aux = new int[2];
+
+        aux[0] = estaPorEncima(origen, media);
+        aux[1] = estaPorDebajo(origen, media);
+
+        return aux;
+
+    }
+    
+    
 
     public static void main(String[] args) {
 
@@ -127,45 +170,6 @@ public class Ejer02 {
         System.out.println(" las personas por debajo de la media son: " + estaPorDebajo(alturasDeCadaPersona, mediaTotal));
 
     }
-    //método que devulve los que están por encima
-
-    public static int estaPorEncima(int[] aux, int media) {
-        int contador = 0;
-        for (int i = 0; i < aux.length; i++) {
-
-            if (aux[i] > media) {
-                contador++;
-
-            }
-
-        }
-        return contador;
-    }
-
-    public static int estaPorDebajo(int[] aux, int media) {
-        int contador = 0;
-
-        for (int altura : aux) {
-
-            if (altura < media) {
-                contador++;
-
-            }
-
-        }
-
-        return contador;
-    }
-
-    public static int[] media(int[] origen, int media) {
-
-        int[] aux = new int[2];
-
-        aux[0] = estaPorEncima(origen, media);
-        aux[1] = estaPorDebajo(origen, media);
-
-        return aux;
-
-    }
+    
 
 }
