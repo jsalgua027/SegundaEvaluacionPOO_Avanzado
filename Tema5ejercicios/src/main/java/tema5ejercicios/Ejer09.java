@@ -74,9 +74,8 @@ public class Ejer09 {
 //
 //        }
     int[] arrayEnteros= {1,9,6,8,5,7,2};
-        for (int arrayEntero : arrayEnteros) {
-            System.out.println(" - " + arrayEntero);
-        }
+        mostrarArray(arrayEnteros);
+        System.out.println("");
 
 //            int numeroPedido=leerEnteroSinErroresScanner();
 //        for (int i = 0; i < arrayEnteros.length; i++) {
