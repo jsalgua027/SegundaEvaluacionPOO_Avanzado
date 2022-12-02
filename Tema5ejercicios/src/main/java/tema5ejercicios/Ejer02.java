@@ -82,7 +82,6 @@ public class Ejer02 {
 
     public static void main(String[] args) {
 
-        Scanner teclado2 = new Scanner(System.in);
         int numeroPersonas = 0; // para saber el tamaño del array 
 
         int totalAlturas = 0; // para poder hacer los calculos de la media 
@@ -101,9 +100,10 @@ public class Ejer02 {
             alturasDeCadaPersona[i] = leerEnteroSinErroresScanner();
             // sumo los valores por cada repetición del bucle
             totalAlturas += alturasDeCadaPersona[i];
-            // obtengo la media
-            mediaTotal = totalAlturas / numeroPersonas;
+
         }
+        // obtengo la media
+        mediaTotal = totalAlturas / numeroPersonas;
         System.out.println("La media es: " + mediaTotal);
         System.out.println(" ");
 
@@ -123,8 +123,48 @@ public class Ejer02 {
 
         }
         // imprimo los contadores
-        System.out.println(" las personas por encima de la media son: " + contadorPorEncima);
-        System.out.println(" las personas por debajo de la media son: " + contadorPorDebajo);
+        System.out.println(" las personas por encima de la media son: " + estaPorEncima(alturasDeCadaPersona, mediaTotal));
+        System.out.println(" las personas por debajo de la media son: " + estaPorDebajo(alturasDeCadaPersona, mediaTotal));
+
+    }
+    //método que devulve los que están por encima
+
+    public static int estaPorEncima(int[] aux, int media) {
+        int contador = 0;
+        for (int i = 0; i < aux.length; i++) {
+
+            if (aux[i] > media) {
+                contador++;
+
+            }
+
+        }
+        return contador;
+    }
+
+    public static int estaPorDebajo(int[] aux, int media) {
+        int contador = 0;
+
+        for (int altura : aux) {
+
+            if (altura < media) {
+                contador++;
+
+            }
+
+        }
+
+        return contador;
+    }
+
+    public static int[] media(int[] origen, int media) {
+
+        int[] aux = new int[2];
+
+        aux[0] = estaPorEncima(origen, media);
+        aux[1] = estaPorDebajo(origen, media);
+
+        return aux;
 
     }
 
