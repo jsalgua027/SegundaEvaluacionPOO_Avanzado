@@ -39,7 +39,7 @@ public class Ejer05 {
      *
      *
      */
-    private static Scanner teclado = new Scanner(System.in);
+    private static final Scanner teclado = new Scanner(System.in);
 
     public static int leerEnteroSinErroresScanner() {
         int num = 0;
