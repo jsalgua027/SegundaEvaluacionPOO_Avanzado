@@ -165,7 +165,7 @@ public class Ejer05 {
         int contadorPositivos = 0;
         int contadorNegativos = 0;
         int contadorCeros = 0;
-        int media = 0;
+      
 
         int[] conjuntoNumeros = new int[10];
 
