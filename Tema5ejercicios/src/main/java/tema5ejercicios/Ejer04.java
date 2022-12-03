@@ -26,8 +26,9 @@ public class Ejer04 {
      *
      *
      */
-      private static Scanner teclado = new Scanner(System.in);
-      public static int leerEnteroSinErroresScanner() {
+    private static Scanner teclado = new Scanner(System.in);
+
+    public static int leerEnteroSinErroresScanner() {
         int num = 0;
         boolean repetir = true;
 
@@ -51,40 +52,49 @@ public class Ejer04 {
 
         return num;
     }
-    
+
+    public static boolean comprobarSiContiene(int[] origen, int indice, int valor) {
+        for (int i = 0; i < indice; i++) {
+            if (origen[i] == valor) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
-        Random numAleatorio= new Random();
-    
-        int [] arrayEnteros= new int[10];
+        Random numAleatorio = new Random();
+
+        int[] arrayEnteros = new int[10];
+        int n = 0;
         for (int i = 0; i < arrayEnteros.length; i++) {
-            
-            arrayEnteros[i]=numAleatorio.nextInt(15-0+1)+0;
-//                if(arrayEnteros[i+1]==arrayEnteros[i]){
-//                
-//                i--;
-//                }
+
+            do {//bucle para que sean distintos los aleatorios 
+                n = numAleatorio.nextInt(15 - 0 + 1) + 0;
+            } while (comprobarSiContiene(arrayEnteros, i, n));
+
+            arrayEnteros[i] = n;
+
         }
-        
+
         for (int arrayEntero : arrayEnteros) {
-            System.out.println(" - "+ arrayEntero);
+            System.out.println(" - " + arrayEntero);
         }
-        
-            int numeroPedido=leerEnteroSinErroresScanner();
+
+        int numeroPedido = leerEnteroSinErroresScanner();
         for (int i = 0; i < arrayEnteros.length; i++) {
-            
-            if (numeroPedido== arrayEnteros[i]){
-                System.out.println("Has acertado, esta en la posición: "+ i);
-            break;
-            }else{
-            
+
+            if (numeroPedido == arrayEnteros[i]) {
+                System.out.println("Has acertado, esta en la posición: " + i);
+                break;
+            } else {
+
                 System.out.println("No has acertado");
             }
         }
         System.out.println("uso del binatySearch");
-        System.out.println("contiene el numero?: "+   Arrays.binarySearch(arrayEnteros, numeroPedido) );
-              
-        
-        
+        System.out.println("contiene el numero?: " + Arrays.binarySearch(arrayEnteros, numeroPedido));
+
     }
 
 }

@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import static tema5ejercicios.Ejer10.comprobarSiContiene;
 
 /**
  *
@@ -46,7 +47,7 @@ public class Ejer09 {
     }
 
     public static int[] bubbleSort(int[] origen) {
-        for (int i = 0; i < origen.length-1; i++) {
+        for (int i = 0; i < origen.length - 1; i++) {
             if (origen[i] < origen[i + 1]) {
                 int temp = origen[i];
                 origen[i] = origen[i + 1];
@@ -64,16 +65,30 @@ public class Ejer09 {
         }
     }
 
+    public static boolean comprobarSiContiene(int[] origen, int indice, int valor) {
+        for (int i = 0; i < indice; i++) {
+            if (origen[i] == valor) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         Random numAleatorio = new Random();
 
-//        int[] arrayEnteros = new int[10];
-//        for (int i = 0; i < arrayEnteros.length; i++) {
-//
-//            arrayEnteros[i] = numAleatorio.nextInt(15 - 0 + 1) + 0;
-//
-//        }
-    int[] arrayEnteros= {1,9,6,8,5,7,2};
+        int[] arrayEnteros = new int[10];
+        int n = 0;
+        for (int i = 0; i < arrayEnteros.length; i++) {
+
+            do {
+                n = numAleatorio.nextInt(15 - 0 + 1) + 0;
+            } while (comprobarSiContiene(arrayEnteros, i, n));
+
+            arrayEnteros[i] = n;
+
+        }
+
         mostrarArray(arrayEnteros);
         System.out.println("");
 

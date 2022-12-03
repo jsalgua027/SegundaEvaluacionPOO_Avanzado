@@ -57,7 +57,14 @@ public class Ejer10 {
  
       }
       
-      
+      public static boolean comprobarSiContiene(int[] origen, int indice, int valor) {
+        for (int i = 0; i < indice; i++) {
+            if (origen[i] == valor) {
+                return true;
+            }
+        }
+        return false;
+    }
       
       
       
@@ -67,12 +74,15 @@ public class Ejer10 {
            Random numAleatorio= new Random();
     
         int [] arrayEnteros= new int[10];
-        for (int i = 0; i < arrayEnteros.length-1; i++) {
+        int n =0;
+        for (int i = 0; i < arrayEnteros.length; i++) {
             
-            arrayEnteros[i]=numAleatorio.nextInt(15-0+1)+0;
-                if (arrayEnteros[i]== arrayEnteros[i+1]){
-                i--;
-                }
+            do {                
+                  n= numAleatorio.nextInt(15-0+1)+0;
+            } while (comprobarSiContiene(arrayEnteros, i, n));
+           
+            arrayEnteros[i]=n;
+              
 
 
         }
