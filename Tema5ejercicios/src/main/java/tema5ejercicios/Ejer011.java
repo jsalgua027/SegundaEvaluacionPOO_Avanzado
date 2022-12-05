@@ -11,22 +11,18 @@ import java.util.Scanner;
 
 /**
  *
- * @author Windows10
+ * @author nacho
  */
-public class Ejer04 {
+public class Ejer011 {
 
     /**
      * @param args the command line arguments
-     *
-     * Escribe un programa que, dado un array de enteros de cualquier tamaño,
-     * busque si un número obtenido por teclado se encuentra en el array e
-     * imprima la primera posición en la que se encuentra el número. Realiza la
-     * búsqueda de un elemento: implementando el método de búsqueda secuencial.
-     * usando el método de búsqueda binaria de la clase Arrays.
-     *
-     *
+     * 
+     * 
      */
-    private static Scanner teclado = new Scanner(System.in);
+    
+    
+     private static Scanner teclado = new Scanner(System.in);
 
     public static int leerEnteroSinErroresScanner() {
         int num = 0;
@@ -67,8 +63,9 @@ public class Ejer04 {
             System.out.print(" - " + origen[i]);
         }
     }
-
     public static void main(String[] args) {
+        
+        
         Random numAleatorio = new Random();
 
         int[] arrayEnteros = new int[10];
@@ -106,5 +103,9 @@ public class Ejer04 {
         System.out.println("contiene el numero?: " + Arrays.binarySearch(arrayEnteros, numeroPedido));
 
     }
+        
+        
+        
+    }
+    
 
-}
