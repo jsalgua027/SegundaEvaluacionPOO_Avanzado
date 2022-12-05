@@ -48,10 +48,12 @@ public class Ejer09 {
 
     public static int[] bubbleSort(int[] origen) {
         for (int i = 0; i < origen.length - 1; i++) {
-            if (origen[i] < origen[i + 1]) {
-                int temp = origen[i];
-                origen[i] = origen[i + 1];
-                origen[i + 1] = temp;
+            for (int j = i + 1; j < origen.length; j++) {
+                if (origen[i] >origen[j]) {
+                    int temp = origen[i];
+                    origen[i] = origen[j];
+                    origen[j] = temp;
+                }
             }
 
         }

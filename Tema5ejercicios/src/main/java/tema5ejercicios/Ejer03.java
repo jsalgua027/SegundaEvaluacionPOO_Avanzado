@@ -32,10 +32,12 @@ public class Ejer03 {
     public static void main(String[] args) {
         Random numeroAleatorio = new Random();
         int posicionAlatoria;
-        double[] array1 = new double[20];
-        for (int i = 0; i < array1.length; i++) {
-            array1[i] = 7.5;
-        }
+    double[] array1 = new double[20];
+//        for (int i = 0; i < array1.length; i++) {
+//            array1[i] = 7.5;
+//        }
+         // meto el  valor 7.5 en el array con un metodo de la clase Arrays
+        Arrays.fill(array1,7.5);
         System.out.println("Imprimo array1: ");
         for (double d : array1) {
             System.out.print(" - " + d);
