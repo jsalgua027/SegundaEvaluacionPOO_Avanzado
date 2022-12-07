@@ -40,7 +40,7 @@ public class Ejer06 {
 
                 if (origen1[i] != origen2[i]) {
                     igual = false;
-
+                    break;
                 } else {
                     igual = true;
                 }

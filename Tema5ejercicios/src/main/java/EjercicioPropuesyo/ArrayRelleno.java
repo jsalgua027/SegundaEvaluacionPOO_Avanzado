@@ -1,0 +1,71 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package EjercicioPropuesyo;
+
+import java.util.Random;
+
+/**
+ *
+ * @author nacho
+ */
+public class ArrayRelleno {
+
+    /*
+     * 
+     * 
+     * 
+     *  ****************************** otro ejecicio rellenar un array con
+     * letras mayusculas array de char[] (25 letras) generamos un array d tamaño
+     * aleatorio entre y 25 pero que no se salga del array de char generamos un
+     * numero aleatorio para que coja las posiciones del array de char[] y meta
+     * el char valido en el nuevo array
+     *
+     * 
+     * 
+     *
+     */
+    static  Random numAle =new Random();
+    
+     public static void mostrarArray(char[] origen) {
+        for (int i = 0; i < origen.length; i++) {
+            System.out.print(" - " + origen[i]);
+        }
+    }
+  
+     public static int[] generarArray( ){
+         int tamanio=numAle.nextInt(25-15+1)+15;
+         
+         int []aux =new int [tamanio];
+     
+         return aux;
+     }
+     
+    
+    
+    
+    public static void main(String[] args) {
+        
+        char[] abecedario=new char[26];
+        String resultado=" ";
+        for (int i = 0; i < abecedario.length; i++) {
+            abecedario[i]=(char)(65+1);
+            
+        }
+        
+        int[] arrayNumeros= generarArray();
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            arrayNumeros[i]=numAle.nextInt(26);
+            
+        }
+        
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            
+            resultado+=abecedario[i];
+            
+        }
+        System.out.println(resultado);
+    }
+    
+}
