@@ -33,6 +33,12 @@ public class ArrayRelleno {
             System.out.print(" - " + origen[i]);
         }
     }
+     
+      public static void mostrarArray(int [] origen) {
+        for (int i = 0; i < origen.length; i++) {
+            System.out.print(" - " + origen[i]);
+        }
+    }
   
      public static int[] generarArray( ){
          int tamanio=numAle.nextInt(25-15+1)+15;
@@ -50,21 +56,30 @@ public class ArrayRelleno {
         char[] abecedario=new char[26];
         String resultado=" ";
         for (int i = 0; i < abecedario.length; i++) {
-            abecedario[i]=(char)(65+1);
+            int numero=numAle.nextInt(90-65+1)+65;
+            abecedario[i]=(char)numero;
             
         }
+        System.out.println("El array de letras presenta el siguente orden:");
+        mostrarArray(abecedario);
+        
         
         int[] arrayNumeros= generarArray();
         for (int i = 0; i < arrayNumeros.length; i++) {
             arrayNumeros[i]=numAle.nextInt(26);
             
         }
+        System.out.println("");
+        System.out.println("El array numerico es:");
+        mostrarArray(arrayNumeros);
         
         for (int i = 0; i < arrayNumeros.length; i++) {
             
-            resultado+=abecedario[i];
+            resultado+=abecedario[arrayNumeros[i]];
             
         }
+        System.out.println("");
+        System.out.println("El string resultante es: ");
         System.out.println(resultado);
     }
     

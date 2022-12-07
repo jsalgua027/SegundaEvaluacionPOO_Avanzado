@@ -77,14 +77,14 @@ public class EjerPropuestoCapicuas {
     }
 
     public static boolean esCapicua(char[] origen) {
-        boolean siLoEs ;// true si  es capicua
+      
         char[] aux =new char[origen.length];
         for (int i = origen.length-1; i >=0; i--) {
 
-            aux[i] = origen[i];
+            aux[i]=origen[origen.length-1-i];
             
         }
-       return siLoEs = Arrays.equals(origen, aux);
+       return  Arrays.equals(origen, aux);
 
       
 
@@ -97,6 +97,8 @@ public class EjerPropuestoCapicuas {
         System.out.println("");
 
         System.out.println("Es capicua el numero: " + esCapicua(numeroChar));
+
+ 
     }
 
 }
