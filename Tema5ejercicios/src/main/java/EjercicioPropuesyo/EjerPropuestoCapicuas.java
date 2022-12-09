@@ -89,7 +89,16 @@ public class EjerPropuestoCapicuas {
       
 
     }
-
+  // otra forma de hacerlo mas eficiente.
+    public static boolean capicua(char[] origen){
+        for (int i = 0; i < origen.length/2; i++) {
+            if (origen[i]!= origen[origen.length-i-1]){
+            return false;
+            }
+        }
+    return true;
+    }
+    
     public static void main(String[] args) {
         int numero = leerEnteroSinErroresScanner();
         char[] numeroChar = tranformamosTipo(numero);
