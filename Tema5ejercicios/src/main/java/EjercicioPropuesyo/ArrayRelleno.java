@@ -83,4 +83,6 @@ public class ArrayRelleno {
         System.out.println(resultado);
     }
     
+    // queda pendiente hacer que se generen varios string y se metan dentro de otro array
+    
 }
