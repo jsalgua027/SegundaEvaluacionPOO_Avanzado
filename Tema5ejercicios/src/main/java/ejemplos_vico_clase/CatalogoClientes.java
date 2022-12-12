@@ -13,15 +13,36 @@ public class CatalogoClientes {
     private int numeroClientes;
 
     private Cliente[] listaClientes;
+    
+//constructor con clientes a null
+//    public CatalogoClientes(int tamanio) {
+//        tamanio = Math.abs(tamanio);
+//        this.numeroClientes = tamanio;
+//
+//        this.listaClientes = new Cliente[tamanio];
+//        for (int i = 0; i < listaClientes.length; i++) {
+//
+//            this.listaClientes[i] = new Cliente();
+//
+//        }
+//    }
 
-    public CatalogoClientes(int tamanio) {
+    public CatalogoClientes(int numeroClientes, Cliente[] listaClientes) {
+        this.numeroClientes = numeroClientes;
+        this.listaClientes = listaClientes;
+    }
+
+    
+    
+    
+       public CatalogoClientes(int tamanio) {
         tamanio = Math.abs(tamanio);
         this.numeroClientes = tamanio;
 
         this.listaClientes = new Cliente[tamanio];
         for (int i = 0; i < listaClientes.length; i++) {
 
-            this.listaClientes[i] = new Cliente();
+            this.listaClientes[i] = Cliente.generarCliente();
 
         }
     }
@@ -89,6 +110,18 @@ public class CatalogoClientes {
         }
 
         return aux;
+    }
+    
+    
+    //borrar clientes
+    public boolean borrarCliente(Cliente c){
+    int posicion=buscarCliente(c);
+    if(posicion>=0){
+    this.numeroClientes--;
+    this.listaClientes[posicion]=null;
+    return true;
+    }
+    return false;
     }
 
 }

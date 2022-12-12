@@ -5,6 +5,7 @@
 package ejemplos_vico_clase;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *
@@ -14,7 +15,7 @@ public class Cliente {
     
     private String NIF;
     private String nombre;
-    private String Nombre;
+    private String apellido;
 
     public Cliente() {
     }
@@ -22,7 +23,20 @@ public class Cliente {
     public Cliente(String NIF, String nombre, String Nombre) {
         this.NIF = NIF;
         this.nombre = nombre;
-        this.Nombre = Nombre;
+        this.apellido = Nombre;
+    }
+    
+    public static Cliente  generarCliente( ){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Indica el NIF");
+      String  nif=teclado.nextLine();
+         System.out.println("Indica el Nombre");
+       String nombre=teclado.nextLine();
+         System.out.println("Indica el Apellido");
+        String apellido=teclado.nextLine();
+    Cliente aux =new Cliente(nif, nombre, apellido);
+        
+    return aux;
     }
 
     public String getNIF() {
@@ -41,9 +55,18 @@ public class Cliente {
         this.nombre = nombre;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    
+
     @Override
     public String toString() {
-        return "Cliente{" + "NIF=" + NIF + ", nombre=" + nombre + ", Nombre=" + Nombre + '}';
+        return "Cliente{" + "NIF=" + NIF + ", nombre=" + nombre + ", Nombre=" + apellido + '}';
     }
 
     @Override
@@ -51,7 +74,7 @@ public class Cliente {
         int hash = 3;
         hash = 43 * hash + Objects.hashCode(this.NIF);
         hash = 43 * hash + Objects.hashCode(this.nombre);
-        hash = 43 * hash + Objects.hashCode(this.Nombre);
+        hash = 43 * hash + Objects.hashCode(this.apellido);
         return hash;
     }
 

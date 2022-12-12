@@ -16,44 +16,39 @@ public class EjemplosVehiculos {
     public static void main(String[] args) {
         CatalogoVehiculos catalogo = new CatalogoVehiculos(10);
 
-//      //  catalogo.mostrarCatalogo();
-//      
-            System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
-            System.out.println(catalogo);
-            
-     
-      catalogo.borrarVehiculo(catalogo.getListaVehiculos()[3]);
-        System.out.println("*******************despues de borrar 3 -----------------");
-        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
-        System.out.println(catalogo);
-        
-        Vehiculo aux = new Vehiculo();
-        aux.setBastidor("13234563");
-        catalogo.añadirVehiculo(aux);
-        
-        
-         System.out.println("*******************despues de añadir-----------------");
-        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
-        System.out.println(catalogo);
-        
-        
-        aux.setBastidor("999999999");
-        catalogo.añadirVehiculo(aux);
-        
-        
-         System.out.println("*******************despues de añadir otro-----------------");
-        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
-        System.out.println(catalogo);
-        
-        
-        
-        CatalogoClientes catalogoClientes = new CatalogoClientes(3);
-      // Cliente c1= new Cliente("", nombre, Nombre);
-        
-        
-        
-        
-        
+    //    catalogo.mostrarCatalogo();
+   
+//            System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+//            System.out.println(catalogo);
+//            
+//     
+//      catalogo.borrarVehiculo(catalogo.getListaVehiculos()[3]);
+//        System.out.println("*******************despues de borrar 3 -----------------");
+//        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+//        System.out.println(catalogo);
+//        
+//        Vehiculo aux = new Vehiculo();
+//        aux.setBastidor("13234563");
+//        catalogo.añadirVehiculo(aux);
+//        
+//        
+//         System.out.println("*******************despues de añadir-----------------");
+//        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+//        System.out.println(catalogo);
+//        
+//        
+//        aux.setBastidor("999999999");
+//        catalogo.añadirVehiculo(aux);
+//        
+//        
+//         System.out.println("*******************despues de añadir otro-----------------");
+//        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+//        System.out.println(catalogo);
+//        
+//        
+//     
+//        
+//        
 //        //array[0].setBastidor("123A");
 //        catalogo.getListaVehiculos()[0].setBastidor("123A");
 //
@@ -72,10 +67,34 @@ public class EjemplosVehiculos {
 //        System.out.println("***************despues de borrar****************");
 //        
 //      //  catalogo.mostrarCatalogo();
-    
+//    
+//
+//// 
 
-// 
-
+           
+        CatalogoClientes catalogoClientes = new CatalogoClientes(3);
+       Cliente c1= new Cliente("75465464","Nacho","Salcedo");
+       Cliente c2= new Cliente("75465464","Pepe","Perez");
+       Cliente c3= new Cliente("75465464","Maria","Hernandez");
+        catalogoClientes.añadirCliente(c1);
+        catalogoClientes.añadirCliente(c2);
+        catalogoClientes.añadirCliente(c3);
+      
+        System.out.println(catalogoClientes);
+        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
+        
+        catalogoClientes.borrarCliente(c2);
+        
+        
+        System.out.println("***************************borramos cliente c2******************************");
+         System.out.println(catalogoClientes);
+        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
+        
+        System.out.println("**********************creo cliente c4  y lo añado**************************");
+           Cliente c4= new Cliente("75465464","Juan","XXXXXXXXX");
+           catalogoClientes.añadirCliente(c4);
+            System.out.println(catalogoClientes);
+        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
         
             
 
