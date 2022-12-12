@@ -16,27 +16,68 @@ public class EjemplosVehiculos {
     public static void main(String[] args) {
         CatalogoVehiculos catalogo = new CatalogoVehiculos(10);
 
-        catalogo.mostrarCatalogo();
-
-        //Vehiculo[ ] array= catalogo.getListaVehiculos();
-        //array[0].setBastidor("123A");
-        catalogo.getListaVehiculos()[0].setBastidor("123A");
-
-        System.out.println("------------------------------------------------------");
-        catalogo.mostrarCatalogo();
-
-        Vehiculo v = new Vehiculo();
-        v.setBastidor("123A");
-        System.out.println(v);
-        int posicion = catalogo.buscarVehiculo(v);
-        System.out.println("La posicio de v es: " + posicion);
+//      //  catalogo.mostrarCatalogo();
+//      
+            System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+            System.out.println(catalogo);
+            
+     
+      catalogo.borrarVehiculo(catalogo.getListaVehiculos()[3]);
+        System.out.println("*******************despues de borrar 3 -----------------");
+        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+        System.out.println(catalogo);
         
-        // borramos 
-        catalogo.borrarVehiculo(catalogo.getListaVehiculos()[4]);
+        Vehiculo aux = new Vehiculo();
+        aux.setBastidor("13234563");
+        catalogo.añadirVehiculo(aux);
         
-        System.out.println("***************despues de borrar****************");
         
-        catalogo.mostrarCatalogo();
+         System.out.println("*******************despues de añadir-----------------");
+        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+        System.out.println(catalogo);
+        
+        
+        aux.setBastidor("999999999");
+        catalogo.añadirVehiculo(aux);
+        
+        
+         System.out.println("*******************despues de añadir otro-----------------");
+        System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+        System.out.println(catalogo);
+        
+        
+        
+        CatalogoClientes catalogoClientes = new CatalogoClientes(3);
+      // Cliente c1= new Cliente("", nombre, Nombre);
+        
+        
+        
+        
+        
+//        //array[0].setBastidor("123A");
+//        catalogo.getListaVehiculos()[0].setBastidor("123A");
+//
+//        System.out.println("------------------------------------------------------");
+//       // catalogo.mostrarCatalogo();
+//
+//        Vehiculo v = new Vehiculo();
+//        v.setBastidor("123A");
+//        System.out.println(v);
+//        int posicion = catalogo.buscarVehiculo(v);
+//        System.out.println("La posicio de v es: " + posicion);
+//        
+//        // borramos 
+//        catalogo.borrarVehiculo(catalogo.getListaVehiculos()[4]);
+//        
+//        System.out.println("***************despues de borrar****************");
+//        
+//      //  catalogo.mostrarCatalogo();
+    
+
+// 
+
+        
+            
 
     }
 

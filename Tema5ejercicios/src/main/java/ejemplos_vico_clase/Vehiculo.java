@@ -59,6 +59,8 @@ public class Vehiculo {
         return modelo;
     }
 
+    
+    
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
     }
