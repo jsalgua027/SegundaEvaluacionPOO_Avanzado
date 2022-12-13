@@ -27,11 +27,7 @@ public class CatalogoClientes {
 //        }
 //    }
 
-    public CatalogoClientes(int numeroClientes, Cliente[] listaClientes) {
-        this.numeroClientes = numeroClientes;
-        this.listaClientes = listaClientes;
-    }
-
+   
     
     
     
