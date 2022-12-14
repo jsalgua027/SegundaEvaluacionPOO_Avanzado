@@ -6,6 +6,7 @@ package ejemplos_vico_clase;
 
 import java.util.Objects;
 import java.util.Scanner;
+import org.apache.commons.lang3.RandomStringUtils;
 
 /**
  *
@@ -16,25 +17,34 @@ public class Cliente {
     private String NIF;
     private String nombre;
     private String apellido;
+    private static int contador=0;
 
     public Cliente() {
+        
+        this.nombre=RandomStringUtils.randomAlphabetic(5);
+        this.apellido=RandomStringUtils.randomAlphabetic(5);
+        contador++;
+         this.NIF = String.valueOf(contador);
+        
     }
 
-    public Cliente(String NIF, String nombre, String Nombre) {
-        this.NIF = NIF;
+    public Cliente(String nombre, String apellido) {
+       
         this.nombre = nombre;
-        this.apellido = Nombre;
+        this.apellido = apellido;
+        contador++;
+         this.NIF = String.valueOf(contador);
     }
     
     public static Cliente  generarCliente( ){
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Indica el NIF");
-      String  nif=teclado.nextLine();
+//        System.out.println("Indica el NIF");
+//      String  nif=teclado.nextLine();
          System.out.println("Indica el Nombre");
        String nombre=teclado.nextLine();
          System.out.println("Indica el Apellido");
         String apellido=teclado.nextLine();
-    Cliente aux =new Cliente(nif, nombre, apellido);
+    Cliente aux =new Cliente (nombre, apellido);
         
     return aux;
     }
@@ -71,10 +81,8 @@ public class Cliente {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 43 * hash + Objects.hashCode(this.NIF);
-        hash = 43 * hash + Objects.hashCode(this.nombre);
-        hash = 43 * hash + Objects.hashCode(this.apellido);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.NIF);
         return hash;
     }
 
@@ -92,6 +100,8 @@ public class Cliente {
         final Cliente other = (Cliente) obj;
         return Objects.equals(this.NIF, other.NIF);
     }
+
+  
 
    
 

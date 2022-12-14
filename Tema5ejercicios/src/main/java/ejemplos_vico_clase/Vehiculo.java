@@ -19,10 +19,11 @@ public class Vehiculo {
     private Modelo modelo;
     private boolean disponible;
     private double tarifa;
+    private static int contador=0;
 
     public Vehiculo() {
-
-        this.bastidor = RandomStringUtils.randomAlphanumeric(10);
+        contador++;
+        this.bastidor = String.valueOf(contador);
         this.matricula = RandomStringUtils.randomNumeric(4)
                 + RandomStringUtils.randomAlphabetic(3);
 

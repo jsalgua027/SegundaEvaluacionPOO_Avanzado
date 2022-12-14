@@ -13,7 +13,7 @@ public class CatalogoClientes {
     private int numeroClientes;
 
     private Cliente[] listaClientes;
-    
+
 //constructor con clientes a null
 //    public CatalogoClientes(int tamanio) {
 //        tamanio = Math.abs(tamanio);
@@ -26,19 +26,14 @@ public class CatalogoClientes {
 //
 //        }
 //    }
-
-   
-    
-    
-    
-       public CatalogoClientes(int tamanio) {
+    public CatalogoClientes(int tamanio) {
         tamanio = Math.abs(tamanio);
         this.numeroClientes = tamanio;
 
         this.listaClientes = new Cliente[tamanio];
         for (int i = 0; i < listaClientes.length; i++) {
 
-            this.listaClientes[i] = Cliente.generarCliente();
+            this.listaClientes[i] = new Cliente();
 
         }
     }
@@ -65,13 +60,16 @@ public class CatalogoClientes {
     }
 
     // buscar un cliente
-    public int buscarCliente(Cliente c) {
+    private int buscarCliente(Cliente c) {
+        if (c != null) {
 
-        for (int i = 0; i < listaClientes.length; i++) {
-            if (c.equals(this.listaClientes[i])) {
-                return i;
+            for (int i = 0; i < listaClientes.length; i++) {
+                if (this.listaClientes != null && c.equals(this.listaClientes[i])) { //ojo con los null con esta condicion lo controlo
+                    return i;
+                }
             }
         }
+
         return -1;
 
     }
@@ -107,17 +105,27 @@ public class CatalogoClientes {
 
         return aux;
     }
-    
-    
+
     //borrar clientes
-    public boolean borrarCliente(Cliente c){
-    int posicion=buscarCliente(c);
-    if(posicion>=0){
-    this.numeroClientes--;
-    this.listaClientes[posicion]=null;
-    return true;
+    public boolean borrarCliente(Cliente c) {
+        int posicion = buscarCliente(c);
+        if (posicion >= 0) {
+
+            this.listaClientes[posicion] = null;
+            this.numeroClientes--;
+            return true;
+        }
+        return false;
     }
-    return false;
+
+    public Cliente buscarCliente(String nif) {
+        //creo un dato con clientes aleatorios
+        Cliente aux = new Cliente();
+        aux.setNIF(nif); //fuezo a que el cliente tenga el nif que busco
+        int posicion = buscarCliente(aux);
+
+        return (posicion >= 0) ? this.listaClientes[posicion] : null;
+
     }
 
 }

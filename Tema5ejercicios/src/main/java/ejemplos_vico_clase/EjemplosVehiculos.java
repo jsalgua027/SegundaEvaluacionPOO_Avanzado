@@ -18,8 +18,8 @@ public class EjemplosVehiculos {
 
     //    catalogo.mostrarCatalogo();
    
-//            System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
-//            System.out.println(catalogo);
+            System.out.println("La cantidad de vehiculos es :"+catalogo.getNumeroVehiculos());
+            System.out.println(catalogo);
 //            
 //     
 //      catalogo.borrarVehiculo(catalogo.getListaVehiculos()[3]);
@@ -72,32 +72,40 @@ public class EjemplosVehiculos {
 //// 
 
            
-        CatalogoClientes catalogoClientes = new CatalogoClientes(3);
-       Cliente c1= new Cliente("75465464","Nacho","Salcedo");
-       Cliente c2= new Cliente("75465464","Pepe","Perez");
-       Cliente c3= new Cliente("75465464","Maria","Hernandez");
-        catalogoClientes.añadirCliente(c1);
-        catalogoClientes.añadirCliente(c2);
-        catalogoClientes.añadirCliente(c3);
-      
-        System.out.println(catalogoClientes);
-        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
-        
-        catalogoClientes.borrarCliente(c2);
-        
-        
-        System.out.println("***************************borramos cliente c2******************************");
-         System.out.println(catalogoClientes);
-        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
-        
-        System.out.println("**********************creo cliente c4  y lo añado**************************");
-           Cliente c4= new Cliente("75465464","Juan","XXXXXXXXX");
-           catalogoClientes.añadirCliente(c4);
-            System.out.println(catalogoClientes);
-        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
-        
+//        CatalogoClientes catalogoClientes = new CatalogoClientes(3);
+//       Cliente c1= new Cliente("Nacho","Salcedo");
+//       Cliente c2= new Cliente("Pepe","Perez");
+//       Cliente c3= new Cliente("Maria","Hernandez");
+//        catalogoClientes.añadirCliente(c1);
+//        catalogoClientes.añadirCliente(c2);
+//        catalogoClientes.añadirCliente(c3);
+//      
+//        System.out.println(catalogoClientes);
+//        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
+//        
+//        catalogoClientes.borrarCliente(c2);
+//        
+//        
+//        System.out.println("***************************borramos cliente c2******************************");
+//         System.out.println(catalogoClientes);
+//        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
+//        
+//        System.out.println("**********************creo cliente c4  y lo añado**************************");
+//           Cliente c4= new Cliente("Juan","XXXXXXXXX");
+//           catalogoClientes.añadirCliente(c4);
+//            System.out.println(catalogoClientes);
+//        System.out.println("La cantidad de clientes es: " + catalogoClientes.getNumeroClientes());
+//        
             
-
+    CatalogoClientes catalogoClientes2 = new CatalogoClientes(10); 
+    System.out.println(catalogoClientes2);
+   System.out.println("La cantidad de clientes es: " + catalogoClientes2.getNumeroClientes());
+   
+    Cliente cli =catalogoClientes2.buscarCliente("9");
+        System.out.println("El cliente encontrado es---");
+        
+   
+   
     }
 
 }

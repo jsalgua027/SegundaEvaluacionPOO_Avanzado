@@ -73,13 +73,15 @@ public class CatalogoVehiculos {
     // te da la posicion si se encuntra el objeto
 
     public int buscarVehiculo(Vehiculo v) {
-
-        for (int i = 0; i < this.listaVehiculos.length; i++) {
+            if(v != null){
+             for (int i = 0; i < this.listaVehiculos.length; i++) {
             if (v.equals(this.listaVehiculos[i])) {
                 return i;
 
             }
         }
+            }
+       
         return -1;
     }
 
@@ -125,4 +127,17 @@ public class CatalogoVehiculos {
     public Vehiculo[] getListaVehiculos() {
         return listaVehiculos;
     }
+    
+    
+    public Vehiculo buscarVehiculo(String bastidor) {
+        //creo un dato con clientes aleatorios
+        Vehiculo aux = new Vehiculo();
+        aux.setBastidor(bastidor); //fuezo a que el cliente tenga el nif que busco
+        int posicion = buscarVehiculo(aux);
+
+        return (posicion >= 0) ? this.listaVehiculos[posicion] : null;
+
+    }
+    
+    
 }
