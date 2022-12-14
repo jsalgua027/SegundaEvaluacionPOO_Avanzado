@@ -99,7 +99,7 @@ public class CatalogoClientes {
     //metodo copiar privado
     private Cliente[] copiar() {
 
-        Cliente[] aux = new Cliente[this.numeroClientes + 1];
+        Cliente[] aux = new Cliente[this.listaClientes.length + 1];
 
         for (int i = 0; i < this.listaClientes.length; i++) {
             aux[i] = this.listaClientes[i];

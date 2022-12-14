@@ -112,7 +112,7 @@ public class CatalogoVehiculos {
     //metodo copiar privado
     private  Vehiculo[]  copiar (){
         
-        Vehiculo[] aux = new Vehiculo[this.numeroVehiculos+1];
+        Vehiculo[] aux = new Vehiculo[this.listaVehiculos.length+1];
         
         for (int i = 0; i < this.listaVehiculos.length; i++) {
             aux[i]=this.listaVehiculos[i];
