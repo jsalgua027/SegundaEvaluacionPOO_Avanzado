@@ -4,7 +4,7 @@
  */
 package empresa_catalogos;
 
-import java.sql.SQLOutput;
+
 import java.time.LocalDate;
 
 /**
@@ -38,7 +38,7 @@ public class EjemploEmpresa {
          System.out.println("Lo intento con un coche que no existe");
          System.out.println("Es posible realizar el alquiler solicitado"+rentAcar.registroAlquiler("2", "36", LocalDate.now(), 5));
          
-         
+         System.out.println(rentAcar);
          
          
     }
