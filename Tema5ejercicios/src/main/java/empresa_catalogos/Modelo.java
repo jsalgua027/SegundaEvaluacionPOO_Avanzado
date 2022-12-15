@@ -5,6 +5,7 @@
 package empresa_catalogos;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -54,5 +55,20 @@ public enum Modelo {
         return modelos[posicionValida];
 
     }
+    
+//    public static  Modelo generarModelo(){
+//        Scanner teclado = new Scanner(System.in);
+//        System.out.println("Indica la marca:");
+//        String marcaAux=teclado.nextLine();
+//        System.out.println("Indica el modelo:");
+//        String modeloAux=teclado.nextLine();
+//        System.out.println("Indica la cilindrada:");
+//        String cilindradaAux=teclado.nextLine();
+//        
+//    Modelo aux = new Modelo(marcaAux, modeloAux, modeloAux);
+//    
+//    
+//    
+//    }
 
 }

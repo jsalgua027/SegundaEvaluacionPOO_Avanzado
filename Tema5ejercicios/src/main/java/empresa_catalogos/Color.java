@@ -23,4 +23,24 @@ public enum Color {
 
     }
 
+    public static Color getROJO() {
+        return ROJO;
+    }
+
+    public static Color getNEGRO() {
+        return NEGRO;
+    }
+
+    public static Color getAZUL() {
+        return AZUL;
+    }
+
+    public static Color getAMARILLO() {
+        return AMARILLO;
+    }
+
+    public static Color getBLANCO() {
+        return BLANCO;
+    }
+
 }
