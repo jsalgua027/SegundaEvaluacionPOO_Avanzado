@@ -29,7 +29,7 @@ public class Vehiculo {
 
         this.color = Color.getAleatorio();
         this.modelo = Modelo.getAleatorio();
-
+        this.disponible=true;
     }
 
     public String getBastidor() {

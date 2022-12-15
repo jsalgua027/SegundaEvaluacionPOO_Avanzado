@@ -4,6 +4,7 @@
  */
 package empresa_catalogos;
 
+import java.time.LocalDate;
 import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -17,49 +18,49 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  */
 public class Empresa {
-
+    
     private String cif;
     private String nombre;
     private CatalogoVehiculos catalogoVehiculos;
     private CatalogoClientes catalogoClientes;
     private CatalogoAlquileres catalogoAlquileres;
-
+    
     public Empresa() {
     }
-
+    
     public Empresa(String nombre) {
         this.cif = RandomStringUtils.randomAlphanumeric(8);
         this.nombre = nombre;
-
-        this.catalogoVehiculos = new CatalogoVehiculos(10);
-        this.catalogoClientes = new CatalogoClientes(10);
-        this.catalogoAlquileres = new CatalogoAlquileres(10);
+        
+        this.catalogoVehiculos = new CatalogoVehiculos(5);
+        this.catalogoClientes = new CatalogoClientes(5);
+        this.catalogoAlquileres = new CatalogoAlquileres(5);
     }
-
+    
     public String getCif() {
         return cif;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
-
+    
     public CatalogoVehiculos getCatalogoVehiculos() {
         return catalogoVehiculos;
     }
-
+    
     public CatalogoClientes getCatalogoClientes() {
         return catalogoClientes;
     }
-
+    
     public CatalogoAlquileres getCatalogoAlquileres() {
         return catalogoAlquileres;
     }
-
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -72,14 +73,14 @@ public class Empresa {
         sb.append('}');
         return sb.toString();
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 17 * hash + Objects.hashCode(this.cif);
         return hash;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -96,34 +97,54 @@ public class Empresa {
     }
 
     // registar Cliente
-    public  void registarCliente() {
+    public void registarCliente() {
         Cliente aux = new Cliente();
         this.catalogoClientes.añadirCliente(aux);
-
+        
     }
-    
+
     // registrar vehiculo
-    
-     public  void registarVehiculo() {
+    public void registarVehiculo() {
         Vehiculo aux = new Vehiculo();
         this.catalogoVehiculos.añadirVehiculo(aux);
+        
+    }
 
+    // buscar cliente
+    public Cliente buscarCliente(String nif) {
+        
+        return this.catalogoClientes.buscarCliente(nif);
+        
+    }
+
+    // buscar vehiculo por bastidor 
+    public Vehiculo buscarVehiculo(String bastidor) {
+        
+        return this.catalogoVehiculos.buscarVehiculo(bastidor);
+        
+    }
+
+    // registrar alquileres tiene que buscar cliente, buscar vehiculo y que este disponible el vehiculo registramos el alquiler
+    // registroAlquiler(fecha, numero dias)
+    public boolean registroAlquiler(String nif, String bastidor, LocalDate fechaInico, int numeroDias) {
+        Cliente auxCli = this.catalogoClientes.buscarCliente(nif);
+        Vehiculo auxVe = this.catalogoVehiculos.buscarVehiculo(bastidor);
+        if (auxCli != null && auxVe != null && auxVe.isDisponible() == true) {
+            
+            this.catalogoAlquileres.añadirAlquiler(new Alquiler(auxCli, auxVe, fechaInico, numeroDias));
+            auxVe.setDisponible(false);
+            return true;
+        }
+        
+        return false;
+        
+    }
+
+//recibirVehiculo( Alquiler a) coje el vehiculo y lo pone en disponible
+    public void recibirVehiculo(Alquiler a) {
+        
+        a.getVehiculo().setDisponible(true);
+        
     }
     
-    // buscar cliente
-     public Cliente buscarCliente ( String nif){
-     
-    return  this.catalogoClientes.buscarCliente(nif);
-     
-     }
-     
-     // buscar vehiculo por bastidor 
-     
-     public Vehiculo buscarVehiculo ( String bastidor){
-     
-     return this.catalogoVehiculos.buscarVehiculo(bastidor);
-     
-     }
-     
-     
 }
