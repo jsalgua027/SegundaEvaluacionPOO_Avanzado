@@ -83,18 +83,18 @@ public class MenuEmpresa {
             opcion = teclado.nextLine();
 
             switch (opcion) {
-                case "1":
+                case "1" -> {
                     do {
                         System.out.println(menuClientes);
                         System.out.println("Introduzca una opción: ");
                         opcion = teclado.nextLine();
                         switch (opcion) {
-                            case "1":
+                            case "1" -> {
                                 rentAcar.registarCliente(Cliente.generarCliente());
                                 System.out.println("Con el registro realizado el catalogo de clientes es:");
                                 System.out.println(rentAcar.getCatalogoClientes().toString());
-                                break;
-                            case "2":
+                            }
+                            case "2" -> {
                                 System.out.println("Indique el nif del cliente que quiere borrar");
                                 clienteAux = teclado.nextLine();
                                 Cliente aux = new Cliente();
@@ -108,9 +108,8 @@ public class MenuEmpresa {
 
                                     System.out.println("El cliente no se encuentra en la lista");
                                 }
-
-                                break;
-                            case "3":
+                            }
+                            case "3" -> {
                                 System.out.println("Indique el nif del cliente a buscar");
                                 clienteAux = teclado.nextLine();
 
@@ -120,29 +119,27 @@ public class MenuEmpresa {
 
                                     System.out.println(rentAcar.getCatalogoClientes().buscarCliente(clienteAux).toString());
                                 }
-
-                                break;
-                            default:
+                            }
+                            default -> {
+                            }
 
                         }
 
                     } while (!opcion.contentEquals("5"));
-
-                    break;
-                case "2":
-
+                }
+                case "2" -> {
                     do {
                         System.out.println(menuVehiculos);
                         System.out.println("Introduzca una opción: ");
                         opcion = teclado.nextLine();
                         switch (opcion) {
-                            case "1":
+                            case "1" -> {
                                 Vehiculo aux = new Vehiculo();
                                 rentAcar.getCatalogoVehiculos().añadirVehiculo(aux);
                                 System.out.println("Con el nuevo vehiculo añadido el catalogo queda asi");
                                 System.out.println(rentAcar.getCatalogoVehiculos().toString());
-                                break;
-                            case "2":
+                            }
+                            case "2" -> {
                                 System.out.println("Indique el numero de bastidor que quiere borrar");
                                 vehiculoAux = teclado.nextLine();
                                 Vehiculo aux1 = new Vehiculo();
@@ -155,9 +152,8 @@ public class MenuEmpresa {
 
                                     System.out.println("El vehiculo no se encuentra en el catalogo");
                                 }
-
-                                break;
-                            case "3":
+                            }
+                            case "3" -> {
                                 System.out.println("Indique el bastidor del vehiculo  a buscar");
                                 vehiculoAux = teclado.nextLine();
 
@@ -167,16 +163,15 @@ public class MenuEmpresa {
 
                                     System.out.println(rentAcar.getCatalogoVehiculos().buscarVehiculo(vehiculoAux).toString());
                                 }
-
-                                break;
-                            default:
-
+                            }
+                            default -> {
+                            }
+                            
                         }
 
                     } while (!opcion.contentEquals("6"));
-
-                    break;
-                case "3":
+                }
+                case "3" -> {
                     System.out.println("Vamos a realizar el registro de alquiler");
                     System.out.println("Indique el nif del clinete a añadir al registro ");
                     clienteAux = teclado.nextLine();
@@ -197,8 +192,9 @@ public class MenuEmpresa {
                     }
                     System.out.println("El catalogo de alquileres queda asi: ");
                     System.out.println(rentAcar.getCatalogoAlquileres().toString());
-                    break;
-                default:
+                }
+                default -> {
+                }
 
             }
 

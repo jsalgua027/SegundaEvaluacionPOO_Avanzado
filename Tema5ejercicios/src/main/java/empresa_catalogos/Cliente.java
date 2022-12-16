@@ -72,12 +72,21 @@ public class Cliente {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
 
     @Override
     public String toString() {
-        return "Cliente{" + "NIF=" + NIF + ", nombre=" + nombre + ", Nombre=" + apellido + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n-------------");
+        sb.append("\nCliente: ");
+        sb.append("\nNIF: ").append(NIF);
+        sb.append("\n Nombre: ").append(nombre);
+        sb.append("\nApellido: ").append(apellido);
+        sb.append("\n-------------");
+        return sb.toString();
     }
+    
+
+   
 
     @Override
     public int hashCode() {
