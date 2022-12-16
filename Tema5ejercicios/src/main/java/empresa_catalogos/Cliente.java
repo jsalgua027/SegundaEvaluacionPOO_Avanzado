@@ -77,11 +77,11 @@ public class Cliente {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\n-------------");
-        sb.append("\nCliente: ");
+        sb.append("\nCliente ");
         sb.append("\nNIF: ").append(NIF);
-        sb.append("\n Nombre: ").append(nombre);
+        sb.append("\nNombre: ").append(nombre);
         sb.append("\nApellido: ").append(apellido);
-        sb.append("\n-------------");
+        sb.append("\n-------------------");
         return sb.toString();
     }
     

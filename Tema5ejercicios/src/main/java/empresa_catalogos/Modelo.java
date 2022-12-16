@@ -43,8 +43,16 @@ public enum Modelo {
 
     @Override
     public String toString() {
-        return "Modelo{" + "marca=" + marca + ", modelo=" + modelo + ", cilindrada=" + cilindrada + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append(" (");
+        sb.append("Marca: ").append(marca);
+        sb.append(", Modelo: ").append(modelo);
+        sb.append(", Cilindrada: ").append(cilindrada);
+        sb.append(')');
+        return sb.toString();
     }
+
+  
 
     public static Modelo getAleatorio() {
         Random r = new Random();

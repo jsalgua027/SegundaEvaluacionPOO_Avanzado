@@ -113,15 +113,24 @@ public class Vehiculo {
         final Vehiculo other = (Vehiculo) obj;
         return Objects.equals(this.bastidor, other.bastidor);
     }
-    
-    
-    
-    
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "bastidor=" + bastidor + ", matricula=" + matricula + ", color=" + color
-                + ", modelo=" + modelo + ", disponible=" + disponible + ", tarifa=" + tarifa + '}';
+        StringBuilder sb = new StringBuilder();
+            sb.append("\n------------");
+        sb.append("\nVehiculo ");
+        sb.append("\nBastidor: ").append(bastidor);
+        sb.append("\nMatricula: ").append(matricula);
+        sb.append("\nColor: ").append(color);
+        sb.append("\nModelo: ").append(modelo);
+        sb.append("\nDisponible: ").append(disponible);
+        sb.append("\nTarifa: ").append(tarifa);
+        sb.append("\n------------------");
+        return sb.toString();
     }
+    
+    
+    
+    
 
 }

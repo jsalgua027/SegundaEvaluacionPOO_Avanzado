@@ -64,13 +64,14 @@ public class Empresa {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Empresa{");
-        sb.append("cif=").append(cif);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", catalogoVehiculos=").append(catalogoVehiculos);
-        sb.append(", catalogoClientes=").append(catalogoClientes);
-        sb.append(", catalogoAlquileres=").append(catalogoAlquileres);
-        sb.append('}');
+            sb.append("\n---------------- ");
+        sb.append("\nEmpresa: ");
+        sb.append("\nCIF: ").append(cif);
+        sb.append("\nNombre empresa: ").append(nombre);
+        sb.append("\nCatalogo de Vehiculos: ").append(catalogoVehiculos);
+        sb.append("\nCatalogo de Clientes: ").append(catalogoClientes);
+        sb.append("\nCatalogo de Alquileres: ").append(catalogoAlquileres);
+            sb.append("\n---------------- ");
         return sb.toString();
     }
 
