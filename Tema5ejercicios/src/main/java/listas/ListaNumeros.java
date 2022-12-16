@@ -48,7 +48,8 @@ public class ListaNumeros {
         listaEnteros.remove(numero);
 
         // muestro 
-        listaEnteros.forEach(System.out::println);
+        listaEnteros.forEach(System.out::println); // imprimir landa
+        listaEnteros.forEach(e->System.out.println(e));// imprimir landa
 
         System.out.println("-------------------------");
 
