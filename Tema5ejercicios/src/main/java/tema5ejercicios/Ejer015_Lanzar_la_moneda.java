@@ -4,6 +4,8 @@
  */
 package tema5ejercicios;
 
+import java.util.Random;
+
 /**
  *
  * @author Windows10
@@ -24,18 +26,28 @@ public class Ejer015_Lanzar_la_moneda {
      * resultado (cara o cruz)
      *
      */
+    private static Random aleatorio= new Random();
     
+        public static int aleatorioDentroRango(int min, int max) {
+        int numeroGenerado;
+
+        numeroGenerado = aleatorio.nextInt(max - min + 1) + min;
+
+        return numeroGenerado;
+
+    }
     
     public static void rellenarArray(boolean[] a) {
-        boolean moneda = true;//cara
+        boolean cara = true;//cara
+        boolean cruz = false;// cruz
         for (int i = 0; i < a.length; i++) {
-            a[i] = moneda;
-            if (a[i] == true) {
-                moneda = false;//false cruz
-
-            } else if (a[i] == false) {
-                moneda = true;
-            }
+                int numero=aleatorioDentroRango(1, 2);
+          if(numero==1){
+           a[i]=cara;
+          }else if (numero==2){
+          a[i]=cruz;
+          
+          }
         }
 
     }
@@ -63,15 +75,24 @@ public class Ejer015_Lanzar_la_moneda {
         return contador;
     }
     
+     public static void imprimir(boolean [] a){
+     
+         for (int i = 0; i < a.length; i++) {
+             System.out.println("En el lanzamiento: "+ (i+1) + " Ha salido: " +a[i]);
+         }
+     
+     }
+     
 
     public static void main(String[] args) {
-        int tamanio = 10;
+        int tamanio = 100;
         boolean[] monedas = new boolean[tamanio];
 
         rellenarArray(monedas);
-        for (int i = 0; i < monedas.length; i++) {
-            System.out.println("- " + monedas[i]);
-        }
+        imprimir(monedas);
+        
+        System.out.println("");
+        System.out.println("*******************contadores: *****************************");
         int contadorCaras= contadorCaras(monedas);
         System.out.println("El array tiene: "+ contadorCaras+ " caras");
         
