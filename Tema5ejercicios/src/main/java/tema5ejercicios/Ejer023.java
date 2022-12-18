@@ -65,11 +65,10 @@ public class Ejer023 {
         }
 
         for (int i = 0; i < lista2.size(); i++) {
-            for (int j = 0; j < lista3.size(); j++) {
-                if (lista3.get(i).equals(lista2.get(i)) == false) {
-                    lista3.add(lista2.get(i));
 
-                }
+            if (lista3.get(i).equals(lista2.get(i)) == false) {
+                lista3.add(lista2.get(i));
+
             }
 
         }
