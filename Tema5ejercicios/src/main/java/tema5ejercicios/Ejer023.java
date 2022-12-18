@@ -35,6 +35,7 @@ public class Ejer023 {
         System.out.println(tamanio1);
            ArrayList<Integer> lista1 = new ArrayList<>(tamanio1);
            ArrayList<Integer> lista2 = new ArrayList<>(tamanio2);
+           ArrayList<Integer> lista3 = new ArrayList<>();
            
            // agrego valores aleatorios a lista 1
            for (int i = 0; i < tamanio1; i++) {
@@ -54,7 +55,32 @@ public class Ejer023 {
            lista1.forEach(System.out::println);
            System.out.println("***************************************************");
              lista2.forEach(System.out::println);
+             
+             //primero busco cual de la dos listas es mayor para usarlo para el bucle
+            if (lista1.size()>lista2.size()){
+             for (int i = 0; i < tamanio1 ;i++) {
+                    if(lista1.get(i).compareTo(lista2.get(i))!=0){
+                     lista3.add(lista1.get(i));
+                     lista3.add(lista2.get(i));
+                    }
+                }
+            }else if (lista2.size()>lista1.size()){
+                for (int i = 0; i < tamanio2; i++) {
+                    
+                     if(lista2.get(i).compareTo(lista1.get(i))!=0){
+                     lista3.add(lista2.get(i));
+                     lista3.add(lista1.get(i));
+                    }
+                }
+            
+            }
+            
+             System.out.println("Imprimo la lista 3");
+                lista3.forEach(System.out::println);
+             
+            
+        }
            
     }
     
-}
+
