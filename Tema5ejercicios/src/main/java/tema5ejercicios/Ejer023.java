@@ -64,34 +64,36 @@ public class Ejer023 {
 
         }
 
-        for (int i = 0; i < lista2.size(); i++) {
-
-            if (lista3.get(i).equals(lista2.get(i)) == false) {
-                lista3.add(lista2.get(i));
-
+//        for (int i = 0; i < lista3.size(); i++) {
+//            for (int j = 0; j < lista2.size(); j++) {
+//                if (lista3.get(i).equals(lista2.get(j)) == false  ) {
+//                    lista3.add(lista2.get(j));
+//
+//                }
+//                
+//            }
+//
+//        }
+            for (Integer integer : lista2) {
+            if(!lista3.contains(lista2)){
+            lista3.add(integer);
             }
-
         }
 
-        System.out.println(
-                "Imprimo la lista 3 con los valores de lista 1 y lista 2 sin que se repitan");
+
+        System.out.println( "Imprimo la lista 3 con los valores de lista 1 y lista 2 sin que se repitan");
         lista3.forEach(System.out::println);
 
-        System.out.println(
-                "********************************************************");
+        System.out.println(  "********************************************************");
 
-        for (int i = 0;
-                i < lista1.size();
-                i++) {
+        for (int i = 0; i < lista1.size(); i++) {
             if (lista1.get(i) % 2 == 0) {// elementos pares de lista 1
 
                 lista4.add(lista1.get(i));
             }
         }
 
-        for (int i = 0;
-                i < lista2.size();
-                i++) {
+        for (int i = 0; i < lista2.size(); i++) {
             if (!(lista2.get(i) % 2 == 0)) {// elementos pares de lista 1
 
                 lista4.add(lista2.get(i));
