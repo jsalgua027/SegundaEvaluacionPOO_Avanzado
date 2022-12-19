@@ -55,7 +55,7 @@ public class Ejer015_Lanzar_la_moneda {
     public static int contadorCaras(boolean[] a) {
         int contador = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] == true) {
+            if (a[i]) {
                 contador++;
             }
         }
@@ -67,7 +67,7 @@ public class Ejer015_Lanzar_la_moneda {
      public static int contadorCruces(boolean[] a) {
         int contador = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] == false) {
+            if (!a[i]) {
                 contador++;
             }
         }

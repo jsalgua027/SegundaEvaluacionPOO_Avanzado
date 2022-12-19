@@ -34,8 +34,8 @@ public class Ejer023 {
         int tamanio2 = aleatorioDentroRango(10, 20);
         int valoresArray = 0;
         System.out.println(tamanio1);
-        ArrayList<Integer> lista1 = new ArrayList<>(tamanio1);
-        ArrayList<Integer> lista2 = new ArrayList<>(tamanio2);
+        ArrayList<Integer> lista1 = new ArrayList<>();
+        ArrayList<Integer> lista2 = new ArrayList<>();
         ArrayList<Integer> lista3 = new ArrayList<>();
         ArrayList<Integer> lista4 = new ArrayList<>();
 
@@ -58,21 +58,23 @@ public class Ejer023 {
         System.out.println("Imprimo la lista 2");
         lista2.forEach(System.out::println);
 
-        System.out.println("*************************************************");
-        for (int i = 0; i < lista1.size(); i++) {
-            lista3.add(lista1.get(i));
 
+        // primera version
+            for (int i = 0; i < lista1.size(); i++) {
+                if (!lista2.contains(lista1.get(i))){
+                
+                    lista3.add(lista1.get(i));
+                }
         }
-
-
-            for (Integer integer : lista2) {
-            if(!lista3.contains(integer)){
-            lista3.add(integer);
-            }
-        }
-     
             
-
+          //con un for echar
+          
+          for (Integer numero : lista1) {
+              if(!lista2.contains(numero)){
+                  lista3.add(numero);
+              }
+            
+        }
 
         System.out.println( "Imprimo la lista 3 con los valores de lista 1 y lista 2 sin que se repitan");
         lista3.forEach(System.out::println);
