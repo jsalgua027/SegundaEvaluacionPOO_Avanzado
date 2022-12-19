@@ -74,19 +74,33 @@ public class Alquiler {
         this.alquilerID = alquilerID;
     }
 
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("\n---------------- ");
+//        sb.append("Alquiler: ");
+//        sb.append("\nAlquilerID: ").append(alquilerID);
+//        sb.append("\nNIF cliente: ").append(cliente.getNIF());
+//        sb.append("\nBastidor vehiculo: ").append(vehiculo.getBastidor());
+//        sb.append("\nFecha inicio alquiler: ").append(fechaInicio);
+//        sb.append("\nDuracion del alquiler: ").append(duracionDias);
+//        sb.append("\n---------------- ");
+//        return sb.toString();
+//    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n---------------- ");
-        sb.append("Alquiler: ");
-        sb.append("\nAlquilerID: ").append(alquilerID);
-        sb.append("\nNIF cliente: ").append(cliente.getNIF());
-        sb.append("\nBastidor vehiculo: ").append(vehiculo.getBastidor());
-        sb.append("\nFecha inicio alquiler: ").append(fechaInicio);
-        sb.append("\nDuracion del alquiler: ").append(duracionDias);
-        sb.append("\n---------------- ");
+        sb.append("Alquiler{");
+        sb.append("alquilerID=").append(alquilerID);
+        sb.append(", cliente=").append(cliente);
+        sb.append(", vehiculo=").append(vehiculo);
+        sb.append(", fechaInicio=").append(fechaInicio);
+        sb.append(", duracionDias=").append(duracionDias);
+        sb.append('}');
         return sb.toString();
     }
+    
 
     @Override
     public int hashCode() {
