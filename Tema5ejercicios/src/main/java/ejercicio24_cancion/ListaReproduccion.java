@@ -50,27 +50,34 @@ public class ListaReproduccion {
 
     // ecuchar cancion segun posición
     public Cancion escucharCancion(int posicion) {
-        
-        return canciones.get(posicion);
+        if(posicion>0 && posicion<=canciones.size()){
+       
+        }
+         return canciones.get(posicion);
     }
 
     // cambiar canción de la posicion inidicada por otra propocionada
     public void cambiarCancion(int posicion, Cancion c) {
         
+        if(posicion>0&&posicion<= this.canciones.size()){
+        
+        }
         this.canciones.set(posicion, c);
         
     }
 
     // añadir cancion al final de la lista
     public void añadirCancion(Cancion c) {
-        
-        this.canciones.add(c);
+        if(this.canciones!=null){
+            this.canciones.add(c);
+        }
+    
     }
 
     //borrar cancion posición indicada
     public boolean borraCancionPosicion(int posicion) {
         
-        if (posicion >= 0) {
+        if (posicion > 0&& posicion<=this.canciones.size()) {
             this.canciones.remove(this.canciones.get(posicion));
             return true;
         }
@@ -102,7 +109,7 @@ public class ListaReproduccion {
         return tmp;
     }
 
-    // buscar cancion
+    // buscar cancion ¿¿¿¿tengo que crear el objeto dentro del metodo????
     public int buscarCancion(Cancion c) {
         
         return this.canciones.indexOf(c);
@@ -121,13 +128,26 @@ public class ListaReproduccion {
         Collections.sort(this.canciones, (c1, c2) -> c1.getCantante().compareToIgnoreCase(c2.getCantante()));
     }
     
-    //busqueda por titulo
+    //ordenar lista
+//    public void ordenar(){
+//    
+//    Collections.sort(this.canciones);
+//    }
+    
+//    //busqueda por titulo
 //   public int  buscarPorTitulo(String titulo){
 //       Cancion aux = new Cancion();
 //       aux.setTitulo(titulo);
-//       Collections.sort(this.canciones, (c1, c2) -> c1.getTitulo().compareToIgnoreCase(c2.getTitulo()));
-//   int posicion=Collections.binarySearch( this.canciones, buscarCancion(aux));
-//   return posicion;
+//      ordenarListaTitulo();
+//
+//   return Collections.binarySearch( this.canciones, aux.getTitulo());
 //   }
-//    
+    
+//    public int busquedaPorCantante(Cancion c){
+//        ordenarListaCantante();
+//        
+//        return Collections.binarySearch(this.canciones,c);
+//    }
+    
+    
 }
