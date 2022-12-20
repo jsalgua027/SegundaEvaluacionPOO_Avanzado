@@ -123,7 +123,7 @@ public class ListaReproduccion {
     }
 
     //ordenar por cantante
-    public void ordenarListaCantante() {
+    public  void ordenarListaCantante() {
         
         Collections.sort(this.canciones, (c1, c2) -> c1.getCantante().compareToIgnoreCase(c2.getCantante()));
     }
@@ -138,7 +138,7 @@ public class ListaReproduccion {
 //   public int  buscarPorTitulo(String titulo){
 //       Cancion aux = new Cancion();
 //       aux.setTitulo(titulo);
-//      ordenarListaTitulo();
+//     ordenarListaTitulo();
 //
 //   return Collections.binarySearch( this.canciones, aux.getTitulo());
 //   }
