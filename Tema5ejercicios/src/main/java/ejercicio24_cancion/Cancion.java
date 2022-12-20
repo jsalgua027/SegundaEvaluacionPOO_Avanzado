@@ -20,9 +20,9 @@ public class Cancion {
     public Cancion() {
     }
 
-    public Cancion(String nombre, String estilo, double duracion) {
-        this.titulo = nombre;
-        this.cantante = estilo;
+    public Cancion(String titulo, String cantante, double duracion) {
+        this.titulo = titulo;
+        this.cantante = cantante;
      
         this.duracion = duracion;
     }
