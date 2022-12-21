@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -18,8 +18,10 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
             this.añadirElemento(new Alquiler());
         }
 
+        
     }
-    
+      
+      
     
     public Alquiler buscarAlquiler(int id) {
         //crear un alquiler con datos  aleatorios
