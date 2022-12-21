@@ -128,26 +128,24 @@ public class ListaReproduccion {
         Collections.sort(this.canciones, (c1, c2) -> c1.getCantante().compareToIgnoreCase(c2.getCantante()));
     }
     
-    //ordenar lista
-//    public void ordenar(){
-//    
-//    Collections.sort(this.canciones);
-//    }
-    
+   
 //    //busqueda por titulo
-//   public int  buscarPorTitulo(String titulo){
-//       Cancion aux = new Cancion();
-//       aux.setTitulo(titulo);
-//     ordenarListaTitulo();
-//
-//   return Collections.binarySearch( this.canciones, aux.getTitulo());
-//   }
-    
-//    public int busquedaPorCantante(Cancion c){
-//        ordenarListaCantante();
-//        
-//        return Collections.binarySearch(this.canciones,c);
-//    }
+   public int  buscarPorTitulo(String titulo){
+       Cancion aux = new Cancion();
+       aux.setTitulo(titulo);
+     ordenarListaTitulo();
+
+
+    return Collections.binarySearch(this.canciones, aux,  (c1, c2) -> c1.getTitulo().compareToIgnoreCase(c2.getTitulo()));
+   
+   }
+    //busqueda oir cantante
+public int buscarPorCantante(String cantante){
+    Cancion aux = new Cancion();
+       aux.setCantante(cantante);
+       ordenarListaCantante();
+       return Collections.binarySearch(this.canciones, aux, (c1, c2) -> c1.getCantante().compareToIgnoreCase(c2.getCantante()));
+}
     
     
 }
