@@ -4,8 +4,7 @@
  */
 package renAcar_catalogos_genericos;
 
-import rentAcar.*;
-import empresa_catalogos.*;
+
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -102,7 +101,7 @@ public class MenuEmpresa {
                                 Cliente aux = new Cliente();
                                 aux.setNIF(clienteAux);
                                 if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) != null) {
-                                    rentAcar.getCatalogoClientes().borrarCliente(aux);
+                                    rentAcar.getCatalogoClientes().borrarElemento(aux);
                                     System.out.println("Con el borrado realizado el catalogo de clientes es:");
                                     System.out.println(rentAcar.getCatalogoClientes().toString());
 
@@ -137,7 +136,7 @@ public class MenuEmpresa {
                         switch (opcion) {
                             case "1" -> {
                                 Vehiculo aux = new Vehiculo();
-                                rentAcar.getCatalogoVehiculos().añadirVehiculo(aux);
+                                rentAcar.getCatalogoVehiculos().añadirElemento(aux);
                                 System.out.println("Con el nuevo vehiculo añadido el catalogo queda asi");
                                 System.out.println(rentAcar.getCatalogoVehiculos().toString());
                             }
@@ -147,7 +146,7 @@ public class MenuEmpresa {
                                 Vehiculo aux1 = new Vehiculo();
                                 aux1.setBastidor(vehiculoAux);
                                 if (rentAcar.getCatalogoVehiculos().buscarVehiculo(vehiculoAux) != null) {
-                                    rentAcar.getCatalogoVehiculos().borrarVehiculo(aux1);
+                                    rentAcar.getCatalogoVehiculos().borrarElemento(aux1);
                                     System.out.println("Con el borrado realizado el catalogo de clientes es:");
                                     System.out.println(rentAcar.getCatalogoVehiculos().toString());
                                 } else {

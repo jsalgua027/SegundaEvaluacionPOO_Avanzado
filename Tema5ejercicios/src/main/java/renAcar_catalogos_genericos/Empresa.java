@@ -4,8 +4,7 @@
  */
 package renAcar_catalogos_genericos;
 
-import rentAcar.*;
-import empresa_catalogos.*;
+import java.security.AlgorithmConstraints;
 import java.time.LocalDate;
 import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -66,14 +65,14 @@ public class Empresa {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-            sb.append("\n---------------- ");
+        sb.append("\n---------------- ");
         sb.append("\nEmpresa: ");
         sb.append("\nCIF: ").append(cif);
         sb.append("\nNombre empresa: ").append(nombre);
         sb.append("\nCatalogo de Vehiculos: ").append(catalogoVehiculos);
         sb.append("\nCatalogo de Clientes: ").append(catalogoClientes);
         sb.append("\nCatalogo de Alquileres: ").append(catalogoAlquileres);
-            sb.append("\n---------------- ");
+        sb.append("\n---------------- ");
         return sb.toString();
     }
 
@@ -156,22 +155,77 @@ public class Empresa {
         return false;
 
     }
-    
-    public boolean  registrarAlquiler(Alquiler a){
-    return  true;
-    
-    
+
+    public boolean registrarAlquiler(Alquiler a) {
+        return true;
+
     }
 
 //recibirVehiculo( Alquiler a) coje el vehiculo y lo pone en disponible
     public void recibirVehiculo(Alquiler a) {
-        
-        
-        if(this.catalogoAlquileres.buscarAlquiler(a.getAlquilerID())!=null){
-         a.getVehiculo().setDisponible(true);
+
+        if (this.catalogoAlquileres.buscarAlquiler(a.getAlquilerID()) != null) {
+            a.getVehiculo().setDisponible(true);
 
         }
-       
+
     }
 
+    //Devolver una lista con todos Alquileres de un cliente, usando su NIF.
+    public CatalogoAlquileres listaAlquileresCliente(String nif) {
+        CatalogoAlquileres auxCatalogo = new CatalogoAlquileres(0);
+        Alquiler auxAlquiler = new Alquiler();
+        Cliente auxCliente = new Cliente();
+        auxCliente.setNIF(nif);
+        auxAlquiler.setCliente(auxCliente);
+        if (buscarCliente(nif) != null) {
+            auxCatalogo.añadirElemento(auxAlquiler);
+           //this.catalogoAlquileres.buscarElemento(auxAlquiler)
+        }
+        return auxCatalogo;
+    }
+
+    //Devolver una lista con todos Alquileres de un vehiculo, usando su bastidor.
+    
+    
+    
+    // Borrar un alquiler por id.
+    public void borrarAlquiler(int id) {
+        Alquiler aux = new Alquiler();
+        aux.setAlquilerID(id);
+        if (this.catalogoAlquileres.buscarElemento(aux) >= 0) {
+
+            this.catalogoAlquileres.borrarElemento(aux);
+        }
+
+    }
+
+    //Borrar un cliente del catálogo, si no tiene alquileres grabados.
+    public void borrarClienteCatalogo(Cliente c) {
+        Alquiler aux = new Alquiler();
+        aux.setCliente(c);
+        if (this.catalogoAlquileres.buscarElemento(aux) < 0) {
+            catalogoClientes.borrarElemento(c);
+
+        } else {
+            System.out.println("El cliente tiene alquileres");
+        }
+
+    }
+    //Borrar un vehículo del catálogo, si no tiene alquileres grabados
+
+    public void borraVehiculoCatalogo(Vehiculo v) {
+        Alquiler aux = new Alquiler();
+        aux.setVehiculo(v);
+        if (this.catalogoAlquileres.buscarElemento(aux) < 0) {
+            catalogoVehiculos.borrarElemento(v);
+
+        } else {
+            System.out.println("El vehiculo tiene alquileres");
+        }
+    }
+
+    //Obtener la lista de vehículos que deben ser devueltos en una fecha dada.
 }
+
+
