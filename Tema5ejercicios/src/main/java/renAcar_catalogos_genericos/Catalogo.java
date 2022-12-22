@@ -4,7 +4,6 @@
  */
 package renAcar_catalogos_genericos;
 
-import rentAcar.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +29,13 @@ public class Catalogo<T> {
        //lisa.size()es cero hasta que hagas un add
     }
 
+    public List<T> getLista() {
+        return lista;
+    }
+
+    
+    
+    
 
     @Override
     public String toString() {
@@ -82,6 +88,11 @@ public class Catalogo<T> {
     }
 
    
+
+       
+    
+    }
     
     
-}
+    
+

@@ -4,8 +4,9 @@
  */
 package renAcar_catalogos_genericos;
 
-import java.security.AlgorithmConstraints;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -172,18 +173,25 @@ public class Empresa {
     }
 
     //Devolver una lista con todos Alquileres de un cliente, usando su NIF.
-    public CatalogoAlquileres listaAlquileresCliente(String nif) {
-        CatalogoAlquileres auxCatalogo = new CatalogoAlquileres(0);
-        Alquiler auxAlquiler = new Alquiler();
-        Cliente auxCliente = new Cliente();
-        auxCliente.setNIF(nif);
-        auxAlquiler.setCliente(auxCliente);
-        if (buscarCliente(nif) != null) {
-            auxCatalogo.añadirElemento(auxAlquiler);
-           //this.catalogoAlquileres.buscarElemento(auxAlquiler)
-        }
-        return auxCatalogo;
-    }
+//    public List<Alquiler> listaAlquileresCliente(String nif) {
+//        List<Alquiler> auxCatalogo = new ArrayList<Alquiler>();
+//        Alquiler auxAlquiler = new Alquiler();
+//        Cliente auxCliente = new Cliente();
+//        auxCliente.setNIF(nif);
+//        auxAlquiler.setCliente(auxCliente);
+//        
+//        for (int i = 0; i < this.catalogoAlquileres.getNumeroElementos(); i++) {
+//            
+//            if(this.catalogoAlquileres.){
+//            
+//            
+//            } 
+//            
+//        }
+//        
+//        
+//        return auxCatalogo;
+//    }
 
     //Devolver una lista con todos Alquileres de un vehiculo, usando su bastidor.
     

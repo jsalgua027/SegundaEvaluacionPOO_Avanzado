@@ -51,18 +51,18 @@ public class ListaReproduccion {
     // ecuchar cancion segun posición
     public Cancion escucharCancion(int posicion) {
         if(posicion>0 && posicion<=canciones.size()){
-       
+        return canciones.get(posicion);
         }
-         return canciones.get(posicion);
+         return null;
     }
 
     // cambiar canción de la posicion inidicada por otra propocionada
     public void cambiarCancion(int posicion, Cancion c) {
         
         if(posicion>0&&posicion<= this.canciones.size()){
-        
-        }
         this.canciones.set(posicion, c);
+        }
+        
         
     }
 
@@ -77,7 +77,7 @@ public class ListaReproduccion {
     //borrar cancion posición indicada
     public boolean borraCancionPosicion(int posicion) {
         
-        if (posicion > 0&& posicion<=this.canciones.size()) {
+        if (posicion >= 0&& posicion<=this.canciones.size()) {
             this.canciones.remove(this.canciones.get(posicion));
             return true;
         }
@@ -87,11 +87,9 @@ public class ListaReproduccion {
     // borrar pasando la cancion
     public boolean borraCancion(Cancion c) {
         
-        if (this.canciones.contains(c)) {
-            this.canciones.remove(c);
-            return true;
-        }
-        return false;
+        
+            return this.canciones.remove(c);
+       
         
     }
 
@@ -109,7 +107,7 @@ public class ListaReproduccion {
         return tmp;
     }
 
-    // buscar cancion ¿¿¿¿tengo que crear el objeto dentro del metodo????
+    // buscar cancion 
     public int buscarCancion(Cancion c) {
         
         return this.canciones.indexOf(c);
@@ -128,6 +126,10 @@ public class ListaReproduccion {
         Collections.sort(this.canciones, (c1, c2) -> c1.getCantante().compareToIgnoreCase(c2.getCantante()));
     }
     
+    public  void ordenarDuracion(){
+     Collections.sort(this.canciones, (c1,c2)->Double.compare(c1.getDuracion(), c2.getDuracion()));
+    
+    }
    
 //    //busqueda por titulo
    public int  buscarPorTitulo(String titulo){
@@ -139,7 +141,7 @@ public class ListaReproduccion {
     return Collections.binarySearch(this.canciones, aux,  (c1, c2) -> c1.getTitulo().compareToIgnoreCase(c2.getTitulo()));
    
    }
-    //busqueda oir cantante
+    //busqueda por cantante
 public int buscarPorCantante(String cantante){
     Cancion aux = new Cancion();
        aux.setCantante(cantante);

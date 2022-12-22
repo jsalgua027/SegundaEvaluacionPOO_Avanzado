@@ -51,13 +51,14 @@ public class Prueba {
         spotify.ordenarListaTitulo();
         System.out.println(spotify.imprimirLista());
         
-        System.out.println("");
-        System.out.println("Borro la cancion C2 que es VENTE de TOTE");
-        spotify.borraCancion(c2);
-          System.out.println(spotify.imprimirLista());
+//        System.out.println("");
+//        System.out.println("Borro la cancion C2 que es VENTE de TOTE");
+//        spotify.borraCancion(c2);
+//          System.out.println(spotify.imprimirLista());
         
-        
-
+        System.out.println("Busco por cantante");
+       int posicion = spotify.buscarPorCantante("TOTE");
+        System.out.println("Se encuentra en la posicion : "+ posicion);
     }
 
 }
