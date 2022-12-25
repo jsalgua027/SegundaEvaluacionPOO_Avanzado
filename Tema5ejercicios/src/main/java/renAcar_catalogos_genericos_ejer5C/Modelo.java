@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
-package renAcar_catalogos_genericos;
+package renAcar_catalogos_genericos_ejer5C;
 
 import rentAcar.*;
 import empresa_catalogos.*;
