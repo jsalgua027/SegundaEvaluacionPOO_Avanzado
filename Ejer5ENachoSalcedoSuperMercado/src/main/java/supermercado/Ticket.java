@@ -52,10 +52,11 @@ public class Ticket {
     int contador=0;
     
         for (int i = 0; i < this.listaProductos.size(); i++) {
+           // if (this.listaProductos.get(i).equals(i))
             
         }
     
-    
+    return contador;
     }
     
     
