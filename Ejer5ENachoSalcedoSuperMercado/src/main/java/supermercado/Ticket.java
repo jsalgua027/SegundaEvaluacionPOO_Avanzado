@@ -46,6 +46,21 @@ public class Ticket {
     public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
+    
+    
+    public int catindadProductoiguales(){
+    int contador=0;
+    
+        for (int i = 0; i < this.listaProductos.size(); i++) {
+            
+        }
+    
+    
+    }
+    
+    
+    
+    
 
     @Override
     public String toString() {
