@@ -5,6 +5,7 @@
 package supermercado;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
 
 /**
@@ -17,7 +18,7 @@ public class Caja {
 
     private ArrayList<Producto> cinta;
 
-    public Caja(String IdCaja) {
+    public Caja() {
         this.IdCaja = RandomStringUtils.randomAlphanumeric(2);
 
         this.cinta = new ArrayList<>();
@@ -96,6 +97,42 @@ public class Caja {
     public boolean estaVacia(){
     return this.cinta.isEmpty();
     }
+
+    
+    // generar ticket
+    public Ticket generarTicket(){
+    Ticket aux = new Ticket(this.cinta);
+    return aux;
+    }
+    
+    
+    
+    
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 31 * hash + Objects.hashCode(this.IdCaja);
+        hash = 31 * hash + Objects.hashCode(this.cinta);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Caja other = (Caja) obj;
+        return Objects.equals(this.IdCaja, other.IdCaja);
+    }
+    
+    
     
     
 }
