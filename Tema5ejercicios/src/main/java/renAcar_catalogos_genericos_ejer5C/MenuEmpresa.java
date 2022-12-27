@@ -211,20 +211,36 @@ public class MenuEmpresa {
                                 System.out.println(rentAcar.getCatalogoAlquileres().toString());
                             }
                             case "2" -> {
-                                List <Alquiler> alquileresUnCliente= new ArrayList<>();
-                                  Cliente aux = new Cliente();
+                                List<Alquiler> alquileresUnCliente = new ArrayList<>();
+                                Cliente aux = new Cliente();
                                 System.out.println("Indique el nif del cliente");
-                                clienteAux=teclado.nextLine();
+                                clienteAux = teclado.nextLine();
                                 aux.setNIF(clienteAux);
-                                if(rentAcar.getCatalogoAlquileres().buscarAlquilerNif(clienteAux)!=null){
-                                
-                                alquileresUnCliente=rentAcar.getCatalogoAlquileres().alquiCliente(clienteAux);
+                                alquileresUnCliente = rentAcar.getCatalogoAlquileres().buscarAlquilerNif(clienteAux);
+                                if (alquileresUnCliente.size() > 0) {
+
                                     System.out.println(alquileresUnCliente.toString());
-                                } 
-                                
+                                } else {
+                                    System.out.println("No hay clientes con ese alquiler");
+
+                                }
+
                             }
                             case "3" -> {
-                                  System.out.println("busqueda Alquileres por vehiculo");
+                                List<Alquiler> alquileresUnVehiculo = new ArrayList<>();
+                                Vehiculo aux = new Vehiculo();
+
+                                System.out.println("Indique el numero de bastidor ");
+                                vehiculoAux = teclado.nextLine();
+                                aux.setBastidor(vehiculoAux);
+                                alquileresUnVehiculo = rentAcar.getCatalogoAlquileres().buscarAlquilerBastidor(vehiculoAux);
+                                if (alquileresUnVehiculo.size() > 0) {
+
+                                    System.out.println(alquileresUnVehiculo.toString());
+                                } else {
+                                    System.out.println("No hay vehiculos con ese numero de bastidor");
+                                }
+
                             }
                             default -> {
                             }

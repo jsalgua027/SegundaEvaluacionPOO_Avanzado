@@ -4,6 +4,7 @@
  */
 package renAcar_catalogos_genericos_ejer5C;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,8 +90,10 @@ public class Catalogo<T> {
 
         for (int i = 0; i < this.lista.size(); i++) {
             if (lista.contains(aux.getCliente().getNIF())) {
-                listaClientes.add(aux);
-            }
+                 listaClientes.add(aux);
+            } 
+               
+            
 
         }
         return listaClientes;
@@ -110,5 +113,14 @@ public class Catalogo<T> {
         return listaVehiculos;
 
     }
+    
+//     public List<Vehiculo> buscarVehiculoPorFecha(LocalDate fecha){
+//         List
+//         
+//         
+//   
+//   } 
+    
+    
 
 }

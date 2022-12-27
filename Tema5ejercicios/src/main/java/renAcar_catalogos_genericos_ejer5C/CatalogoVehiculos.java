@@ -4,7 +4,8 @@
  */
 package renAcar_catalogos_genericos_ejer5C;
 
-import rentAcar.*;
+import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
@@ -30,7 +31,7 @@ public class CatalogoVehiculos extends Catalogo <Vehiculo>{
 
     }
     
-    
+  
    
     
 }

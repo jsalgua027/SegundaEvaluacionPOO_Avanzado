@@ -20,9 +20,8 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         }
 
     }
-    
-    // estos dos metodos los he pasado a Catalogo
 
+    // estos dos metodos los he pasado a Catalogo
 //    public List<Alquiler> alquiCliente(String nif) {
 //        List<Alquiler> listaClientes = new ArrayList<Alquiler>();
 //        Alquiler aux = new Alquiler();
@@ -52,7 +51,6 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
 //        return listaVehiculos;
 //
 //    }
-
     public Alquiler buscarAlquiler(int id) {
         //crear un alquiler con datos  aleatorios
         Alquiler aux = new Alquiler();
@@ -64,20 +62,29 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
     }
 
     //metodos de busqueda 
-    public Alquiler buscarAlquilerNif(String nif) {
-        Alquiler aux = new Alquiler();
+    public List<Alquiler> buscarAlquilerNif(String nif) {
+        List<Alquiler> listaClientes = new ArrayList<Alquiler>();
+
         Cliente clienteAux = new Cliente();
         clienteAux.setNIF(nif);
-        aux.setCliente(clienteAux);
-        int posicion = buscarElemento(aux);
-        return (posicion >= 0) ? this.lista.get(posicion) : null;
+
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (this.lista.get(i).getCliente().equals(clienteAux)) {
+                listaClientes.add(this.lista.get(i));
+            }
+        }
+        return listaClientes;
     }
-public Alquiler buscarAlquilerBastidor(String bastidor) {
-        Alquiler aux = new Alquiler();
+
+    public List<Alquiler> buscarAlquilerBastidor(String bastidor) {
+        List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
         Vehiculo vehiculoAux = new Vehiculo();
         vehiculoAux.setBastidor(bastidor);
-        aux.setVehiculo(vehiculoAux);
-        int posicion = buscarElemento(aux);
-        return (posicion >= 0) ? this.lista.get(posicion) : null;
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (this.lista.get(i).getVehiculo().equals(vehiculoAux)) {
+                listaVehiculos.add(this.lista.get(i));
+            }
+        }
+        return listaVehiculos;
     }
 }
