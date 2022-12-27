@@ -4,7 +4,6 @@
  */
 package renAcar_catalogos_genericos_ejer5C;
 
-
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -50,7 +49,7 @@ public class MenuEmpresa {
                                     
                                     1-Para gestión con Clientes
                                     2-Para gestión con  Vehiculos
-                                    3-Para registrar nuevo alquiler
+                                    3-Para gestión con alquileres
                                     4-salir
                      
                                     **********************************
@@ -73,6 +72,15 @@ public class MenuEmpresa {
                                                 6-salir
                                                 *******************************
                                            """;
+
+        String menuAlquileres = """
+                                            *****ZONA ALQUILERES*****
+                                              1-Para registro Alquiler
+                                              2-Busqueda de Alquileres por cliente
+                                              3-Busqueda de Alquileres por vehiculo
+                                              7-Para salir
+                                              *********************************
+                                            """;
 
         Empresa rentAcar = new Empresa("RENTCAR");
         System.out.println(rentAcar);
@@ -167,32 +175,52 @@ public class MenuEmpresa {
                             }
                             default -> {
                             }
-                            
+
                         }
 
                     } while (!opcion.contentEquals("6"));
                 }
                 case "3" -> {
-                    System.out.println("Vamos a realizar el registro de alquiler");
-                    System.out.println("Indique el nif del clinete a añadir al registro ");
-                    clienteAux = teclado.nextLine();
-                    if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) != null) {
-                        System.out.println("Indique el numero de bastidor del vehiculo a añadir");
-                        vehiculoAux = teclado.nextLine();
-                        if (rentAcar.getCatalogoVehiculos().buscarVehiculo(vehiculoAux) != null) {
-                            System.out.println("Indique le numero de dias de alquiler");
-                            int numeroDias = leerEnteroSinErroresScanner();
-                            rentAcar.registroAlquiler(clienteAux, vehiculoAux, LocalDate.now(), numeroDias);
-                        } else {
-                            System.out.println(" No se encuentra el vehiculo");
-                            break;
+                    do {
+                        System.out.println(menuAlquileres);
+                        System.out.println("Introduzca una opción: ");
+                        opcion = teclado.nextLine();
+                        switch (opcion) {
+                            case "1" -> {
+                                System.out.println("Vamos a realizar el registro de alquiler");
+                                System.out.println("Indique el nif del clinete a añadir al registro ");
+                                clienteAux = teclado.nextLine();
+                                if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) != null) {
+                                    System.out.println("Indique el numero de bastidor del vehiculo a añadir");
+                                    vehiculoAux = teclado.nextLine();
+                                    if (rentAcar.getCatalogoVehiculos().buscarVehiculo(vehiculoAux) != null) {
+                                        System.out.println("Indique le numero de dias de alquiler");
+                                        int numeroDias = leerEnteroSinErroresScanner();
+                                        rentAcar.registroAlquiler(clienteAux, vehiculoAux, LocalDate.now(), numeroDias);
+                                    } else {
+                                        System.out.println(" No se encuentra el vehiculo");
+                                        break;
+                                    }
+                                } else {
+                                    System.out.println("No se encuentra el cliente");
+                                    break;
+                                }
+                                System.out.println("El catalogo de alquileres queda asi: ");
+                                System.out.println(rentAcar.getCatalogoAlquileres().toString());
+                            }
+                            case "2" -> {
+                                System.out.println("busqueda Alquileres por cliente");
+                            }
+                            case "3" -> {
+                                  System.out.println("busqueda Alquileres por vehiculo");
+                            }
+                            default -> {
+                            }
+
                         }
-                    } else {
-                        System.out.println("No se encuentra el cliente");
-                        break;
-                    }
-                    System.out.println("El catalogo de alquileres queda asi: ");
-                    System.out.println(rentAcar.getCatalogoAlquileres().toString());
+
+                    } while (!opcion.contentEquals("7"));
+
                 }
                 default -> {
                 }

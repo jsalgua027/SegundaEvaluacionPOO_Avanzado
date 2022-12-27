@@ -36,7 +36,7 @@ public class Empresa {
 
         this.catalogoVehiculos = new CatalogoVehiculos(5);
         this.catalogoClientes = new CatalogoClientes(5);
-        this.catalogoAlquileres = new CatalogoAlquileres(5);
+        this.catalogoAlquileres = new CatalogoAlquileres(0);
     }
 
     public String getCif() {
