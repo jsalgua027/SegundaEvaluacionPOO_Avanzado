@@ -75,19 +75,11 @@ public class Alquiler {
         this.alquilerID = alquilerID;
     }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("\n---------------- ");
-//        sb.append("Alquiler: ");
-//        sb.append("\nAlquilerID: ").append(alquilerID);
-//        sb.append("\nNIF cliente: ").append(cliente.getNIF());
-//        sb.append("\nBastidor vehiculo: ").append(vehiculo.getBastidor());
-//        sb.append("\nFecha inicio alquiler: ").append(fechaInicio);
-//        sb.append("\nDuracion del alquiler: ").append(duracionDias);
-//        sb.append("\n---------------- ");
-//        return sb.toString();
-//    }
+   //para saber dia de entrega
+public LocalDate fechaEntrega(){
+return this.fechaInicio.plusDays(duracionDias);
+
+}
 
     @Override
     public String toString() {
