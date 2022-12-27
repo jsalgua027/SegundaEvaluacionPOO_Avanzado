@@ -12,13 +12,11 @@ import java.util.List;
  * @author nacho
  * @param <T>
  */
-
 //clase generica
 public class Catalogo<T> {
-    
+
     protected List<T> lista;
-    
-    
+
     // el construcutor recibe el tamaño del catalogo
     //inicializa la estructura de datos con vehiuclos aleatorios
     public Catalogo(int tamanio) {
@@ -26,16 +24,12 @@ public class Catalogo<T> {
         tamanio = Math.abs(tamanio);
 
         this.lista = new ArrayList<>(tamanio);// creo estructura
-       //lisa.size()es cero hasta que hagas un add
+        //lisa.size()es cero hasta que hagas un add
     }
 
     public List<T> getLista() {
         return lista;
     }
-
-    
-    
-    
 
     @Override
     public String toString() {
@@ -87,12 +81,34 @@ public class Catalogo<T> {
 
     }
 
-   
+    public List<Alquiler> alquiCliente(String nif) {
+        List<Alquiler> listaClientes = new ArrayList<Alquiler>();
+        Alquiler aux = new Alquiler();
+        Cliente clienteAuc = new Cliente();
+        clienteAuc.setNIF(nif);
 
-       
-    
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (lista.contains(aux.getCliente().getNIF())) {
+                listaClientes.add(aux);
+            }
+
+        }
+        return listaClientes;
     }
-    
-    
-    
 
+    public List<Alquiler> listaAlquilerVehiculo(String bastidor) {
+        List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
+        Alquiler aux = new Alquiler();
+        Vehiculo vehiculoAux = new Vehiculo();
+
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (lista.contains(aux.getVehiculo().getBastidor())) {
+                listaVehiculos.add(aux);
+            }
+
+        }
+        return listaVehiculos;
+
+    }
+
+}

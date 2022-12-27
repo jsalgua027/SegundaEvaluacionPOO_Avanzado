@@ -5,7 +5,9 @@
 package renAcar_catalogos_genericos_ejer5C;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -209,7 +211,17 @@ public class MenuEmpresa {
                                 System.out.println(rentAcar.getCatalogoAlquileres().toString());
                             }
                             case "2" -> {
-                                System.out.println("busqueda Alquileres por cliente");
+                                List <Alquiler> alquileresUnCliente= new ArrayList<>();
+                                  Cliente aux = new Cliente();
+                                System.out.println("Indique el nif del cliente");
+                                clienteAux=teclado.nextLine();
+                                aux.setNIF(clienteAux);
+                                if(rentAcar.getCatalogoAlquileres().buscarAlquilerNif(clienteAux)!=null){
+                                
+                                alquileresUnCliente=rentAcar.getCatalogoAlquileres().alquiCliente(clienteAux);
+                                    System.out.println(alquileresUnCliente.toString());
+                                } 
+                                
                             }
                             case "3" -> {
                                   System.out.println("busqueda Alquileres por vehiculo");
