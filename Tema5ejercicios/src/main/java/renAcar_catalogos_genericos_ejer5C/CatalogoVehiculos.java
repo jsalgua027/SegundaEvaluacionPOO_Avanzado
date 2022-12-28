@@ -33,22 +33,6 @@ public class CatalogoVehiculos extends Catalogo <Vehiculo>{
     }
     
   
-//    public List<Vehiculo> listaVehiculosFecha(LocalDate fechaEntrega){
-//     List
-//    
-//    }
-    
-    
-//   public List<Alquiler> buscarAlquilerBastidor(String bastidor) {
-//        List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
-//        Vehiculo vehiculoAux = new Vehiculo();
-//        vehiculoAux.setBastidor(bastidor);
-//        for (int i = 0; i < this.lista.size(); i++) {
-//            if (this.lista.get(i).getVehiculo().equals(vehiculoAux)) {
-//                listaVehiculos.add(this.lista.get(i));
-//            }
-//        }
-//        return listaVehiculos;
-//    }
+
     
 }

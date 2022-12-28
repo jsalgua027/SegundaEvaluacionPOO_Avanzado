@@ -4,6 +4,7 @@
  */
 package renAcar_catalogos_genericos_ejer5C;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,36 +22,7 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
 
     }
 
-    // estos dos metodos los he pasado a Catalogo
-//    public List<Alquiler> alquiCliente(String nif) {
-//        List<Alquiler> listaClientes = new ArrayList<Alquiler>();
-//        Alquiler aux = new Alquiler();
-//        Cliente clienteAuc = new Cliente();
-//        clienteAuc.setNIF(nif);
-//
-//        for (int i = 0; i < this.lista.size(); i++) {
-//            if (lista.contains(aux.getCliente().getNIF())) {
-//                listaClientes.add(aux);
-//            }
-//
-//        }
-//        return listaClientes;
-//    }
-//
-//    public List<Alquiler> listaAlquilerVehiculo(String bastidor) {
-//        List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
-//        Alquiler aux = new Alquiler();
-//        Vehiculo vehiculoAux = new Vehiculo();
-//
-//        for (int i = 0; i < this.lista.size(); i++) {
-//            if (lista.contains(aux.getVehiculo().getBastidor())) {
-//                listaVehiculos.add(aux);
-//            }
-//
-//        }
-//        return listaVehiculos;
-//
-//    }
+  
     public Alquiler buscarAlquiler(int id) {
         //crear un alquiler con datos  aleatorios
         Alquiler aux = new Alquiler();
@@ -61,7 +33,7 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
 
     }
 
-    //metodos de busqueda 
+    //metodos para devolver una lista de alquleres con ese nif
     public List<Alquiler> buscarAlquilerNif(String nif) {
         List<Alquiler> listaClientes = new ArrayList<Alquiler>();
 
@@ -75,7 +47,7 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         }
         return listaClientes;
     }
-
+// metodo que devuleve lista de alquilres con ese numero de bastidor
     public List<Alquiler> buscarAlquilerBastidor(String bastidor) {
         List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
         Vehiculo vehiculoAux = new Vehiculo();
@@ -87,4 +59,20 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         }
         return listaVehiculos;
     }
+    
+    //metodo que devuelve lista de vehiculos que deben de ser devueltos con la fecha dada
+    public List<Vehiculo> vehiculosDevueltos(LocalDate fecha){
+    List<Vehiculo> listaVehiculosEntregados= new ArrayList<>();
+    Alquiler aux = new Alquiler();
+      aux.setFechaEntrega(fecha);
+        for (int i = 0; i < this.lista.size(); i++) {
+            if(this.lista.get(i).equals(aux)){
+            listaVehiculosEntregados.add(this.lista.get(i).getVehiculo());
+            
+            }
+        }
+    return listaVehiculosEntregados;
+    
+    }
+    
 }

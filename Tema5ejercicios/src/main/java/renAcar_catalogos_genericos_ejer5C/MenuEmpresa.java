@@ -80,6 +80,7 @@ public class MenuEmpresa {
                                               1-Para registro Alquiler
                                               2-Busqueda de Alquileres por cliente
                                               3-Busqueda de Alquileres por vehiculo
+                                              4-Listado de Vehiculos por fecha de entrega  
                                               7-Para salir
                                               *********************************
                                             """;
@@ -239,6 +240,28 @@ public class MenuEmpresa {
                                     System.out.println(alquileresUnVehiculo.toString());
                                 } else {
                                     System.out.println("No hay vehiculos con ese numero de bastidor");
+                                }
+
+                            } case "4" -> {
+                                List<Vehiculo> vehiculoFechaEntrega = new ArrayList<>();
+                                Vehiculo aux = new Vehiculo();
+
+                                System.out.println("Indique la fecha de entrega y comprovamos si hay alguno con esa fecha ");
+                                 System.out.println("¿Que dia?");
+                                 int dia=teclado.nextInt();
+                                  System.out.println("¿Que mes?");
+                                 int mes=teclado.nextInt();
+                                  System.out.println("¿Que año?");
+                                 int anio=teclado.nextInt();
+                                 LocalDate fechaBuscar=LocalDate.of(anio, mes, dia);
+                                 teclado.nextLine();// limpio buffer
+                          
+                                vehiculoFechaEntrega = rentAcar.getCatalogoAlquileres().vehiculosDevueltos(fechaBuscar);
+                                if (vehiculoFechaEntrega.size() > 0) {
+
+                                    System.out.println(vehiculoFechaEntrega.toString());
+                                } else {
+                                    System.out.println("No hay vehiculos con esa fecha de entregar");
                                 }
 
                             }

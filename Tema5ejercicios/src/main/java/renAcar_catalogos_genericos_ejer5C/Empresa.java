@@ -34,8 +34,8 @@ public class Empresa {
         this.cif = RandomStringUtils.randomAlphanumeric(8);
         this.nombre = nombre;
 
-        this.catalogoVehiculos = new CatalogoVehiculos(5);
-        this.catalogoClientes = new CatalogoClientes(5);
+        this.catalogoVehiculos = new CatalogoVehiculos(10);
+        this.catalogoClientes = new CatalogoClientes(10);
         this.catalogoAlquileres = new CatalogoAlquileres(0);
     }
 
@@ -172,29 +172,7 @@ public class Empresa {
 
     }
 
-    //Devolver una lista con todos Alquileres de un cliente, usando su NIF.
-//    public List<Alquiler> listaAlquileresCliente(String nif) {
-//        List<Alquiler> auxCatalogo = new ArrayList<Alquiler>();
-//        Alquiler auxAlquiler = new Alquiler();
-//        Cliente auxCliente = new Cliente();
-//        auxCliente.setNIF(nif);
-//        auxAlquiler.setCliente(auxCliente);
-//        
-//        for (int i = 0; i < this.catalogoAlquileres.getNumeroElementos(); i++) {
-//            
-//            if(this.catalogoAlquileres.){
-//            
-//            
-//            } 
-//            
-//        }
-//        
-//        
-//        return auxCatalogo;
-//    }
-
-    //Devolver una lista con todos Alquileres de un vehiculo, usando su bastidor.
-    
+  
     
     
     // Borrar un alquiler por id.
@@ -233,7 +211,7 @@ public class Empresa {
         }
     }
 
-    //Obtener la lista de vehículos que deben ser devueltos en una fecha dada.
+  
 }
 
 

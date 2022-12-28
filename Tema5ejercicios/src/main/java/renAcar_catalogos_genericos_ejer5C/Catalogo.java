@@ -82,45 +82,4 @@ public class Catalogo<T> {
 
     }
 
-    public List<Alquiler> alquiCliente(String nif) {
-        List<Alquiler> listaClientes = new ArrayList<Alquiler>();
-        Alquiler aux = new Alquiler();
-        Cliente clienteAuc = new Cliente();
-        clienteAuc.setNIF(nif);
-
-        for (int i = 0; i < this.lista.size(); i++) {
-            if (lista.contains(aux.getCliente().getNIF())) {
-                 listaClientes.add(aux);
-            } 
-               
-            
-
-        }
-        return listaClientes;
-    }
-
-    public List<Alquiler> listaAlquilerVehiculo(String bastidor) {
-        List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
-        Alquiler aux = new Alquiler();
-        Vehiculo vehiculoAux = new Vehiculo();
-
-        for (int i = 0; i < this.lista.size(); i++) {
-            if (lista.contains(aux.getVehiculo().getBastidor())) {
-                listaVehiculos.add(aux);
-            }
-
-        }
-        return listaVehiculos;
-
-    }
-    
-//     public List<Vehiculo> buscarVehiculoPorFecha(LocalDate fecha){
-//         List
-//         
-//         
-//   
-//   } 
-    
-    
-
 }

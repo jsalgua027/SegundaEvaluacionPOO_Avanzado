@@ -19,7 +19,7 @@ public class Alquiler {
     private Vehiculo vehiculo;
     private LocalDate fechaInicio;
     private int duracionDias;
-
+    private LocalDate fechaEntrega;
     private static int contador = 0;
 
     public Alquiler(Cliente cliente, Vehiculo vehiculo, LocalDate fechaInicio, int duracionDias) {
@@ -29,7 +29,7 @@ public class Alquiler {
         this.duracionDias = duracionDias;
         contador++;
         this.alquilerID = contador;
-
+        this.fechaEntrega=fechaEntrega();
     }
 
     public Alquiler() {
@@ -75,6 +75,16 @@ public class Alquiler {
         this.alquilerID = alquilerID;
     }
 
+    public LocalDate getFechaEntrega() {
+        return fechaEntrega;
+    }
+
+    public void setFechaEntrega(LocalDate fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
+    }
+    
+    
+
    //para saber dia de entrega
 public LocalDate fechaEntrega(){
 return this.fechaInicio.plusDays(duracionDias);
@@ -90,9 +100,12 @@ return this.fechaInicio.plusDays(duracionDias);
         sb.append(", vehiculo=").append(vehiculo);
         sb.append(", fechaInicio=").append(fechaInicio);
         sb.append(", duracionDias=").append(duracionDias);
+        sb.append(", fechaEntrega=").append(fechaEntrega);
         sb.append('}');
         return sb.toString();
     }
+
+    
     
 
     @Override
