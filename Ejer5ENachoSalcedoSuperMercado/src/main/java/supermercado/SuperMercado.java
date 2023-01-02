@@ -49,6 +49,8 @@ public class SuperMercado {
         t1 = generarTicket(caja1);
 
         System.out.println(t1);
+        int prodcutosIguales= t1.catindadProductoiguales();
+        System.out.println(prodcutosIguales);
     }
 
 }

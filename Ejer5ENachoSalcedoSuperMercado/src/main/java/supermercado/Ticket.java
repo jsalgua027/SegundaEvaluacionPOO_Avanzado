@@ -7,6 +7,7 @@ package supermercado;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Objects;
  * @author Windows10
  */
 public class Ticket {
-    
+
     private LocalDate fecha;
     private LocalTime hora;
     private ArrayList<Producto> listaProductos;
@@ -22,10 +23,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    
-    
-    
-    public Ticket( ArrayList<Producto> listaProductos) {
+    public Ticket(ArrayList<Producto> listaProductos) {
         this.fecha = LocalDate.now();
         this.hora = LocalTime.now();
         this.listaProductos = listaProductos;
@@ -46,22 +44,24 @@ public class Ticket {
     public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
-    
-    
-    public int catindadProductoiguales(){
-    int contador=0;
-    
+
+    public int catindadProductoiguales() {
+        int contador = 0;
+       ArrayList<Producto> aux= new ArrayList<>();
+
+        Collections.sort(this.listaProductos, (p1,p2)-> p1.nombre().compareToIgnoreCase(p2.nombre()));
+        
         for (int i = 0; i < this.listaProductos.size(); i++) {
-           // if (this.listaProductos.get(i).equals(i))
-            
+            for (int j = 0; j < this.listaProductos.size(); j++) {
+                if (this.listaProductos.get(i).equals(this.listaProductos.get(j))) {
+                    aux.add(this.listaProductos.get(i));
+                }
+            }
+           
         }
-    
-    return contador;
+
+        return  contador=aux.size();
     }
-    
-    
-    
-    
 
     @Override
     public String toString() {
@@ -100,8 +100,5 @@ public class Ticket {
         }
         return Objects.equals(this.hora, other.hora);
     }
-    
-    
-    
-    
+
 }
