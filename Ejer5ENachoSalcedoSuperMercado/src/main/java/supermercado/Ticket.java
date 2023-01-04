@@ -45,21 +45,6 @@ public class Ticket {
         this.listaProductos = listaProductos;
     }
 
-//    //metodo para saber total de un producto con las cantidades includas
-//  public double precioTotalConIva(Producto p){
-//      Producto aux= new Producto(p.nombre(), p.cantidad(), p.precio(), p.iva());
-// double iva= p.precio()*((double)aux.iva()/100);
-//  double totaliva = aux.precio()+iva;
-//  double resultado= aux.cantidad()*totaliva;
-//  return resultado;
-//  
-//  }
-//  // metodo totales por producto sin iva
-//  public double precioTotalSinIva(Producto p){
-//   
-//  return p.cantidad()*(p.precio());
-//  }
-//  
     // metodo que da el importe total con iva de todos los productos
     public double importeTotalTiket() {
         double total = 0;
@@ -78,15 +63,15 @@ public class Ticket {
                 = """
                         --------------------------------------------------------------------
                                                 Supermercados El
-                                    Fecha:%s                    Hora:%s
+                            Fecha:%s                    Hora:%s
                         -------------------------------------------------------------------
                         Producto    Precio   Cantidad    IVA    Precio sin IVA
                        %s
                         --------------------------------------------------------------------
                        %s
                        ---------------------------------------------------------------------
-                       Total a pagar: %s  -- Gracias por su visita.
-                        """.formatted(this.fecha, this.hora, impresionListadoProductos(),impresionPorTipoIva(),importeTotalTiket());
+                       Total a pagar: %.2f  -- Gracias por su visita.
+                        """.formatted(this.fecha, this.hora, impresionListadoProductos(), impresionPorTipoIva(), importeTotalTiket());
 
         return salida;
 
@@ -106,11 +91,11 @@ public class Ticket {
         for (int i = 0; i < this.listaProductos.size(); i++) {
             switch (this.listaProductos.get(i).iva()) {
                 case 4 ->
-                    tmp += this.listaProductos.get(i).ToString3()+"\n";
+                    tmp += this.listaProductos.get(i).ToString3() + "\n";
                 case 10 ->
-                    tmp += this.listaProductos.get(i).ToString3()+"\n";
+                    tmp += this.listaProductos.get(i).ToString3() + "\n";
                 case 21 ->
-                    tmp += this.listaProductos.get(i).ToString3()+"\n";
+                    tmp += this.listaProductos.get(i).ToString3() + "\n";
                 default -> {
                 }
             }

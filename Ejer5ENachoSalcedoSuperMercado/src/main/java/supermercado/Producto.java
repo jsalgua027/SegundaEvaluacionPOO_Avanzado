@@ -44,14 +44,14 @@ public record Producto(String nombre, int cantidad, double precio, int iva) {
         double iva = this.precio() * ((double) this.iva() / 100);
         double totaliva = this.precio() + iva;
         double resultado = this.cantidad() * totaliva;
-        return resultado;
+        return Math.round(resultado*100.0)/100.0;
 
     }
 
     // metodo totales por producto sin iva
     public double precioProductoTotalSinIva() {
-
-        return this.cantidad() * this.precio();
+        double resultado=this.cantidad() * this.precio();
+         return Math.round(resultado*100.0)/100.0;
     }
 
     public String ToString2() {
@@ -59,8 +59,10 @@ public record Producto(String nombre, int cantidad, double precio, int iva) {
         sb.append(nombre);
         sb.append("    ");
         sb.append(precio);
-        sb.append("    ");
+        sb.append("          ");
         sb.append(cantidad);
+        sb.append("       ");
+        sb.append(iva);
         sb.append("    ");
         sb.append(precioProductoTotalSinIva());
         return sb.toString();
@@ -68,9 +70,9 @@ public record Producto(String nombre, int cantidad, double precio, int iva) {
 
     public String ToString3() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Nº prod. iva ");
+        sb.append("Nº prod.iva");
         sb.append(iva);
-        sb.append("%");
+        sb.append("%:");
         sb.append(" ");
         sb.append(cantidad);
         sb.append("  ");

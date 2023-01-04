@@ -20,38 +20,34 @@ public class SuperMercado {
         return aux;
     }
 
- 
     public static void main(String[] args) {
         Ticket t1 = new Ticket();
         // creo productos (A) 
         Producto lataCocaCola = new Producto("LataCocaCola", 3, 1.10, 4);
-        Producto pan = new Producto("Pan", 1, 0.65, 4);
+        Producto pan = new Producto("Pan de molde", 1, 0.65, 4);
         Producto leche = new Producto("LecheEntera", 1, 1.25, 10);
         Producto salchichon = new Producto("Salchichon", 1, 0.85, 21);
-        Producto champu = new Producto("Champu", 1, 1.00, 21);
+        Producto champu = new Producto("Cham Jonson", 1, 1.00, 21);
         Producto natillas = new Producto("Natillas", 1, 2.35, 10);
-        Producto cerveza = new Producto("Estrella Galicia", 1, 2.00, 21);
+        Producto cerveza = new Producto("Estre Galicia", 1, 2.00, 21);
 
         // creo una caja (B)
         Caja caja1 = new Caja();
 
         // añado productos (C)
         caja1.añadirProducto(lataCocaCola);
-       // caja1.añadirProducto(pan);
-      caja1.añadirProducto(leche);
+        caja1.añadirProducto(pan);
+        caja1.añadirProducto(leche);
         caja1.añadirProducto(salchichon);
-//        caja1.añadirProducto(champu);
-//        caja1.añadirProducto(natillas);
-//        caja1.añadirProducto(cerveza);
-
+        caja1.añadirProducto(champu);
+        caja1.añadirProducto(natillas);
+        caja1.añadirProducto(cerveza);
+        //Genero el ticket (D)
         t1 = generarTicket(caja1);
+        // compruebo el metodo de ver si esta vacia la cja
+        System.out.println("¿Esta vacia la caja:? " + caja1.estaVacia());
 
-//        System.out.println("¿Esta vacia la caja:? " + caja1.estaVacia());
-//        System.out.println(t1);
-//        System.out.println("El precio con iva del " + lataCocaCola.ToString2()+ " es "+ lataCocaCola.precioProductoTotalConIva());
-//           System.out.println("El precio con iva del " + pan.ToString2() + " es "+ pan.precioProductoTotalConIva());
-//        System.out.println("El total del ticket es: " + t1.importeTotalTiket());
-
+        //Imprimo el tikect (E)
         System.out.println(t1.impresionTicket());
     }
 
