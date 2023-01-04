@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public record Producto(String nombre, int cantidad, double precio, int iva) {
 
-   public static Producto generarProducto() {
+    public static Producto generarProducto() {
         Scanner teclado = new Scanner(System.in);
         String nombre = "";
         int cantidad = 0;
@@ -36,6 +36,50 @@ public record Producto(String nombre, int cantidad, double precio, int iva) {
         } while (!(iva == 4 || iva == 10 || iva == 21));
         Producto aux = new Producto(nombre, cantidad, precio, iva);
         return aux;
+    }
+
+    //metodo para saber total de un producto con las cantidades includas
+    public double precioProductoTotalConIva() {
+
+        double iva = this.precio() * ((double) this.iva() / 100);
+        double totaliva = this.precio() + iva;
+        double resultado = this.cantidad() * totaliva;
+        return resultado;
+
+    }
+
+    // metodo totales por producto sin iva
+    public double precioProductoTotalSinIva() {
+
+        return this.cantidad() * this.precio();
+    }
+
+    public String ToString2() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(nombre);
+        sb.append("    ");
+        sb.append(precio);
+        sb.append("    ");
+        sb.append(cantidad);
+        sb.append("    ");
+        sb.append(precioProductoTotalSinIva());
+        return sb.toString();
+    }
+
+    public String ToString3() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nº prod. iva ");
+        sb.append(iva);
+        sb.append("%");
+        sb.append(" ");
+        sb.append(cantidad);
+        sb.append("  ");
+        sb.append("Precio sin IVA: ");
+        sb.append(precioProductoTotalSinIva());
+        sb.append("  ");
+        sb.append("Precio con IVA: ");
+        sb.append(precioProductoTotalConIva());
+        return sb.toString();
     }
 
 }

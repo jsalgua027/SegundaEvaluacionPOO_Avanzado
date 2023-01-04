@@ -20,10 +20,11 @@ public class SuperMercado {
         return aux;
     }
 
+ 
     public static void main(String[] args) {
         Ticket t1 = new Ticket();
         // creo productos (A) 
-        Producto lataCocaCola = new Producto("LataCocaCola", 1, 1.10, 4);
+        Producto lataCocaCola = new Producto("LataCocaCola", 3, 1.10, 4);
         Producto pan = new Producto("Pan", 1, 0.65, 4);
         Producto leche = new Producto("LecheEntera", 1, 1.25, 10);
         Producto salchichon = new Producto("Salchichon", 1, 0.85, 21);
@@ -36,21 +37,22 @@ public class SuperMercado {
 
         // añado productos (C)
         caja1.añadirProducto(lataCocaCola);
-        caja1.añadirProducto(pan);
-        caja1.añadirProducto(leche);
+       // caja1.añadirProducto(pan);
+      caja1.añadirProducto(leche);
         caja1.añadirProducto(salchichon);
-        caja1.añadirProducto(champu);
-        caja1.añadirProducto(natillas);
-        caja1.añadirProducto(cerveza);
-        caja1.añadirProducto(lataCocaCola);
-        caja1.añadirProducto(lataCocaCola);
-        caja1.añadirProducto(lataCocaCola);
+//        caja1.añadirProducto(champu);
+//        caja1.añadirProducto(natillas);
+//        caja1.añadirProducto(cerveza);
 
         t1 = generarTicket(caja1);
 
-        System.out.println(t1);
-        int prodcutosIguales= t1.catindadProductoiguales();
-        System.out.println(prodcutosIguales);
+//        System.out.println("¿Esta vacia la caja:? " + caja1.estaVacia());
+//        System.out.println(t1);
+//        System.out.println("El precio con iva del " + lataCocaCola.ToString2()+ " es "+ lataCocaCola.precioProductoTotalConIva());
+//           System.out.println("El precio con iva del " + pan.ToString2() + " es "+ pan.precioProductoTotalConIva());
+//        System.out.println("El total del ticket es: " + t1.importeTotalTiket());
+
+        System.out.println(t1.impresionTicket());
     }
 
 }

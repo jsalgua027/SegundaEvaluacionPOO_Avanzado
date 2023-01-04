@@ -45,22 +45,79 @@ public class Ticket {
         this.listaProductos = listaProductos;
     }
 
-    public int catindadProductoiguales() {
-        int contador = 0;
-       ArrayList<Producto> aux= new ArrayList<>();
-
-        Collections.sort(this.listaProductos, (p1,p2)-> p1.nombre().compareToIgnoreCase(p2.nombre()));
-        
+//    //metodo para saber total de un producto con las cantidades includas
+//  public double precioTotalConIva(Producto p){
+//      Producto aux= new Producto(p.nombre(), p.cantidad(), p.precio(), p.iva());
+// double iva= p.precio()*((double)aux.iva()/100);
+//  double totaliva = aux.precio()+iva;
+//  double resultado= aux.cantidad()*totaliva;
+//  return resultado;
+//  
+//  }
+//  // metodo totales por producto sin iva
+//  public double precioTotalSinIva(Producto p){
+//   
+//  return p.cantidad()*(p.precio());
+//  }
+//  
+    // metodo que da el importe total con iva de todos los productos
+    public double importeTotalTiket() {
+        double total = 0;
+        //Ticket aux = new Ticket();
         for (int i = 0; i < this.listaProductos.size(); i++) {
-            for (int j = 0; j < this.listaProductos.size(); j++) {
-                if (this.listaProductos.get(i).equals(this.listaProductos.get(j))) {
-                    aux.add(this.listaProductos.get(i));
-                }
-            }
-           
+            total = total + this.listaProductos.get(i).precioProductoTotalConIva();
+
         }
 
-        return  contador=aux.size();
+        return total;
+
+    }
+
+    public String impresionTicket() {
+        String salida
+                = """
+                        --------------------------------------------------------------------
+                                                Supermercados El
+                                    Fecha:%s                    Hora:%s
+                        -------------------------------------------------------------------
+                        Producto    Precio   Cantidad    IVA    Precio sin IVA
+                       %s
+                        --------------------------------------------------------------------
+                       %s
+                       ---------------------------------------------------------------------
+                       Total a pagar: %s  -- Gracias por su visita.
+                        """.formatted(this.fecha, this.hora, impresionListadoProductos(),impresionPorTipoIva(),importeTotalTiket());
+
+        return salida;
+
+    }
+    //impresion de productos parte principal del ticket
+
+    public String impresionListadoProductos() {
+        String tmp = "";
+        for (int i = 0; i < this.listaProductos.size(); i++) {
+            tmp += this.listaProductos.get(i).ToString2() + "\n";
+        }
+        return tmp;
+    }
+
+    public String impresionPorTipoIva() {
+        String tmp = "";
+        for (int i = 0; i < this.listaProductos.size(); i++) {
+            switch (this.listaProductos.get(i).iva()) {
+                case 4 ->
+                    tmp += this.listaProductos.get(i).ToString3()+"\n";
+                case 10 ->
+                    tmp += this.listaProductos.get(i).ToString3()+"\n";
+                case 21 ->
+                    tmp += this.listaProductos.get(i).ToString3()+"\n";
+                default -> {
+                }
+            }
+
+        }
+
+        return tmp;
     }
 
     @Override

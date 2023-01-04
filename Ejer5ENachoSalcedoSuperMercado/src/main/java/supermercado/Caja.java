@@ -48,7 +48,7 @@ public class Caja {
 
         for (Producto p : cinta) {
             if (p != null) {
-                tmp += p.toString() + "\n";
+                tmp += p.ToString2()+ "\n";
             }
 
         }
