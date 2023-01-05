@@ -86,12 +86,18 @@ public class Ticket {
         return tmp;
     }
 
+   
+    
+    
+    
+    
     public String impresionPorTipoIva() {
         String tmp = "";
         for (int i = 0; i < this.listaProductos.size(); i++) {
             switch (this.listaProductos.get(i).iva()) {
                 case 4 ->
                     tmp += this.listaProductos.get(i).ToString3() + "\n";
+                      
                 case 10 ->
                     tmp += this.listaProductos.get(i).ToString3() + "\n";
                 case 21 ->
