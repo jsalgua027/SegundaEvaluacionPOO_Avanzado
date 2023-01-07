@@ -62,7 +62,7 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
     
     //metodo que devuelve lista de vehiculos que deben de ser devueltos con la fecha dada
     public List<Vehiculo> vehiculosDevueltos(LocalDate fecha){
-    List<Vehiculo> listaVehiculosEntregados= new ArrayList<>();
+    List<Vehiculo> listaVehiculosEntregados= new ArrayList<Vehiculo>();
     Alquiler aux = new Alquiler();
       aux.setFechaEntrega(fecha);
         for (int i = 0; i < this.lista.size(); i++) {
