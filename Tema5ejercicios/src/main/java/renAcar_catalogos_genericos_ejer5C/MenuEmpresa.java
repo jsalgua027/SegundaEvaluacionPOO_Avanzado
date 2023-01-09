@@ -220,7 +220,7 @@ public class MenuEmpresa {
                                 System.out.println(rentAcar.getCatalogoAlquileres().toString());
                             }
                             case "2" -> {
-                                List<Alquiler> alquileresUnCliente = new ArrayList<>();
+                                List<Alquiler> alquileresUnCliente;
                                 Cliente aux = new Cliente();
                                 System.out.println("Indique el nif del cliente");
                                 clienteAux = teclado.nextLine();
@@ -236,7 +236,7 @@ public class MenuEmpresa {
 
                             }
                             case "3" -> {
-                                List<Alquiler> alquileresUnVehiculo = new ArrayList<>();
+                                List<Alquiler> alquileresUnVehiculo ;
                                 Vehiculo aux = new Vehiculo();
 
                                 System.out.println("Indique el numero de bastidor ");
@@ -252,7 +252,7 @@ public class MenuEmpresa {
 
                             }
                             case "4" -> {
-                                List<Vehiculo> vehiculoFechaEntrega = new ArrayList<>();
+                                List<Vehiculo> vehiculoFechaEntrega ;
                                 Vehiculo aux = new Vehiculo();
 
                                 System.out.println("Indique la fecha de entrega y comprovamos si hay alguno con esa fecha ");
