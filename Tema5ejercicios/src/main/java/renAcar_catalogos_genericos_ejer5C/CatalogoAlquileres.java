@@ -66,7 +66,7 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         Alquiler aux = new Alquiler();
         aux.setFechaEntrega(fecha);
         for (int i = 0; i < this.lista.size(); i++) {
-            if (this.lista.get(i).equals(aux)) {
+            if (this.lista.get(i).fechaEntrega().isEqual(fecha)) {
                 listaVehiculosEntregados.add(this.lista.get(i).getVehiculo());
 
             }

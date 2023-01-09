@@ -184,36 +184,45 @@ public class Empresa {
     }
 
     //Borrar un cliente del catálogo, si no tiene alquileres grabados.
-    public void borrarClienteCatalogo(Cliente c) {
+    public boolean borrarClienteCatalogo(Cliente c) {
         Alquiler aux = new Alquiler();
         aux.setCliente(c);
-
+        boolean si = false; //si es falso sino esta dentro del catalogo alquileres
         for (int i = 0; i < this.catalogoAlquileres.lista.size(); i++) {
-            if (!this.catalogoAlquileres.lista.get(i).getCliente().getNIF().equals(aux.getCliente().getNIF()) ){
-              
-                       this.catalogoClientes.borrarElemento(c);
-                    
-                
-               
-              //  break;
+            if (!this.catalogoAlquileres.lista.get(i).getCliente().getNIF().equals(aux.getCliente().getNIF())) {
+
+                this.catalogoClientes.borrarElemento(c);
+
+                si = false;
+
+                //  break;
             } else {
-              System.out.println("El cliente tiene alquileres");
-               
+                System.out.println("El cliente tiene alquileres");
+
             }
 
         }
+        return si;
     }
     //Borrar un vehículo del catálogo, si no tiene alquileres grabados
 
-    public void borraVehiculoCatalogo(Vehiculo v) {
+    public boolean borraVehiculoCatalogo(Vehiculo v) {
         Alquiler aux = new Alquiler();
         aux.setVehiculo(v);
-        if (this.catalogoAlquileres.buscarElemento(aux) < 0) {
-            catalogoVehiculos.borrarElemento(v);
+        boolean si = false; // si es fsldo sino esta dentro del catalogo de alquileres
 
-        } else {
-            System.out.println("El vehiculo tiene alquileres");
+        for (int i = 0; i < this.catalogoAlquileres.lista.size(); i++) {
+            if (!this.catalogoAlquileres.lista.get(i).getVehiculo().getBastidor().equals(v.getBastidor())) {
+                catalogoVehiculos.borrarElemento(v);
+                si = false;
+            } else {
+                System.out.println("El vehiculo tiene alquileres");
+                si = true;
+            }
+
         }
+
+        return si;
     }
 
 }

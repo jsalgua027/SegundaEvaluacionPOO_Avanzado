@@ -33,7 +33,7 @@ public class MenuEmpresa {
                 repetir = false;
 
             } catch (InputMismatchException ime) {
-                System.out.println("No has introducido un numero entero");
+                System.out.println("No has introducido un número entero");
                 //limpio buffer
                 teclado2.nextLine();
             }
@@ -112,8 +112,12 @@ public class MenuEmpresa {
                                 Cliente aux = new Cliente();
                                 aux.setNIF(clienteAux);
                                 if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) != null) {
-                                   // rentAcar.getCatalogoClientes().borrarElemento(aux);
-                                 rentAcar.borrarClienteCatalogo(aux);
+
+                                    if (!rentAcar.borrarClienteCatalogo(aux)) {
+
+                                        rentAcar.getCatalogoClientes().borrarElemento(aux);
+
+                                    }
                                     System.out.println("Con el borrado realizado el catalogo de clientes es:");
                                     System.out.println(rentAcar.getCatalogoClientes().toString());
 
@@ -123,7 +127,7 @@ public class MenuEmpresa {
                                 }
                             }
                             case "3" -> {
-                                System.out.println("Indique el nif del cliente a buscar");
+                                System.out.println("Indique el NIF del cliente a buscar");
                                 clienteAux = teclado.nextLine();
 
                                 if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) == null) {
@@ -158,7 +162,10 @@ public class MenuEmpresa {
                                 Vehiculo aux1 = new Vehiculo();
                                 aux1.setBastidor(vehiculoAux);
                                 if (rentAcar.getCatalogoVehiculos().buscarVehiculo(vehiculoAux) != null) {
-                                    rentAcar.getCatalogoVehiculos().borrarElemento(aux1);
+                                    if (!rentAcar.borraVehiculoCatalogo(aux1)) {
+                                        rentAcar.getCatalogoVehiculos().borrarElemento(aux1);
+                                    }
+
                                     System.out.println("Con el borrado realizado el catalogo de clientes es:");
                                     System.out.println(rentAcar.getCatalogoVehiculos().toString());
                                 } else {
@@ -192,13 +199,13 @@ public class MenuEmpresa {
                         switch (opcion) {
                             case "1" -> {
                                 System.out.println("Vamos a realizar el registro de alquiler");
-                                System.out.println("Indique el nif del clinete a añadir al registro ");
+                                System.out.println("Indique el nif del cliente a añadir al registro ");
                                 clienteAux = teclado.nextLine();
                                 if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) != null) {
-                                    System.out.println("Indique el numero de bastidor del vehiculo a añadir");
+                                    System.out.println("Indique el número de bastidor del vehiculo a añadir");
                                     vehiculoAux = teclado.nextLine();
                                     if (rentAcar.getCatalogoVehiculos().buscarVehiculo(vehiculoAux) != null) {
-                                        System.out.println("Indique le numero de dias de alquiler");
+                                        System.out.println("Indique le número de dias de alquiler");
                                         int numeroDias = leerEnteroSinErroresScanner();
                                         rentAcar.registroAlquiler(clienteAux, vehiculoAux, LocalDate.now(), numeroDias);
                                     } else {
@@ -219,7 +226,7 @@ public class MenuEmpresa {
                                 clienteAux = teclado.nextLine();
                                 aux.setNIF(clienteAux);
                                 alquileresUnCliente = rentAcar.getCatalogoAlquileres().buscarAlquilerNif(clienteAux);
-                                if (alquileresUnCliente.size() > 0) {
+                                if (!alquileresUnCliente.isEmpty()) {
 
                                     System.out.println(alquileresUnCliente.toString());
                                 } else {
@@ -236,29 +243,30 @@ public class MenuEmpresa {
                                 vehiculoAux = teclado.nextLine();
                                 aux.setBastidor(vehiculoAux);
                                 alquileresUnVehiculo = rentAcar.getCatalogoAlquileres().buscarAlquilerBastidor(vehiculoAux);
-                                if (alquileresUnVehiculo.size() > 0) {
+                                if (!alquileresUnVehiculo.isEmpty()) {
 
                                     System.out.println(alquileresUnVehiculo.toString());
                                 } else {
                                     System.out.println("No hay vehiculos con ese numero de bastidor");
                                 }
 
-                            } case "4" -> {
+                            }
+                            case "4" -> {
                                 List<Vehiculo> vehiculoFechaEntrega = new ArrayList<>();
                                 Vehiculo aux = new Vehiculo();
 
                                 System.out.println("Indique la fecha de entrega y comprovamos si hay alguno con esa fecha ");
-                                 System.out.println("¿Que dia?");
-                                 int dia=teclado.nextInt();
-                                  System.out.println("¿Que mes?");
-                                 int mes=teclado.nextInt();
-                                  System.out.println("¿Que año?");
-                                 int anio=teclado.nextInt();
-                                 LocalDate fechaBuscar=LocalDate.of(anio, mes, dia);
-                                 teclado.nextLine();// limpio buffer
-                          
+                                System.out.println("¿Que dia?");
+                                int dia = teclado.nextInt();
+                                System.out.println("¿Que mes?");
+                                int mes = teclado.nextInt();
+                                System.out.println("¿Que año?");
+                                int anio = teclado.nextInt();
+                                LocalDate fechaBuscar = LocalDate.of(anio, mes, dia);
+                                teclado.nextLine();// limpio buffer
+
                                 vehiculoFechaEntrega = rentAcar.getCatalogoAlquileres().vehiculosDevueltos(fechaBuscar);
-                                if (vehiculoFechaEntrega.size() > 0) {
+                                if (!vehiculoFechaEntrega.isEmpty()) {
 
                                     System.out.println(vehiculoFechaEntrega.toString());
                                 } else {
