@@ -172,9 +172,6 @@ public class Empresa {
 
     }
 
-  
-    
-    
     // Borrar un alquiler por id.
     public void borrarAlquiler(int id) {
         Alquiler aux = new Alquiler();
@@ -190,13 +187,21 @@ public class Empresa {
     public void borrarClienteCatalogo(Cliente c) {
         Alquiler aux = new Alquiler();
         aux.setCliente(c);
-        if (this.catalogoAlquileres.buscarElemento(aux) < 0) {
-            catalogoClientes.borrarElemento(c);
 
-        } else {
-            System.out.println("El cliente tiene alquileres");
+        for (int i = 0; i < this.catalogoAlquileres.lista.size(); i++) {
+            if (!this.catalogoAlquileres.lista.get(i).getCliente().getNIF().equals(aux.getCliente().getNIF()) ){
+              
+                       this.catalogoClientes.borrarElemento(c);
+                    
+                
+               
+              //  break;
+            } else {
+              System.out.println("El cliente tiene alquileres");
+               
+            }
+
         }
-
     }
     //Borrar un vehículo del catálogo, si no tiene alquileres grabados
 
@@ -211,7 +216,4 @@ public class Empresa {
         }
     }
 
-  
 }
-
-

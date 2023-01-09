@@ -22,7 +22,6 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
 
     }
 
-  
     public Alquiler buscarAlquiler(int id) {
         //crear un alquiler con datos  aleatorios
         Alquiler aux = new Alquiler();
@@ -48,6 +47,7 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         return listaClientes;
     }
 // metodo que devuleve lista de alquilres con ese numero de bastidor
+
     public List<Alquiler> buscarAlquilerBastidor(String bastidor) {
         List<Alquiler> listaVehiculos = new ArrayList<Alquiler>();
         Vehiculo vehiculoAux = new Vehiculo();
@@ -59,20 +59,20 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         }
         return listaVehiculos;
     }
-    
+
     //metodo que devuelve lista de vehiculos que deben de ser devueltos con la fecha dada
-    public List<Vehiculo> vehiculosDevueltos(LocalDate fecha){
-    List<Vehiculo> listaVehiculosEntregados= new ArrayList<Vehiculo>();
-    Alquiler aux = new Alquiler();
-      aux.setFechaEntrega(fecha);
+    public List<Vehiculo> vehiculosDevueltos(LocalDate fecha) {
+        List<Vehiculo> listaVehiculosEntregados = new ArrayList<Vehiculo>();
+        Alquiler aux = new Alquiler();
+        aux.setFechaEntrega(fecha);
         for (int i = 0; i < this.lista.size(); i++) {
-            if(this.lista.get(i).equals(aux)){
-            listaVehiculosEntregados.add(this.lista.get(i).getVehiculo());
-            
+            if (this.lista.get(i).equals(aux)) {
+                listaVehiculosEntregados.add(this.lista.get(i).getVehiculo());
+
             }
         }
-    return listaVehiculosEntregados;
-    
+        return listaVehiculosEntregados;
+
     }
-    
+
 }

@@ -112,8 +112,8 @@ public class MenuEmpresa {
                                 Cliente aux = new Cliente();
                                 aux.setNIF(clienteAux);
                                 if (rentAcar.getCatalogoClientes().buscarCliente(clienteAux) != null) {
-                                  //  rentAcar.getCatalogoClientes().borrarElemento(aux);
-                                  rentAcar.borrarClienteCatalogo(aux);
+                                   // rentAcar.getCatalogoClientes().borrarElemento(aux);
+                                 rentAcar.borrarClienteCatalogo(aux);
                                     System.out.println("Con el borrado realizado el catalogo de clientes es:");
                                     System.out.println(rentAcar.getCatalogoClientes().toString());
 
