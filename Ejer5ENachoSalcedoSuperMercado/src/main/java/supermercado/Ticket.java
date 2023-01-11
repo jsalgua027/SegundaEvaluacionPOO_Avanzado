@@ -62,8 +62,8 @@ public class Ticket {
         String salida
                 = """
                         --------------------------------------------------------------------
-                                                Supermercados El
-                            Fecha:%s                    Hora:%s
+                                                Supermercado Lola
+                            Fecha= %s                    Hora= %s:%s
                         -------------------------------------------------------------------
                         Producto    Precio   Cantidad    IVA    Precio sin IVA
                        %s
@@ -71,7 +71,8 @@ public class Ticket {
                        %s
                        ---------------------------------------------------------------------
                        Total a pagar: %.2f  -- Gracias por su visita.
-                        """.formatted(this.fecha, this.hora, impresionListadoProductos(), impresionPorTipoIva(), importeTotalTiket());
+                        """.formatted(this.fecha, this.hora.getHour(),this.hora.getMinute(),
+                                impresionListadoProductos(), impresionPorTipoIva(), importeTotalTiket());
 
         return salida;
 
