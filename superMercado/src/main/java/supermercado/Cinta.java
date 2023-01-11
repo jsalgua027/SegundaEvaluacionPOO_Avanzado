@@ -26,14 +26,7 @@ public class Cinta {
         this.listaProductos = listaProductos;
     }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("Cinta{");
-//        sb.append("cinta=").append(listaProductos);
-//        sb.append('}');
-//        return sb.toString();
-//    }
+
 
     // numero de productos
     public int getNumeroProductos() {
@@ -76,6 +69,7 @@ public class Cinta {
         return this.listaProductos.isEmpty();
     }
 
+    //metodo para la impresion de los productos desglosados que recibe el toString modificado de productos
       public String impresionListadoProductos() {
         String tmp = "";
         for (int i = 0; i < this.listaProductos.size(); i++) {

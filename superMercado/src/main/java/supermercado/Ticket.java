@@ -44,6 +44,8 @@ public class Ticket {
         this.cajaCobro = cajaCobro;
     }
 
+    
+    //metodo que imprime el ticket principal
     public String impresionTicket() {
         String salida
                 = """
@@ -63,7 +65,7 @@ public class Ticket {
         return salida;
 
     }
-
+// metodo para realizar los calculos de los totales del la segunda parte de impresion del tikect
     private String impresionProductosPorIva() {
     String aux="""
                """;
@@ -101,16 +103,21 @@ public class Ticket {
         return aux;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Ticket{");
-        sb.append("fecha=").append(fecha);
-        sb.append(", hora=").append(hora);
-        sb.append(", cajaCobro=").append(cajaCobro);
-        sb.append('}');
-        return sb.toString();
+    
+        // metodo que da el importe total con iva de todos los productos
+    public double importeTotalTiket() {
+        double total = 0;
+        //Ticket aux = new Ticket();
+        for (int i = 0; i < this.cajaCobro.getCinta().getListaProductos().size(); i++) {
+            total = total + this.cajaCobro.getCinta().getListaProductos().get(i).precioProductoTotalConIva();
+
+        }
+
+        return total;
+
     }
+
+ 
 
     @Override
     public int hashCode() {
@@ -136,17 +143,5 @@ public class Ticket {
         return Objects.equals(this.cajaCobro, other.cajaCobro);
     }
 
-    // metodo que da el importe total con iva de todos los productos
-    public double importeTotalTiket() {
-        double total = 0;
-        //Ticket aux = new Ticket();
-        for (int i = 0; i < this.cajaCobro.getCinta().getListaProductos().size(); i++) {
-            total = total + this.cajaCobro.getCinta().getListaProductos().get(i).precioProductoTotalConIva();
-
-        }
-
-        return total;
-
-    }
 
 }

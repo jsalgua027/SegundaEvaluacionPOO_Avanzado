@@ -55,6 +55,7 @@ public record Producto(String nombre, int cantidad, double precio, int iva) {
          return Math.round(resultado*100.0)/100.0;
     }
     
+    //metodo para darle formato a la impresion de los productos en el ticket de forma desglosada
  public String ToString2() {
         StringBuilder sb = new StringBuilder();
         sb.append(nombre);
