@@ -46,8 +46,9 @@ public class Ejer014 {
         int totalvalores = 0;
         double media = 0;
         int valorMax = 0;
-        int valorMIn = 0;
+        int valorMIn = 101;
 
+        // relleno matriz
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
 
@@ -55,29 +56,24 @@ public class Ejer014 {
                 matriz[i][j] = num;
                 totalvalores += num;
 
-                if (matriz[i][j] > num) {
-
-                    matriz[i][j] = valorMax;
-                } else if (matriz[i][j] < num) {
-                    matriz[i][j] = valorMIn;
-
-                }
-
             }
         }
 
         //calculo la media de todos los valores
         media = totalvalores / 9;
 //        //compruebo valores
-//        for (int i = 0; i < matriz.length; i++) {
-//            for (int j = 0; j < matriz[i].length; j++) {
-//                if (matriz[i][j] > matriz[i + 1][j + 1]) {
-//
-//                }
-//            }
-//
-//        }
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (valorMax < matriz[i][j]) {
+                    valorMax = matriz[i][j];
+                } else if (valorMIn > matriz[i][j]) {
+                    valorMIn = matriz[i][j];
 
+                }
+            }
+
+        }
+ // imprimo matiz
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
 
