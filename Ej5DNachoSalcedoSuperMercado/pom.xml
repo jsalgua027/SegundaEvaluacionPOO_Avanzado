@@ -19,5 +19,5 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>com.mycompany.supermercado.SuperMercado</exec.mainClass>
     </properties>
-    <name>Ej5ENachoSalcedoSuperMercado</name>
+    <name>Ej5DNachoSalcedoSuperMercado</name>
 </project>
