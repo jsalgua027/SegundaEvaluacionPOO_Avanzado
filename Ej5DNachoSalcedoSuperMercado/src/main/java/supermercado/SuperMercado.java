@@ -11,7 +11,8 @@ package supermercado;
 public class SuperMercado {
 
     /**
-     * @param args the command line arguments
+     * @param c
+     * @return 
      */
     public static Ticket generarTicket(Caja c) {
         Ticket aux = new Ticket(c);
