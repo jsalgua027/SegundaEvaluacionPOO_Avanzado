@@ -41,11 +41,11 @@ public class Caja {
         this.cinta = cinta;
     }
     
-     // generar ticket
-    public Ticket generarTicket(Caja c){
-    Ticket aux = new Ticket(c);
-    return aux;
-    }
+//     // generar ticket
+//    public Ticket generarTicket(Caja c){
+//    Ticket aux = new Ticket(c);
+//    return aux;
+//    }
     
     
 
