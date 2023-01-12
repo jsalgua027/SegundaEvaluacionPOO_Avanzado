@@ -120,7 +120,7 @@ public class Ejer19Avion {
                         if ((asiento >= 0 || asiento <= 3)) {
                             System.out.println("El avión solo tiene 4 asientos por fila");
                         }
-                    } while (!(asiento >= 0 || asiento <= 3));
+                    } while ((asiento >= 0 || asiento <= 3));
 
                     do {
 
