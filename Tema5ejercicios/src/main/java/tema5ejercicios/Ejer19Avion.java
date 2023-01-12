@@ -24,16 +24,55 @@ public class Ejer19Avion {
      *
      *
      */
+    public static void imprimirAvion(char[][] origen) {
+
+        for (char[] row : origen) {
+            for (char c : row) {
+
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-       Scanner teclado = new Scanner(System.in);
-       
-       String menu= """
+        Scanner teclado = new Scanner(System.in);
+        char ocupado = 'x';
+        char libre = ' ';
+        int numeroPersonas=0;
+        String opcion = "";
+        String menu = """
                                 1.Para reservar  asientos
                                 2.Para cancelar asientos
                                 3.Para mostrar asientos
+                                4.Salir
                              """;
-        
-        
+         char[][] asientosAvion = new char [25][4];
+        do {
+            System.out.println(menu);
+            System.out.println("Indique la opcion");
+            opcion = teclado.nextLine();
+
+            switch (opcion) {
+                case "1" -> {
+                    System.out.println("¿Cuantas personas?");
+                    numeroPersonas=teclado.nextInt();
+                    for (int i = 0; i < numeroPersonas; i++) {
+                        
+                    }
+                }
+                case "2" -> {
+                }
+              
+                default -> {
+                }
+
+            }
+
+        } while (!opcion.equalsIgnoreCase("4"));
+
+    
+//        imprimirAvion(asientosAvion);
     }
 
 }
