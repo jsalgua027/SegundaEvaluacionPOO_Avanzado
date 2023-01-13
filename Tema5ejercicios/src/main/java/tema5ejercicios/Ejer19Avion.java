@@ -83,8 +83,32 @@ public class Ejer19Avion {
         return num;
     }
 
-    public static boolean reservaAsiento(int fila, int asiento) {
+    public static boolean reservaAsiento(boolean[][] auxM, int fila, int asiento) {
         boolean aux = true;
+
+        if (!auxM[fila][asiento]) {
+
+            System.out.println("El asiento esta ocupado");
+
+        } else {
+            aux = false;
+        }
+
+        return aux;
+
+    }
+
+    public static boolean cancelarAsiento(boolean[][] auxM, int fila, int asiento) {
+        boolean aux = false;
+
+        if (!auxM[fila][asiento]) {
+
+            aux = true;
+
+        } else {
+
+            System.out.println("El asiento esta libre no se puede cancelar");
+        }
 
         return aux;
 
@@ -128,13 +152,33 @@ public class Ejer19Avion {
                         fila = leerEnteroSinErroresScanner();
                         if (!(fila >= 0 && fila <= 24)) {
                             System.out.println("El avión solo tiene 25 filas");
-
+                            teclado.nextLine();
                         }
-                    } while ((fila >= 0 && fila <= 24));
+                    } while (!(fila >= 0 && fila <= 24));
+
+                    reservaAsiento(asientosAvion, fila, asiento);
 
                 }
                 case "2" -> {
+                    do {
+                        System.out.println("¿Indique que  asientos?");
+                        asiento = leerEnteroSinErroresScanner();
 
+                        if (!(asiento >= 0 && asiento <= 3)) {
+                            System.out.println("El avión solo tiene 4 asientos por fila");
+                        }
+                    } while (!(asiento >= 0 && asiento <= 3));
+
+                    do {
+
+                        System.out.println("Indique la fila ");
+                        fila = leerEnteroSinErroresScanner();
+                        if (!(fila >= 0 && fila <= 24)) {
+                            System.out.println("El avión solo tiene 25 filas");
+                            teclado.nextLine();
+                        }
+                    } while (!(fila >= 0 && fila <= 24));
+                    cancelarAsiento(asientosAvion, fila, asiento);
                 }
                 case "3" -> {
 
@@ -148,7 +192,6 @@ public class Ejer19Avion {
 
         } while (!opcion.equalsIgnoreCase("4"));
 
-//        imprimirAvion(asientosAvion);
     }
 
 }
