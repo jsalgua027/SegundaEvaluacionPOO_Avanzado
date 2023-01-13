@@ -83,34 +83,28 @@ public class Ejer19Avion {
         return num;
     }
 
-    public static boolean reservaAsiento(boolean[][] auxM, int fila, int asiento) {
-        boolean aux = true;
+    public static void reservaAsiento(boolean[][] auxM, int fila, int asiento) {
 
-        if (!auxM[fila][asiento]) {
+        if ((auxM[fila][asiento])) {
+            auxM[fila][asiento] = false;
+
+        } else {
 
             System.out.println("El asiento esta ocupado");
 
-        } else {
-            aux = false;
         }
-
-        return aux;
 
     }
 
-    public static boolean cancelarAsiento(boolean[][] auxM, int fila, int asiento) {
-        boolean aux = false;
+    public static void cancelarAsiento(boolean[][] auxM, int fila, int asiento) {
 
-        if (!auxM[fila][asiento]) {
-
-            aux = true;
+        if (auxM[fila][asiento]) {
+            System.out.println("El asiento esta libre no se puede cancelar");
 
         } else {
 
-            System.out.println("El asiento esta libre no se puede cancelar");
+            auxM[fila][asiento] = true;
         }
-
-        return aux;
 
     }
 
@@ -122,30 +116,24 @@ public class Ejer19Avion {
         boolean ocupacion = true; //true es asiento libre
         String opcion = "";
         String menu = """
+                            -----------------------------------------
+                                    Aeorilinas Myflight
                                 1.Para reservar  asientos
                                 2.Para cancelar asientos
                                 3.Para mostrar asientos
                                 4.Salir
+                             ---------------------------------------
                              """;
         boolean[][] asientosAvion = new boolean[25][4];
+        rellenarAsientosInicial(asientosAvion);
         do {
             System.out.println(menu);
             System.out.println("Indique la opcion");
             opcion = teclado.nextLine();
 
-            rellenarAsientosInicial(asientosAvion);
-            imprimirAvion(asientosAvion);
+            //     imprimirAvion(asientosAvion);
             switch (opcion) {
                 case "1" -> {
-                    do {
-                        System.out.println("¿Indique que  asientos?");
-                        asiento = leerEnteroSinErroresScanner();
-
-                        if (!(asiento >= 0 && asiento <= 3)) {
-                            System.out.println("El avión solo tiene 4 asientos por fila");
-                        }
-                    } while (!(asiento >= 0 && asiento <= 3));
-
                     do {
 
                         System.out.println("Indique la fila ");
@@ -155,21 +143,20 @@ public class Ejer19Avion {
                             teclado.nextLine();
                         }
                     } while (!(fila >= 0 && fila <= 24));
+                    do {
+                        System.out.println("¿Indique que  asientos?");
+                        asiento = leerEnteroSinErroresScanner();
+
+                        if (!(asiento >= 0 && asiento <= 3)) {
+                            System.out.println("El avión solo tiene 4 asientos por fila");
+                        }
+                    } while (!(asiento >= 0 && asiento <= 3));
 
                     reservaAsiento(asientosAvion, fila, asiento);
 
                 }
                 case "2" -> {
                     do {
-                        System.out.println("¿Indique que  asientos?");
-                        asiento = leerEnteroSinErroresScanner();
-
-                        if (!(asiento >= 0 && asiento <= 3)) {
-                            System.out.println("El avión solo tiene 4 asientos por fila");
-                        }
-                    } while (!(asiento >= 0 && asiento <= 3));
-
-                    do {
 
                         System.out.println("Indique la fila ");
                         fila = leerEnteroSinErroresScanner();
@@ -178,6 +165,16 @@ public class Ejer19Avion {
                             teclado.nextLine();
                         }
                     } while (!(fila >= 0 && fila <= 24));
+                    do {
+                        System.out.println("¿Indique que  asientos?");
+                        asiento = leerEnteroSinErroresScanner();
+
+                        if (!(asiento >= 0 && asiento <= 3)) {
+                            System.out.println("El avión solo tiene 4 asientos por fila");
+                            teclado.nextLine();
+                        }
+                    } while (!(asiento >= 0 && asiento <= 3));
+
                     cancelarAsiento(asientosAvion, fila, asiento);
                 }
                 case "3" -> {
