@@ -117,22 +117,24 @@ public class Ejer19Avion {
                         System.out.println("¿Indique que  asientos?");
                         asiento = leerEnteroSinErroresScanner();
 
-                        if ((asiento >= 0 || asiento <= 3)) {
+                        if (!(asiento >= 0 && asiento <= 3)) {
                             System.out.println("El avión solo tiene 4 asientos por fila");
                         }
-                    } while ((asiento >= 0 || asiento <= 3));
+                    } while (!(asiento >= 0 && asiento <= 3));
 
                     do {
 
                         System.out.println("Indique la fila ");
                         fila = leerEnteroSinErroresScanner();
-                        if (!(fila >= 0 || fila <= 25)) {
+                        if (!(fila >= 0 && fila <= 24)) {
                             System.out.println("El avión solo tiene 25 filas");
 
                         }
-                    } while ((fila >= 0 || fila <= 25));
+                    } while ((fila >= 0 && fila <= 24));
                 }
                 case "2" -> {
+                    
+                    imprimirAvion(asientosAvion);
                 }
 
                 default -> {
