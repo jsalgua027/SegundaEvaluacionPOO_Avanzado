@@ -47,7 +47,7 @@ public class Ejer014 {
         double media = 0;
         int valorMax = 0;
         int valorMIn = 101;
-
+        int casillas=0;
         // relleno matriz
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -55,12 +55,12 @@ public class Ejer014 {
                 int num = aleatorioDentroRango(min, max);
                 matriz[i][j] = num;
                 totalvalores += num;
-
+                casillas++;
             }
         }
 
         //calculo la media de todos los valores
-        media = totalvalores / 9;
+        media = ((double)totalvalores) / casillas;
 //        //compruebo valores
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {

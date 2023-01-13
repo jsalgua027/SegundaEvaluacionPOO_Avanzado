@@ -131,9 +131,13 @@ public class Ejer19Avion {
 
                         }
                     } while ((fila >= 0 && fila <= 24));
+
                 }
                 case "2" -> {
-                    
+
+                }
+                case "3" -> {
+
                     imprimirAvion(asientosAvion);
                 }
 
