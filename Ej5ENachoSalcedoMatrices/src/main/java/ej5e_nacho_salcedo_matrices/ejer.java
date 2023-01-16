@@ -88,10 +88,10 @@ public class ejer {
     int valorMin=0;
         for (int i = 0; i < origen.length; i++) {
             for (int j = 0; j < origen[i].length; j++) {
-                if (Integer.MAX_VALUE<origen[i][j]){
+                if (origen[i][j]>Integer.MAX_VALUE){
                 valorMax=origen[i][j];
                     for (int k = 0; k < origen[j].length; k++) {
-                        if (Integer.MIN_VALUE> origen[i][j]){
+                        if  ( origen[i][j]<Integer.MIN_VALUE){
                         valorMin= origen[i][j];
                         aux.setFila(valorMax);
                         aux.setColumna(valorMin);
