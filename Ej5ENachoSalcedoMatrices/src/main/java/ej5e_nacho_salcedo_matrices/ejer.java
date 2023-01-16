@@ -81,40 +81,39 @@ public class ejer {
 
         return origen;
     }
-    
-    public static Coordenada MayorFilaYMenosColumna( int[][] origen){
-    Coordenada aux= new Coordenada();
-    int valorMax=0;
-    int valorMin=0;
+
+    public static Coordenada MayorFilaYMenosColumna(int[][] origen) {
+        Coordenada aux = new Coordenada();
+  
+      
         for (int i = 0; i < origen.length; i++) {
+                  int valorMax = origen[0][0];
+                
             for (int j = 0; j < origen[i].length; j++) {
-                if (origen[i][j]>Integer.MAX_VALUE){
-                valorMax=origen[i][j];
+                  int valorMin= origen[i][0];
+                if (valorMax < origen[i][j]) {
+                    valorMax = origen[i][j];
                     for (int k = 0; k < origen[j].length; k++) {
-                        if  ( origen[i][j]<Integer.MIN_VALUE){
-                        valorMin= origen[i][j];
-                        aux.setFila(valorMax);
-                        aux.setColumna(valorMin);
-                        return aux;
-                        }else{
+                        if (valorMin > origen[i][j]) {
+                            valorMin = origen[i][j];
+
+                            aux.setFila(valorMax);
+                            aux.setColumna(valorMin);
+
+                            return aux;
+
+                        } else {
                             aux.setFila(-1);
                             aux.setColumna(-1);
-                        return aux;
+                            return aux;
                         }
                     }
                 }
             }
         }
-    
-    
-    
-    
-    
-    return aux;
+
+        return aux;
     }
-    
-    
-    
 
     public static void main(String[] args) {
 
@@ -131,7 +130,7 @@ public class ejer {
         int numeroFilasYColumnas = 0;
         Coordenada apartadoA;
         Coordenada apartadoB;
-        
+
         do {
             System.out.println(menu);
             opcion = leerEnteroSinErroresScanner();
@@ -149,7 +148,7 @@ public class ejer {
                     System.out.println("*********** Vamos a rellenar la Matriz************** ");
                     rellenarMatrizSolicitando(matrizA);
                     imprimirMatriz(matrizA);
-                    apartadoA=MayorFilaYMenosColumna(matrizA);
+                    apartadoA = MayorFilaYMenosColumna(matrizA);
                     System.out.println(apartadoA.toString());
                 }
 
@@ -164,7 +163,7 @@ public class ejer {
                     rellenarMatrizAleatorioa(matrizB, 0, 20);
 
                     imprimirMatriz(matrizB);
-                    apartadoB=MayorFilaYMenosColumna(matrizB);
+                    apartadoB = MayorFilaYMenosColumna(matrizB);
                     System.out.println(apartadoB.toString());
                 }
                 default -> {
