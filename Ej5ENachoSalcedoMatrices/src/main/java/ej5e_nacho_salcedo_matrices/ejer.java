@@ -84,21 +84,21 @@ public class ejer {
 
     public static Coordenada MayorFilaYMenosColumna(int[][] origen) {
         Coordenada aux = new Coordenada();
-  
-      
+        int valorMax = origen[0][0];
+        int valorMin = origen[0][0];
+
         for (int i = 0; i < origen.length; i++) {
-                  int valorMax = origen[0][0];
-                
+
             for (int j = 0; j < origen[i].length; j++) {
-                  int valorMin= origen[i][0];
-                if (valorMax < origen[i][j]) {
+
+                if (valorMax <= origen[i][j]) {
                     valorMax = origen[i][j];
                     for (int k = 0; k < origen[j].length; k++) {
-                        if (valorMin > origen[i][j]) {
+                        if (valorMin >= origen[i][j]) {
                             valorMin = origen[i][j];
 
-                            aux.setFila(valorMax);
-                            aux.setColumna(valorMin);
+                            aux.setFila(i);
+                            aux.setColumna(j);
 
                             return aux;
 
