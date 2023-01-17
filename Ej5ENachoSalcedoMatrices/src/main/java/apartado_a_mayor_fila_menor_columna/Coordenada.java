@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ej5e_nacho_salcedo_matrices;
+package apartado_a_mayor_fila_menor_columna;
 
 /**
  *
