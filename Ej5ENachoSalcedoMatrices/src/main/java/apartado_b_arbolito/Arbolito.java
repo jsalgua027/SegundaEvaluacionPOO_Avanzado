@@ -27,24 +27,30 @@ public class Arbolito {
 //          *                     fila 9 espacios 7
 //          *                     fila 10 espacios 7
     
-     public static void imprimirMatriz(int[][] origen) {
+     public static void imprimirMatriz(char[][] origen) {
 
         for (int i = 0; i < origen.length; i++) {
             for (int j = 0; j < origen[i].length; j++) {
-                System.out.print("|" + "(" + i + "-" + j + ")" + ":" + origen[i][j] + "|");
+                System.out.print( origen[i][j] );
             }
             System.out.println("");
         }
     }
      
      public static char[][] rellenarArbol( int filas, int coumnas ){
-         
-      String  libre=" ";
-      String relleno="1";
+       int altura= filas-2;
+       int contadorPosicionesLibres=0;
+       int contadorPosicionesOcupadas=0;
+      char  libre=' ';
+      char relleno='1';
      char[][] arbol = new char [filas][coumnas];
          for (int i = 0; i < arbol.length; i++) {
              for (int j = 0; j < arbol[i].length; j++) {
-                 
+               if(j<altura-j || j>altura+j){
+               arbol[i][j]=libre;
+               }else{
+               arbol[i][j]=relleno;
+               }
              }
          }
      
@@ -55,19 +61,33 @@ public class Arbolito {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         int altura=0;
-        int numeroFilas =  altura+2; // obtego el numero de filas 
+         char  libre='x';
+      char relleno='1';
+        // obtego el numero de filas 
         int numeroColumnas= 1;
         
         System.out.println("Dime la altura de la copa del arbol");
         altura= teclado.nextInt();
+         int numeroFilas =  altura+2;
         // bucle para obtener el numero de columnas
         for (int i = 0; i < altura-1; i++) {
             numeroColumnas= numeroColumnas+2;
         }
-            System.out.println("El numero de columnas seria:  " + numeroColumnas);
+            System.out.println("El numero de columnas seria:  " + numeroColumnas+ " El numero de filas: "+numeroFilas);
         
-        char[][] arbolito = new char [numeroFilas][numeroColumnas]; 
+        char[][] arbol = new char[numeroFilas][numeroColumnas];
+         for (int i = 0; i < arbol.length; i++) {
+             for (int j = 0; j < arbol[i].length; j++) {
+               if(!(j<altura-j && j>altura+j)){
+               arbol[i][j]=libre;
+               }else{
+               arbol[i][j]=relleno;
+               }
+             }
+         }
+        System.out.println("");
         
+        imprimirMatriz(arbol);
         
         
     }
