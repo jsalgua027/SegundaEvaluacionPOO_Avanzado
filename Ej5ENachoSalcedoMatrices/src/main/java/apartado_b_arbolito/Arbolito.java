@@ -74,11 +74,11 @@ public class Arbolito {
 
         int derecha = altura - 1;
         int izquierda = altura - 1;
-       
-        char[][] arbol = new char[numeroFilas][numeroColumnas];
-        //bucle
-        for (int i = 0; i < arbol.length; i++) {
 
+        char[][] arbol = new char[numeroFilas][numeroColumnas];
+        //bucle de todas las filas
+        for (int i = 0; i < arbol.length; i++) {
+            //bucle  de todas las columnas de la copa
             for (int j = 0; j < arbol[i].length; j++) {
 
                 if (j >= izquierda && j <= derecha) {
@@ -90,10 +90,11 @@ public class Arbolito {
             }
             izquierda -= 1;
             derecha += 1;
-
+            // condicion para entrar en las filas del tronco
             if (i >= altura) {
                 derecha = altura - 1;
                 izquierda = altura - 1;
+                //bucle para las columnas del tonco
                 for (int j = 0; j < arbol[i].length; j++) {
 
                     if (j >= izquierda && j <= derecha) {
