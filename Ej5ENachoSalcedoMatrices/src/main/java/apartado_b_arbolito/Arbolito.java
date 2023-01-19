@@ -4,6 +4,7 @@
  */
 package apartado_b_arbolito;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -25,6 +26,30 @@ public class Arbolito {
 //***************          fila 8 espacios 0
 //          *                     fila 9 espacios 7
 //          *                     fila 10 espacios 7
+    private static Scanner teclado = new Scanner(System.in);
+
+    public static int leerEnteroSinErroresScanner() {
+        int num = 0;
+        boolean repetir = true;
+
+        do {
+            System.out.println("Introduce la altura del arbol, Recuerda que es entre 2 y 10");
+            try {
+
+                num = teclado.nextInt();
+                repetir = false;
+
+            } catch (InputMismatchException ime) {
+                System.out.println("No has introducido un numero entero");
+                //limpio buffer
+                teclado.nextLine();
+            }
+
+        } while (repetir);
+
+        return num;
+    }
+
     public static void imprimirMatriz(char[][] origen) {
 
         for (int i = 0; i < origen.length; i++) {
@@ -35,47 +60,23 @@ public class Arbolito {
         }
     }
 
-    public static char[][] rellenarArbol(int filas, int coumnas) {
-        int altura = filas - 2;
-        int contadorPosicionesLibres = 0;
-        int contadorPosicionesOcupadas = 0;
-        char libre = ' ';
-        char relleno = '1';
-        char[][] arbol = new char[filas][coumnas];
-        for (int i = 0; i < arbol.length; i++) {
-            for (int j = 0; j < arbol[i].length; j++) {
-                if (j < altura - j || j > altura + j) {
-                    arbol[i][j] = libre;
-                } else {
-                    arbol[i][j] = relleno;
-                }
-            }
-        }
-
-        return arbol;
-    }
-
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        int altura = 0;
-        char libre = ' ';
-        char relleno = '1';
-        // obtego el numero de filas 
+    public static int numeroColumnas(int numero) {
         int numeroColumnas = 1;
-
-        System.out.println("Dime la altura de la copa del arbol");
-        altura = teclado.nextInt();
-        int numeroFilas = altura + 2;
-
-        // bucle para obtener el numero de columnas
-        for (int i = 0; i < altura - 1; i++) {
+        for (int i = 0; i < numero - 1; i++) {
             numeroColumnas = numeroColumnas + 2;
         }
+        return numeroColumnas;
 
+    }
+
+    public static char[][] arbolNavideño(int altura) {
+        int numeroFilas = altura + 2; //obtengo el numero filas
         int derecha = altura - 1;
         int izquierda = altura - 1;
-
+        int numeroColumnas = numeroColumnas(altura); // obtengo numero columnas
         char[][] arbol = new char[numeroFilas][numeroColumnas];
+        char libre = ' ';
+        char relleno = '1';
         //bucle de todas las filas
         for (int i = 0; i < arbol.length; i++) {
             //bucle  de todas las columnas de la copa
@@ -109,10 +110,19 @@ public class Arbolito {
             }
 
         }
-        System.out.println("");
+        return arbol;
+    }
 
-        imprimirMatriz(arbol);
+    public static void main(String[] args) {
 
+        int altura = 0;
+        do {
+            altura = leerEnteroSinErroresScanner();
+           
+        } while (!(altura>=2&&altura<=10));
+         char[][] arbol = arbolNavideño(altura);
+            System.out.println("");
+            imprimirMatriz(arbol);
     }
 
 }

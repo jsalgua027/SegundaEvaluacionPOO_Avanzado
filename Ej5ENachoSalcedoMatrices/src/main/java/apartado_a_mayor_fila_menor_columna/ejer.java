@@ -83,36 +83,43 @@ public class ejer {
     }
 
     public static Coordenada MayorFilaYMenosColumna(int[][] origen) {
-        Coordenada aux = new Coordenada();
-        int valorMax = origen[0][0];
-        int valorMin = origen[0][0];
+        //   Coordenada aux = new Coordenada(-1,-1);
+        int valorActual;
+        boolean esMayor;
+        boolean esMenor;
 
         for (int i = 0; i < origen.length; i++) {
 
             for (int j = 0; j < origen[i].length; j++) {
-
-                if (valorMax <= origen[i][j]) {
-                    valorMax = origen[i][j];
-                    for (int k = 0; k < origen[j].length; k++) {
-                        if (valorMin >= origen[i][j]) {
-                            valorMin = origen[i][j];
-
-                            aux.setFila(i);
-                            aux.setColumna(j);
-
-                            return aux;
-
-                        } else {
-                            aux.setFila(-1);
-                            aux.setColumna(-1);
-                            return aux;
-                        }
+                //actulizamos los valores para cada ronda del buvle for, boolenaos para la comprobación y el int para la comparación
+                esMayor = true;
+                esMenor = true;
+                valorActual = origen[i][j];
+                //comparacion horizontal, si el valor actual es menor no me vale y se para (fila)
+                for (int k = 0; k < origen[i].length; k++) {
+                    if (valorActual < origen[i][k]) {
+                        esMayor = false;
+                        break;
                     }
+
                 }
+                //comparacion en vertical, si el valor actual es mayo no me vale y se para(columna de esa fila)
+                for (int k = 0; k < origen[i].length; k++) {
+                    if (valorActual > origen[k][j]) {
+                        esMenor = false;
+                        break;
+                    }
+
+                }
+                //si las comparciones son correctas creo el objeto con las coordenadas
+                if (esMayor && esMenor) {
+
+                    return new Coordenada(i, j);
+                }
+
             }
         }
-
-        return aux;
+        return new Coordenada(-1, -1);
     }
 
     public static void main(String[] args) {
