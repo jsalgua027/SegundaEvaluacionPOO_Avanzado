@@ -77,6 +77,7 @@ public class Arbolito {
         char[][] arbol = new char[numeroFilas][numeroColumnas];
         char libre = ' ';
         char relleno = '1';
+        char tronco='*';
         //bucle de todas las filas
         for (int i = 0; i < arbol.length; i++) {
             //bucle  de todas las columnas de la copa
@@ -99,7 +100,7 @@ public class Arbolito {
                 for (int j = 0; j < arbol[i].length; j++) {
 
                     if (j >= izquierda && j <= derecha) {
-                        arbol[i][j] = relleno;
+                        arbol[i][j] = tronco;
 
                     } else {
                         arbol[i][j] = libre;
