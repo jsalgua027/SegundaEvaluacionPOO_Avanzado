@@ -72,11 +72,12 @@ public class Vecinas {
       
       public static void vecinas( int[][]orien, int fila, int columna){
       
-      if (fila< orien.length || columna< orien[fila].length){
-      
-      
-      
-      
+         /*compruebo que las coordenadas estan en una parte de la matriz que tiene huecos libres
+          en todas las direcciones 
+      */
+         
+            if ((orien[fila].length-columna>=1&& columna>=1)&&(fila>1&&orien.length-fila>=1)){
+                        
       }
       
       }
