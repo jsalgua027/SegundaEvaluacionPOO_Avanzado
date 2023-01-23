@@ -4,6 +4,7 @@
  */
 package apartado_a_mayor_fila_menor_columna;
 
+import java.awt.Point;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -123,6 +124,10 @@ public class ejer {
     }
 
     public static void main(String[] args) {
+        
+        
+        
+        
 
         String menu = """
                             ----------------------------------------
