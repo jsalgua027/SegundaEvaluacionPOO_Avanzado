@@ -91,7 +91,7 @@ public class ejer {
         for (int i = 0; i < origen.length; i++) {
 
             for (int j = 0; j < origen[i].length; j++) {
-                //actulizamos los valores para cada ronda del buvle for, boolenaos para la comprobación y el int para la comparación
+                //actulizamos los valores para cada ronda del buvcle for, boolenaos para la comprobación y el int para la comparación
                 esMayor = true;
                 esMenor = true;
                 valorActual = origen[i][j];
