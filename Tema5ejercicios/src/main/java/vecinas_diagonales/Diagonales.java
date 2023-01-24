@@ -116,9 +116,9 @@ public class Diagonales {
         rellenarMatrizAleatorioa(diagonales, 61, 79);
         imprimirMatriz(diagonales);
         System.out.println("*******DIAGONALES************");
-        System.out.println("diagonal principal");
+        System.out.println("Diagonal Principal");
         diagonalPrincipal(diagonales);
-        System.out.println("Diagonal inferior ");
+        System.out.println("Diagonal Secundaria ");
         diagonalSecundaria(diagonales);
     }
     
