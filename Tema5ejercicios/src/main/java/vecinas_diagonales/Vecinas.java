@@ -99,8 +99,15 @@ public class Vecinas {
            if(coorFila==tamanio && coorColum==tamanio){
            
            }
-           //colunma cero  y fila mayor que cero
+           //colunma cero  y fila mayor que cero y menor que tamaño
+           if (coorFila>=1 && tamanio-coorFila>=1 && coorColum==0){
            
+           }
+           // columna =tamaño y fila mayor que cero y menor que tamaño
+           if(coorColum==tamanio && coorFila>=1 && tamanio-coorFila>=0){
+           
+           
+           }
            
         }
 
