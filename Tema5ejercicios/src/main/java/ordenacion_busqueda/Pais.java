@@ -93,6 +93,8 @@ public class Pais  implements Comparable<Pais>{
         return Objects.equals(this.nombre, other.nombre);
     }
 
+    
+    // metodo que tenemos que implemetar al usar la interface Comparable
     @Override
     public int compareTo(Pais o) {
         return  this.nombre.compareToIgnoreCase(o.nombre);
