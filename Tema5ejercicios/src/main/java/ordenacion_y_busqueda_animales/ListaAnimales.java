@@ -24,7 +24,7 @@ public class ListaAnimales {
 
     }
     
-    public static void orenacionCriterio (List<Animal>aux, Comparator<Animal> criterio){
+    public static void ordenacionCriterio (List<Animal>aux, Comparator<Animal> criterio){
     
      Collections.sort(aux, criterio);
     }
@@ -37,10 +37,10 @@ public class ListaAnimales {
         return posicion;
     }
 
-    public static int busquedaBinarySearchCriteriol(List<Animal> aux, Animal objetobuscar, Comparator<Animal>criterio) {
+    public static int busquedaBinarySearchCriterio(List<Animal> aux, Animal objetobuscar, Comparator<Animal>criterio) {
         int posicion = 0;
-        orenacionCriterio(aux, criterio);
-        posicion = Collections.binarySearch(aux, objetobuscar);
+        ordenacionCriterio(aux, criterio);
+        posicion = Collections.binarySearch(aux, objetobuscar, criterio);
 
         return posicion;
     }
@@ -85,7 +85,23 @@ public class ListaAnimales {
         
         System.out.println("****************************************************************");
         System.out.println("------ordeno Por criterio de Poblacion----------");
-
+        ordenacionCriterio(zoologico, criterioPoblacion);
+        imprimirLista(zoologico);
+        b1= new Animal();
+        b1.setPoblacion(30);
+        posicion= busquedaBinarySearchCriterio(zoologico, b1, criterioPoblacion);
+        System.out.println("El animal con la poblacion de 30 millones esta en la posicion  : "+posicion+" y es: " +zoologico.get(posicion));
+        
+        
+        System.out.println("**************************************************************");
+        System.out.println("ordeno por criterio de tipo y intento buscar uno que no este en la lista paara que me de posición negativa");
+         b1= new Animal();
+         b1.setTipo("Lagarto");
+         ordenacionCriterio(zoologico, criterioTipo);
+         imprimirLista(zoologico);
+         posicion=busquedaBinarySearchCriterio(zoologico, b1, criterioTipo);
+         System.out.println("El tipo lagarto se encuntra en la posición: " + posicion);
+        
     }
 
 }
