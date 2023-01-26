@@ -2,35 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package composicioclases;
+package teoria_composicio_clases_coche;
 
 /**
  *
  * @author nacho
  */
-public class Puerta {
+public class Ventana {
     
-    private Ventana ventana;
-    private boolean estado;
+    private boolean estado; // abierta o cerrada
 
-    public Puerta(Ventana ventana, boolean estado) {
-        this.ventana = ventana;
+    public Ventana(boolean estado) {
         this.estado = estado;
     }
 
-    public Ventana getVentana() {
-        return ventana;
-    }
-
-    public void setVentana(Ventana ventana) {
-        this.ventana = ventana;
-    }
-
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
-       public void abrir(){
+
+    
+    
+    public void abrir(){
     
     this.estado=true;
     }
@@ -44,9 +37,8 @@ public class Puerta {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Puerta{");
-        sb.append("ventana=").append(ventana);
-        sb.append(", estado=").append(estado);
+        sb.append("Ventana{");
+        sb.append("estado=").append(estado);
         sb.append('}');
         return sb.toString();
     }
