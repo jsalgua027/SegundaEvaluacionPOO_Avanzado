@@ -1,58 +1,60 @@
+package parteb;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package parte_A;
+
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import parteb.Soldado;
 
 /**
  *
- * @author Windows10
+ * @author nacho
  */
-public class Ejercito {
+public class EjercitoOrdenado {
+    
+    private SortedSet<Soldado> ejercitoOrdenado = new TreeSet<>();
 
-    private Set<Soldado> ejercito;
-
-    public Ejercito() {
-        this.ejercito = new HashSet<>();
+    public EjercitoOrdenado() {
+        
+        this.ejercitoOrdenado= new TreeSet<>();
     }
 
-    public Set<Soldado> getEjercito() {
-        return ejercito;
+    public SortedSet<Soldado> getEjercitoOrdenado() {
+        return ejercitoOrdenado;
     }
-    
-    
-    
 
-    // metodo para saber cuantos soldados
+    
+// metodo para saber cuantos soldados
     public int getNumeroSoldados() {
 
-        return this.ejercito.size();
+        return this.ejercitoOrdenado.size();
     }
 
     // metodo para añadir soldado
     public void añadirSoldado(Soldado s) {
 
-        this.ejercito.add(s);
+        this.ejercitoOrdenado.add(s);
     }
 // saber si el ejercito está vacio
 
     public boolean estaVacio() {
-        return this.ejercito.isEmpty();
+        return this.ejercitoOrdenado.isEmpty();
     }
 
     // buscar soldado
     public boolean buscarSoldado(Soldado aux) {
-        return this.ejercito.contains(aux);
+        return this.ejercitoOrdenado.contains(aux);
 
     }
 
     //sacar los soldados en forma de ArrayList
     public ArrayList<Soldado> devolverLista() {
-        ArrayList<Soldado> aux = new ArrayList<>(this.ejercito);
+        ArrayList<Soldado> aux = new ArrayList<>(this.ejercitoOrdenado);
 
         return aux;
 
@@ -61,8 +63,15 @@ public class Ejercito {
     // borrar soldado
     public String dematricularSoldado(String nif) {
 
-        return this.ejercito.remove(new Soldado(nif, " ", " ", " ", 0))
+        return this.ejercitoOrdenado.remove(new Soldado(nif, " ", " ", " ", 0))
                 ? "El soldado con el nif: " + nif + " ha sido borrado " : "No se puede borrar un soldado que no existe";
     }
 
+    
+    
+    
+    
+    
+    
+    
 }
