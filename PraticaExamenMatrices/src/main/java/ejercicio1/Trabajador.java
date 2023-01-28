@@ -5,12 +5,13 @@
 package ejercicio1;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
  * @author Windows10
  */
-public class Trabajador {
+public class Trabajador  implements Comparable<Trabajador>{
 
     private String nombre;
     private String apellidos;
@@ -54,6 +55,8 @@ public class Trabajador {
             return this.fechaNacimiento = fechaNacimiento;
         }
 
+        
+        
     }
 
     // metodo copia
@@ -98,6 +101,31 @@ public class Trabajador {
     public void setCategoriaE(CategoriaEmpleado categoriaE) {
         this.categoriaE = categoriaE;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Trabajador other = (Trabajador) obj;
+        return Objects.equals(this.nombre, other.nombre);
+    }
+    
+    
+    
 // metod para calcular sueldo
 
     public double calcularSueldo() {
@@ -116,7 +144,7 @@ public class Trabajador {
         return total;
     }
 
-    public LocalDate fechaJubilacion(Trabajador trabajador) {
+    public static LocalDate fechaJubilacion(Trabajador trabajador) {
         int edad;
         int anioParaJubilarse;// Para saber cuantos años le quedan para jubilarse
         int anioActual = LocalDate.now().getYear();
@@ -126,6 +154,7 @@ public class Trabajador {
         return fechaJubilacion;
     }
 
+   
     @Override
     public String toString() {
 //        StringBuilder sb = new StringBuilder();
@@ -139,19 +168,25 @@ public class Trabajador {
         
         String infoEmpleado=
                                           """
-                                           s%,s%         F.Nac: s%/s%/s%
-                                          Categoría: s%
-                                          Fecha Jubilación: s%
-                                          Sueldo actual: d%
+                                           %s,%s         F.Nac: %s/%s/%s
+                                          Categoría: %s
+                                          Fecha Jubilación: 
+                                          Sueldo actual: %s
                                           
                                          """.formatted(this.apellidos,this.nombre,this.fechaNacimiento.getDayOfMonth(),
                                                  this.fechaNacimiento.getMonthValue(),this.fechaNacimiento.getYear(),this.categoriaE,
-                                                 fechaJubilacion(Trabajador aux= new Trabajador(););
+                                                 this.calcularSueldo());
         
+       
         
-        
-        
+        return infoEmpleado;
     }
+
+    @Override
+    public int compareTo(Trabajador o) {
+     return  this.nombre.compareToIgnoreCase(o.nombre);
+    }
+    
     
     
     
