@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Windows10
  */
-public class prueba {
+public class PruebaLoteria {
 
   
   
