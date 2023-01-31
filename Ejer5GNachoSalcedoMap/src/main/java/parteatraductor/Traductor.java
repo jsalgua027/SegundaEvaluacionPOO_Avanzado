@@ -104,7 +104,7 @@ public class Traductor {
         Set<String> palabrasExtranjeras = this.traductor.keySet();
         return palabrasExtranjeras;
     }
-    //devulco lista de palabras españolas
+    //devuelvo lista de palabras españolas
     public Collection<String> listaDePalabrasEspaniolas() {
         Set<String> palabrasEspaniolas = new HashSet<>(this.traductor.values());
 

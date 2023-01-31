@@ -57,6 +57,18 @@ public class Ejercito {
 
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ejercito{");
+        sb.append("ejercito=").append(ejercito);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    
+    
+    
     // borrar soldado
     public String dematricularSoldado(String nif) {
 
