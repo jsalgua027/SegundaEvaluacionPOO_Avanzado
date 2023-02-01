@@ -170,11 +170,11 @@ public class Trabajador  implements Comparable<Trabajador>{
                                           """
                                            %s,%s         F.Nac: %s/%s/%s
                                           Categoría: %s
-                                          Fecha Jubilación: 
+                                          Fecha Jubilación: %s
                                           Sueldo actual: %s
                                           
                                          """.formatted(this.apellidos,this.nombre,this.fechaNacimiento.getDayOfMonth(),
-                                                 this.fechaNacimiento.getMonthValue(),this.fechaNacimiento.getYear(),this.categoriaE,
+                                                 this.fechaNacimiento.getMonthValue(),this.fechaNacimiento.getYear(),this.categoriaE,fechaJubilacion(this),
                                                  this.calcularSueldo());
         
        
