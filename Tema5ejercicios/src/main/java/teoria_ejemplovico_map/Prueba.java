@@ -7,6 +7,7 @@ package teoria_ejemplovico_map;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -54,7 +55,14 @@ public class Prueba {
         
         List<Integer> listaEdades= new ArrayList<>(nombreEdades.values());
         
+        //ejemplo iterador------ esta obsoleto 
         
+         Iterator<Integer> iterador= listaEdades.iterator();
+          while (iterador.hasNext()) {
+            Integer elemento = iterador.next();
+            
+        }
+         
         
        
     }
