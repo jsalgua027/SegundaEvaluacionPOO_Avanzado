@@ -83,6 +83,7 @@ int cantidad=0;
             }
              case 2 -> {
                 cantidad=2500;
+                
             }
              case 3 -> {
                   cantidad=1000;

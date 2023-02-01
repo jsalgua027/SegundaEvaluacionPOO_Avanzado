@@ -53,6 +53,9 @@ public class Prueba {
         List<String> palabrasEspa = diccionario.listaDePalabrasEspaniolas();
         palabrasEspa.forEach(System.out::println);
 
+        System.out.println("la palabra hello significa: " + diccionario.traducir("Hello"));   
+        
+        
     }
 
 }

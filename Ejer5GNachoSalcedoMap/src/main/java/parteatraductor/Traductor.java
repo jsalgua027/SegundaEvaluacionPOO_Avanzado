@@ -84,11 +84,12 @@ public class Traductor {
 
     }
 
+    
     // traducir
-    public void traducir(String extranjera) {
-
-        this.traductor.get(extranjera);
-
+    public  String  traducir(String extranjera) {
+    String resultado="";
+        resultado =this.traductor.get(extranjera);
+     return resultado;
     }
     
     // imprimir map
