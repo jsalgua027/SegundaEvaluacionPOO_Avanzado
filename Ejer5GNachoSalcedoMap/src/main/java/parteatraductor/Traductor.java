@@ -99,14 +99,14 @@ public class Traductor {
     }
 
     // devuelvo lista de palabras extranjeras
-    public Set<String> listaDePalabrasExtrangeras() {
+    public List<String> listaDePalabrasExtrangeras() {
 
-        Set<String> palabrasExtranjeras = this.traductor.keySet();
+        List<String> palabrasExtranjeras = new ArrayList <>(this.traductor.keySet());
         return palabrasExtranjeras;
     }
     //devuelvo lista de palabras españolas
-    public Collection<String> listaDePalabrasEspaniolas() {
-        Set<String> palabrasEspaniolas = new HashSet<>(this.traductor.values());
+    public List<String> listaDePalabrasEspaniolas() {
+        List<String> palabrasEspaniolas = new ArrayList<>(this.traductor.values());
 
         return palabrasEspaniolas;
     }

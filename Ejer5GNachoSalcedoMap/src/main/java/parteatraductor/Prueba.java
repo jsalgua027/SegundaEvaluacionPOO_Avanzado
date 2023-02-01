@@ -5,7 +5,7 @@
 package parteatraductor;
 
 import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
 /**
  *
@@ -46,11 +46,11 @@ public class Prueba {
         diccionario.imprimirMap();
 
         System.out.println("Paso las palabras extranjeras a la lista y las imprimo");
-        Set<String> palabrasExtranjeras = diccionario.listaDePalabrasExtrangeras();
+        List<String> palabrasExtranjeras = diccionario.listaDePalabrasExtrangeras();
         palabrasExtranjeras.forEach(System.out::println);
 
         System.out.println("Paso las palabras extranjeras a la lista y las imprimo");
-        Collection<String> palabrasEspa = diccionario.listaDePalabrasEspaniolas();
+        List<String> palabrasEspa = diccionario.listaDePalabrasEspaniolas();
         palabrasEspa.forEach(System.out::println);
 
     }
