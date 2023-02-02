@@ -4,7 +4,12 @@
  */
 package ejercicio1;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Objects;
 
 /**
@@ -187,8 +192,49 @@ public class Trabajador  implements Comparable<Trabajador>{
      return  this.nombre.compareToIgnoreCase(o.nombre);
     }
     
+    // metodo victoria  para cambiar los formatos de la fecha
+    
+//    public String toString() {
+//         Locale configLocal = Locale.getDefault();
+//         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+//
+//        String fechaFormatNacim= formato.format(fechaNacim);
+//
+//        //DEFAULT PORQUE SP NO TIENE,
+//         String configSistema = Locale.getDefault().getDisplayLanguage(Locale.getDefault());
+//
+//         Month fechaJubilaci =fechaJubilacion(this).getMonth();
+//
+//         DayOfWeek diaJubi= fechaJubilacion(this).getDayOfWeek();
+//
+//
+//
+//         fechaJubilaci.getDisplayName(TextStyle.FULL, configLocal);
+//
+//         String nuevaFechaJubilacionFormato= " "+ diaJubi.getDisplayName(TextStyle.FULL, configLocal)+ "," 
+//                 + fechaJubilacion(this).getDayOfMonth()
+//                 +  fechaJubilaci.getDisplayName(TextStyle.FULL, configLocal) 
+//                +" de " 
+//                 + fechaJubilacion(this).getYear();
+//
+//       return apellidos + ", " + nombre + "\tF.Nac: " + fechaFormatNacim + "\n" +
+//                "Categoría: " + categoria.getCategoria() + "\n" +
+//               //THIS se refiere al propio objeto de la clase
+//                "Fecha Jubilación: " +nuevaFechaJubilacionFormato + "\n" +
+//                "Sueldo actual: " + calcularSueldo(categoria);
+//
+//    }
+//    
+    /*
+    
+    mesActual.getDisplayName(TextStyle.FULL, configLocal)
+    Month mesActual = fechaHoy.getMonth();
+        System.out.println(mesActual);
+        System.out.println(mesActual.getDisplayName(TextStyle.FULL, configLocal));
     
     
+    
+    */
     
 
 }
