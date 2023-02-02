@@ -7,7 +7,7 @@ package ejercicio3;
 import ejercicio1.CategoriaEmpleado;
 import ejercicio1.Trabajador;
 import java.time.LocalDate;
-import paquete2.Empresa;
+import ejercicio2.Empresa;
 
 /**
  *
