@@ -70,7 +70,7 @@ public class Fechas {
         System.out.println("hoy "+ fechaHoy);
         System.out.println("despues de cien dias  " + fechaHoy.plusDays(100));
         System.out.println("hoy " + fechaHoy);// fijate como se queda fecha hoy igual por no meterlo en un objeto
-        LocalDate sumarMeses = fechaHoy.plusMonths(13);
+        LocalDate sumarMeses = fechaHoy.plusMonths(3);
         System.out.println("desoues de 13 meses: "+ sumarMeses);
         
         
@@ -110,7 +110,7 @@ public class Fechas {
         DateTimeFormatter formatoFechas= DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String fechaFormateada = fechaHoy.format(formatoFechas);
         System.out.println("Fecga formateada "+ fechaFormateada);
-
+          
     }
     
 }

@@ -21,12 +21,12 @@ public class Trabajador  implements Comparable<Trabajador>{
     public Trabajador() {
     }
 
-    public Trabajador(String nombre, String apellidos, LocalDate fechaNacimiento, CategoriaEmpleado categoriaE) {
+    public Trabajador(String nombre, String apellidos, LocalDate fechaNacimiento, CategoriaEmpleado categoriaE){
         this.nombre = nombre;
         this.apellidos = apellidos;
         try {
             this.fechaNacimiento = calcularEdad(fechaNacimiento);
-        } catch (IllegalAccessException e) {
+        } catch (IllegalArgumentException iae) {
             System.out.println("La edad del trabajador incumple la normativa");
         }
 
@@ -44,11 +44,11 @@ public class Trabajador  implements Comparable<Trabajador>{
     }
 
     // metodo para controlar la edad  y si falla que me salte la excepcion
-    public LocalDate calcularEdad(LocalDate fechaNacimiento) throws IllegalAccessException {
+    public LocalDate calcularEdad(LocalDate fechaNacimiento) {
         LocalDate hoy = LocalDate.now();
         int anioNacimiento = fechaNacimiento.getYear();
         int anioActual = hoy.getYear();
-        if (anioActual - anioNacimiento <= 0) {
+        if (anioActual - anioNacimiento <= 16) {
             throw new IllegalArgumentException();
         } else {
 

@@ -19,6 +19,8 @@ public class Prueba {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+      //  Trabajador menor = new Trabajador("menor", "menor", LocalDate.of(2019, 1, 1), CategoriaEmpleado.MEDIA);
+        
         //creo empresas
         Empresa empresaA = new Empresa("empresaA", "12345");
         Empresa empresaB = new Empresa("empresaB", "6789");
