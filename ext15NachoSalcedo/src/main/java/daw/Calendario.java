@@ -4,6 +4,9 @@
  */
 package daw;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 /**
  *
  * @author nacho
@@ -58,7 +61,44 @@ public class Calendario {
     }
     
     
+    public  void  rellenarCalendario (int mes, int anio){
+       
+        int dias=1;
+        for (int i = 0; i < this.calendario.length; i++) {
+            for (int j = 0; j < this.calendario[i].length; j++) {
+                
+              this.calendario[i][j]=dias;
+              dias++;
+            }
+            
+        }
     
     
+ 
     
-}
+    }
+    
+      public   void imprimirMatriz() {
+          
+          for (int i = 0; i < this.calendario.length; i++) {
+              for (int j = 0; j < this.calendario[i].length; j++) {
+                  System.out.print(this.calendario[i][j]);
+              }
+              System.out.println(" ");
+          }
+         
+        }
+
+      //metodo para saber que dia de la semana es 
+      public  static String diaSemana( int dia , Calendario aux){
+          String stringAux="";
+      
+      
+       return stringAux;
+      }
+      
+      
+      
+      
+    }
+

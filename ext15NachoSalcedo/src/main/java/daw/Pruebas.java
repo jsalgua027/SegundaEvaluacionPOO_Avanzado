@@ -9,9 +9,19 @@ package daw;
  *
  * @author nacho
  */
-public class Ext15NachoSalcedo {
+
+
+public class Pruebas {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+      Calendario p = new Calendario(2, 3);
+      
+      p.rellenarCalendario(2, 3);
+      
+      p.imprimirMatriz();
+    
+      
+      
+      
     }
 }
