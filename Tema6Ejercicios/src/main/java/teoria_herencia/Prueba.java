@@ -15,10 +15,10 @@ public class Prueba {
      */
     public static void main(String[] args) {
         
-        Turismo t1 = new Turismo(5, true, 45464645L, "DAF454", "Seat", "Ibiza", "Blanco", 12500.2, true);
-        
+        Turismo t1 = new Turismo(5, true, 45464645L, "DAF454", "Seat", "Ibiza", "Blanco", 25000, true);
+        Deportivo d1 = new Deportivo(3000, 548646548L, "4598GG", "Ferrari", "430D", "Rojo", 100000, true);
        
-
+        Furgoneta f1 = new Furgoneta(3000, 250, 132213546L,"456LL", "Renault", "Cangoo", "Blue", 10000, true);
         
         
     }
