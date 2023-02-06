@@ -38,6 +38,20 @@ public class PruebaPila {
         aux.push(st5);
         aux.push(st6);
         
+        canciones.push(c1);
+        canciones.push(c2);
+        canciones.push(c3);
+        canciones.push(c4);
+        canciones.push(c5);
+        canciones.push(c6);
+        System.out.println("******************canciones******");
+        canciones.mostrarElementosSegunSalida();
+        System.out.println("*******************Strings********");
+        aux.mostrarElementosSegunSalida();
+        
+        
+        
+        
         
     }
     

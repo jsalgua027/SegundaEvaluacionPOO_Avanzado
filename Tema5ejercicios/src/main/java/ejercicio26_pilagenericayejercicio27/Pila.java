@@ -83,7 +83,7 @@ public class Pila<T> {
     public void mostrarElementosSegunSalida() {
 
         for (int i = this.pila.size() - 1; i >= 0; i--) {
-            System.out.print(this.pila.get(i));
+            System.out.print(" "+this.pila.get(i));
 
         }
 
