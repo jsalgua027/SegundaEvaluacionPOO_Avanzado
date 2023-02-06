@@ -20,6 +20,8 @@ public class Prueba {
        
         Furgoneta f1 = new Furgoneta(3000, 250, 132213546L,"456LL", "Renault", "Cangoo", "Blue", 10000, true);
         
+          System.out.println("El turismo es: "+t1.toString() );
+        
         
     }
     
