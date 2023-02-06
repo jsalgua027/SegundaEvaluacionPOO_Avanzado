@@ -14,8 +14,8 @@ public class PruebaPila {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pila<String> aux= new Pila<>();
-        Pila<Cancion> canciones = new Pila<>();
+        Pila<String> aux= new Pila<>(6);
+        Pila<Cancion> canciones = new Pila<>(6);
         
         String st1="hola";
         String st2="adios";

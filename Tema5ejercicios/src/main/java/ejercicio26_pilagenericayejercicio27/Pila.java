@@ -15,9 +15,11 @@ import java.util.List;
 public class Pila<T> {
 
     private List<T> pila;
+    private int tamanioMax;
 
 // constructo generico
-    public Pila() {
+    public Pila(int tamanio) {
+        this.tamanioMax= tamanio;
         this.pila = new ArrayList<>();
     }
 
@@ -29,15 +31,33 @@ public class Pila<T> {
         this.pila = pila;
     }
 
+    public int getTamanioMax() {
+        return tamanioMax;
+    }
+
+    public void setTamanioMax(int tamanioMax) {
+        this.tamanioMax = tamanioMax;
+    }
+    
+    
+
     // metodo push
     public void push(T aux) {
-        this.pila.add(aux);
+        
+        if (this.pila.size()<this.tamanioMax){
+          this.pila.add(aux);
+        }
+      
 
     }
 
     //metedo pop
     public void pop(T aux) {
-        this.pila.remove(this.pila.size() - 1);
+        boolean noVacia=!this.pila.isEmpty();
+        if(noVacia){
+          this.pila.remove(this.pila.size() - 1);
+        }
+      
 
     }
 
@@ -49,7 +69,7 @@ public class Pila<T> {
 
     // esta llena 
     public boolean estaLlena() {
-        return this.pila.isEmpty();
+        return this.pila.size()== this.tamanioMax;
 
     }
     // cuantos elementos
