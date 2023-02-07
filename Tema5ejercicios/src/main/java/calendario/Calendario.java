@@ -18,17 +18,19 @@ public class Calendario {
     private int anio;
 
     public Calendario(int mes, int anio) {
-        this.calendario = new int[6][7];
+        this.calendario =rellenarCalendario(mes, anio);
         this.mes = mes;
         this.anio = anio;
     }
 
-    public static void rellenarCalenadrio(int mes, int anio) {
-        int numeroCalendario = 1;
-        LocalDate fechaAux = LocalDate.of(mes, anio, 1);
+    public static int[][] rellenarCalendario(int mes, int anio) {
+      
+        
+        LocalDate fechaAux = LocalDate.of(anio, mes, 1);
         DayOfWeek diaSemana = fechaAux.getDayOfWeek();
         int dia = diaSemana.getValue();
         int[][] calendarioAux = new int[6][7];
+          int numeroCalendario = 1;
         for (int i = 0; i < calendarioAux.length; i++) {
 
             if (i == 0) {
@@ -47,8 +49,19 @@ public class Calendario {
             }
 
         }
-
+            return calendarioAux;
     }
+    
+        public  static  void imprimirMatriz(Calendario aux) {
+          
+          for (int i = 0; i < aux.calendario.length; i++) {
+              for (int j = 0; j < aux.calendario[i].length; j++) {
+                  System.out.print(aux.calendario[i][j]);
+              }
+              System.out.println(" ");
+          }
+         
+        }
 
     public int[][] getCalendario() {
         return calendario;
