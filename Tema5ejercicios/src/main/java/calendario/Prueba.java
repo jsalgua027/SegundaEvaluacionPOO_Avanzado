@@ -13,30 +13,18 @@ public class Prueba {
     /**
      * @param args the command line arguments
      */
-    public  static  void imprimirMatrizAux(int[][] aux) {
-          
-          for (int i = 0; i < aux.length; i++) {
-              for (int j = 0; j < aux[i].length; j++) {
-                  System.out.print(aux[i][j]);
-              }
-              System.out.println(" ");
-          }
-         
-        }
-    
-    
     public static void main(String[] args) {
-    Calendario aux = new Calendario(1, 2023);
-    
-    Calendario.imprimirMatriz(aux);
-    
-        System.out.println("****************************************************");
-    
-    int[][] ca= Calendario.rellenarCalendario(1, 2023);
-        imprimirMatrizAux(ca);
-    
-     
-    
+
+        Calendario c = new Calendario(1981, 9);
+        c.imprimir();
+     System.out.println(Calendario.diaSemana(15, c));
+
+        Calendario[] aux = Calendario.calendarioAnual(2023);
+        for (Calendario aux1 : aux) {
+            aux1.imprimir();
+            System.out.println("");
+        }
+
     }
-    
+
 }
