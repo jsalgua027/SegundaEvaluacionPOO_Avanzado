@@ -28,7 +28,7 @@ public class Calendario {
         
         LocalDate fechaAux = LocalDate.of(anio, mes, 1);
         DayOfWeek diaSemana = fechaAux.getDayOfWeek();
-        int dia = diaSemana.getValue();
+        int dia = diaSemana.getValue()-1;
         int[][] calendarioAux = new int[6][7];
           int numeroCalendario = 1;
         for (int i = 0; i < calendarioAux.length; i++) {
@@ -38,14 +38,14 @@ public class Calendario {
                     calendarioAux[i][j] = numeroCalendario;
                     numeroCalendario++;
                 }
-                if (i > 0) {
+            }else  {               
                     for (int j = 0; j < calendarioAux[i].length; j++) {
 
                         calendarioAux[i][j] = numeroCalendario;
                         numeroCalendario++;
                     }
 
-                }
+                
             }
 
         }
