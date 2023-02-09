@@ -1,0 +1,54 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ejercicio1_casa;
+
+/**
+ *
+ * @author Windows10
+ */
+public class Ventana extends Casa{
+    private boolean estadoVentana; // true cerrada
+
+    public Ventana(boolean estadoVentana, int numPlantas, double metrosCuadrados) {
+        super(numPlantas, metrosCuadrados);
+        this.estadoVentana = estadoVentana;
+    }
+
+    public Ventana() {
+    }
+
+    public boolean isEstadoVentana() {
+        return estadoVentana;
+    }
+
+    public void setEstadoVentana(boolean estadoVentana) {
+        this.estadoVentana = estadoVentana;
+    }
+    
+    // abrir ventana
+    public void abrirVentana(){
+    
+    this.estadoVentana=false;
+    }
+    
+    // cerra ventana
+      public void cerrarVentana(){
+    
+    this.estadoVentana=true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+         sb.append(super.toString());
+        sb.append("Ventana{");
+        sb.append("La ventana está=").append(estadoVentana);
+        sb.append('}');
+        return sb.toString();
+    }
+    
+      
+      
+}

@@ -1,0 +1,73 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ejercicio1_casa;
+
+/**
+ *
+ * @author Windows10
+ */
+public class Calefactor extends Casa{
+    
+    private int temperatura;
+    private boolean estadoCalefactor; // true encendido
+
+    public Calefactor(int temperatura, boolean estadoCalefactor, int numPlantas, double metrosCuadrados) {
+        super(numPlantas, metrosCuadrados);
+        this.temperatura = temperatura;
+        this.estadoCalefactor = estadoCalefactor;
+    }
+
+    public Calefactor() {
+    }
+
+    public int getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(int temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public boolean isEstadoCalefactor() {
+        return estadoCalefactor;
+    }
+
+    public void setEstadoCalefactor(boolean estadoCalefactor) {
+        this.estadoCalefactor = estadoCalefactor;
+    }
+
+    public void encenderCalefactor(){
+    
+    this.estadoCalefactor=true;
+    
+    }
+    
+     public void borrarCalefactor(){
+    
+    this.estadoCalefactor=false;
+    
+    }
+    
+    public void fijarTemperatura(int tempe){
+    
+    this.temperatura=tempe;
+    }
+    
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+           sb.append(super.toString());
+        sb.append("Calefactor{");
+        sb.append("temperatura=").append(temperatura);
+        sb.append(", el calefactor está =").append(estadoCalefactor);
+        sb.append('}');
+        return sb.toString();
+    }
+    
+    
+    
+    
+}
