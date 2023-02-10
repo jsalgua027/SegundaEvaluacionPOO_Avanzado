@@ -19,6 +19,25 @@ public class Vehiculo {
     private String color;
     private double tarifa;
     private boolean disponible;
+    
+    
+    public void arrancar(){
+    
+        System.out.println("El vehiculo"+this.bastidor+" esta arracado");
+    
+    }
+    
+    
+     public void parar(){
+    
+        System.out.println("El vehiculo"+this.bastidor+" esta parado");
+    
+    }
+
+    public Vehiculo() {
+    }
+    
+     
 
     public Vehiculo(Long bastidor, String matricula, String marca, String modelo, String color, double tarifa, boolean disponible) {
         this.bastidor = bastidor;
