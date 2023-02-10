@@ -10,13 +10,13 @@ import java.util.Objects;
  *
  * @author Windows10
  */
-public class Puerta extends Casa{
+public class Puerta {
     
     private String color;
     private boolean estadoPuerta;//tue cerrada; false abierta
 
-    public Puerta(String color, boolean estado, int numPlantas, double metrosCuadrados) {
-        super(numPlantas, metrosCuadrados);
+    public Puerta(String color, boolean estado) {
+       
         this.color = color;
         this.estadoPuerta = estado;
     }
@@ -53,7 +53,7 @@ public class Puerta extends Casa{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-         sb.append(super.toString());
+    
         sb.append("Puerta{");
         sb.append("color=").append(color);
         sb.append(", la puerta está=").append(estadoPuerta);

@@ -8,11 +8,11 @@ package ejercicio1_casa;
  *
  * @author Windows10
  */
-public class Ventana extends Casa{
+public class Ventana {
     private boolean estadoVentana; // true cerrada
 
-    public Ventana(boolean estadoVentana, int numPlantas, double metrosCuadrados) {
-        super(numPlantas, metrosCuadrados);
+    public Ventana(boolean estadoVentana) {
+        
         this.estadoVentana = estadoVentana;
     }
 
@@ -42,7 +42,7 @@ public class Ventana extends Casa{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-         sb.append(super.toString());
+   
         sb.append("Ventana{");
         sb.append("La ventana está=").append(estadoVentana);
         sb.append('}');

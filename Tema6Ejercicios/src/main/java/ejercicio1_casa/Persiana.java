@@ -8,12 +8,12 @@ package ejercicio1_casa;
  *
  * @author Windows10
  */
-public class Persiana extends Ventana {
+public class Persiana  {
 
     private boolean estadoPersiana;//true cerrada
 
-    public Persiana(boolean estadoPersiana, boolean estadoVentana, int numPlantas, double metrosCuadrados) {
-        super(estadoVentana, numPlantas, metrosCuadrados);
+    public Persiana(boolean estadoPersiana) {
+       
         this.estadoPersiana = estadoPersiana;
     }
 

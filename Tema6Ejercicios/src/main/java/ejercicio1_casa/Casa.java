@@ -4,6 +4,10 @@
  */
 package ejercicio1_casa;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 /**
  *
  * @author Windows10
@@ -12,13 +16,21 @@ public class Casa {
     
     private  int numPlantas ;
     private double metrosCuadrados;
+    private List<Ventana> listaVentana;
+    private List<Puerta> listaPuertas;
+    private List<Calefactor> listaCalefacto;
 
+    public Casa() {
+    }
+
+    
+    
     public Casa(int numPlantas, double metrosCuadrados) {
         this.numPlantas = numPlantas;
         this.metrosCuadrados = metrosCuadrados;
-    }
-
-    public Casa() {
+        this.listaVentana = new ArrayList<>();
+        this.listaPuertas = new ArrayList<>();;
+        this.listaCalefacto = new ArrayList<>();
     }
 
     public int getNumPlantas() {
@@ -37,12 +49,39 @@ public class Casa {
         this.metrosCuadrados = metrosCuadrados;
     }
 
+    public List<Ventana> getListaVentana() {
+        return listaVentana;
+    }
+
+    public void setListaVentana(List<Ventana> listaVentana) {
+        this.listaVentana = listaVentana;
+    }
+
+    public List<Puerta> getListaPuertas() {
+        return listaPuertas;
+    }
+
+    public void setListaPuertas(List<Puerta> listaPuertas) {
+        this.listaPuertas = listaPuertas;
+    }
+
+    public List<Calefactor> getListaCalefacto() {
+        return listaCalefacto;
+    }
+
+    public void setListaCalefacto(List<Calefactor> listaCalefacto) {
+        this.listaCalefacto = listaCalefacto;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Casa{");
         sb.append("numPlantas=").append(numPlantas);
         sb.append(", metrosCuadrados=").append(metrosCuadrados);
+        sb.append(", listaVentana=").append(listaVentana);
+        sb.append(", listaPuertas=").append(listaPuertas);
+        sb.append(", listaCalefacto=").append(listaCalefacto);
         sb.append('}');
         return sb.toString();
     }
@@ -50,8 +89,11 @@ public class Casa {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + this.numPlantas;
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.metrosCuadrados) ^ (Double.doubleToLongBits(this.metrosCuadrados) >>> 32));
+        hash = 79 * hash + this.numPlantas;
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.metrosCuadrados) ^ (Double.doubleToLongBits(this.metrosCuadrados) >>> 32));
+        hash = 79 * hash + Objects.hashCode(this.listaVentana);
+        hash = 79 * hash + Objects.hashCode(this.listaPuertas);
+        hash = 79 * hash + Objects.hashCode(this.listaCalefacto);
         return hash;
     }
 
@@ -69,8 +111,7 @@ public class Casa {
         final Casa other = (Casa) obj;
         return Double.doubleToLongBits(this.metrosCuadrados) == Double.doubleToLongBits(other.metrosCuadrados);
     }
-    
-    
-    
+
+   
     
 }
