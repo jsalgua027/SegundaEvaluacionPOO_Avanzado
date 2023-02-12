@@ -15,30 +15,44 @@ public class DecimalABinario {
     /**
      * @param args the command line arguments
      */
+    public static void binarioRecursivo(int n){
+    int conversion;
     
-    public static void decimalBinarioIteractivo(int n){
-        ArrayList<Integer> fibo = new ArrayList<>();
+    if(n<=1){
+        System.out.print(n);
+        return ;
+    }
+    conversion=n%2;
+        binarioRecursivo(n>>1);
+        System.out.print(conversion);
+                
+    
+    }
+    
+    
+    public static void  decimalBinarioIteractivo(int n){
+        ArrayList<Integer> bina = new ArrayList<>();
         
-        for (int i = 0; i < n; i++) {
-            if(n>2){
-            
-            fibo.add(n%2);
-            }else{
-            
+        while (n>=2) {
+            bina.add(n%2);
             n/=2;
-            
-            }
-            
         }
+    bina.add(n%2);
     
-    
-    
+        for (int i = bina.size()-1; i < 0; i--) {
+            System.out.println(bina.get(i));
+        }
     
     }
     
     
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("binario Recursivo");
+       
+        binarioRecursivo(10);
+        System.out.println("");
+           System.out.println("binario Iteractivo");
+        decimalBinarioIteractivo(10);
     }
     
 }
