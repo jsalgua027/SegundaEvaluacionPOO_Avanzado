@@ -72,5 +72,10 @@ public class Electrico extends Vehiculo{
         System.out.println("Soy un vehículo electrico "+ this.getBastidor()+ " y voy a arrancar");
     
     }
+
+    @Override
+    public void parar() {
+       System.out.println("Soy un vehículo electrico "+ this.getBastidor()+ " y voy a parar");
+    }
     
 }

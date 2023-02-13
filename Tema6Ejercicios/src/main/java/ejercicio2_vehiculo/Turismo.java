@@ -46,6 +46,16 @@ public class Turismo extends Vehiculo {
         return sb.toString();
     }
 
+    @Override
+    public void arrancar() {
+         System.out.println("El Turismo "+super.getBastidor()+" esta arracado");
+    }
+
+    @Override
+    public void parar() {
+        System.out.println("El turismo "+super.getBastidor()+" esta parada");
+    }
+
 }
 
 

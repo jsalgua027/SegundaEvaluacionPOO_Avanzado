@@ -17,8 +17,8 @@ public class Prueba {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        Vehiculo v1 = new Vehiculo(9679463L, "789769r", "Fiat", "UNO", "Rojo", 12000, true);
+      // Al tranforma vehiculo en abstracta ya no podemos hacer un new Vehiculo
+      //  Vehiculo v1 = new Vehiculo(9679463L, "789769r", "Fiat", "UNO", "Rojo", 12000, true);
 
         Turismo t1 = new Turismo(5, true, 45464645L, "DAF454", "Seat", "Ibiza", "Blanco", 25000, true);
         Deportivo d1 = new Deportivo(3000, 548646548L, "4598GG", "Ferrari", "430D", "Rojo", 100000, true);
@@ -37,7 +37,7 @@ public class Prueba {
 //        c1.arrancar();
 
         List<Vehiculo> lista = new ArrayList<>();
-        lista.add(v1);
+    //lista.add(v1);
         lista.add(e1);
         // las siguientes lineas son conversiones  implicitas
         lista.add(c1);

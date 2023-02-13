@@ -56,6 +56,16 @@ public void repostar(){
     System.out.println("El vehiculo "+ this.getMatricula()+ "esta repostando");
 
 }
+
+    @Override
+    public void arrancar() {
+         System.out.println("El Vehiculo de  combustión "+super.getBastidor()+" está arracado");
+    }
+
+    @Override
+    public void parar() {
+         System.out.println("El Vehiculo de  combustión "+super.getBastidor()+" está  apagado");
+    }
   
     
     

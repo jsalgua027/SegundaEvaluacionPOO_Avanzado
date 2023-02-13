@@ -35,6 +35,16 @@ public class Deportivo  extends Vehiculo{
         return sb.toString();
     }
 
+    @Override
+    public void arrancar() {
+      System.out.println("El Deportivo"+super.getBastidor()+" esta arracado");
+    }
+
+    @Override
+    public void parar() {
+         System.out.println("El Deportivo"+super.getBastidor()+" esta apagado");
+    }
+
     
     
     

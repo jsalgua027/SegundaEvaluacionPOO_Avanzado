@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author nacho
  */
-public class Vehiculo {
+public abstract class  Vehiculo {
 
     private Long bastidor;
     private String matricula;
@@ -21,18 +21,17 @@ public class Vehiculo {
     private boolean disponible;
     
     
-    public void arrancar(){
+    public  abstract  void arrancar();
     
-        System.out.println("El vehiculo"+this.bastidor+" esta arracado");
-    
-    }
+      //  System.out.println("El vehiculo"+this.bastidor+" esta arracado");
     
     
-     public void parar(){
     
-        System.out.println("El vehiculo"+this.bastidor+" esta parado");
     
-    }
+     public  abstract void parar();
+      //  System.out.println("El vehiculo"+this.bastidor+" esta parado");
+    
+    
 
     public Vehiculo() {
     }

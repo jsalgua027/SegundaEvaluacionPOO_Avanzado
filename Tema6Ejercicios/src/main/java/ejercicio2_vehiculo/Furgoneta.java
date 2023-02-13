@@ -48,6 +48,16 @@ private int volumen;
         return sb.toString();
     }
 
+    @Override
+    public void arrancar() {
+         System.out.println("La Furgoneta S"+super.getBastidor()+" esta arracado");
+    }
+
+    @Override
+    public void parar() {
+        System.out.println("La Furgoneta S"+super.getBastidor()+" esta parada");
+    }
+
 
     
 }
