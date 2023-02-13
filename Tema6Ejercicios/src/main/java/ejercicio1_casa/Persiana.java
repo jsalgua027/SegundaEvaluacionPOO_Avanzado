@@ -24,9 +24,7 @@ public class Persiana  {
         return estadoPersiana;
     }
 
-    public void setEstadoPersiana(boolean estadoPersiana) {
-        this.estadoPersiana = estadoPersiana;
-    }
+    
 
     public void abrirPersiana() {
 

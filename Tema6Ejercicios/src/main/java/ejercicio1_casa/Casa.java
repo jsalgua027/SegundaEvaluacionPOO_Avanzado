@@ -23,11 +23,11 @@ public class Casa {
     public Casa() {
     }
 
-    public Casa(int numPlantas, double metrosCuadrados) {
+    public Casa(int numPlantas, double metrosCuadrados, Puerta puerta) {
         this.numPlantas = numPlantas;
         this.metrosCuadrados = metrosCuadrados;
         this.listaVentana = new ArrayList<>();
-        this.puerta = new Puerta();
+        this.puerta = puerta;
         this.listaCalefacto = new ArrayList<>();
     }
 

@@ -23,9 +23,7 @@ public class Ventana {
         return estadoVentana;
     }
 
-    public void setEstadoVentana(boolean estadoVentana) {
-        this.estadoVentana = estadoVentana;
-    }
+   
     
     // abrir ventana
     public void abrirVentana(){

@@ -12,7 +12,7 @@ public class Corredera extends Ventana {
     
     private int rieles;
     private Persiana persiana;
-    private boolean estado;
+   
 
     public Corredera() {
     }
@@ -21,7 +21,7 @@ public class Corredera extends Ventana {
         super(estadoVentana);
         this.rieles = rieles;
         this.persiana = persiana;
-        this.estado= apertura;
+       
     }
 
     public int getRieles() {
@@ -40,13 +40,7 @@ public class Corredera extends Ventana {
         this.persiana = persiana;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
+    
 
     
     
@@ -64,19 +58,6 @@ public class Corredera extends Ventana {
     
     
    
-    @Override
-    public void abrirVentana(){
-    
-    this.estado=false;
-    }
-    
-    // cerra ventana
-    @Override
-      public void cerrarVentana(){
-    
-    this.estado=true;
-    }
-
     
     
 }
