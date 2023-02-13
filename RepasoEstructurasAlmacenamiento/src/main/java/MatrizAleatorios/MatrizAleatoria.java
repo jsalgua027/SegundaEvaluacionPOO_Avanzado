@@ -29,7 +29,7 @@ public class MatrizAleatoria {
     }
 
     public static int[][] rellenarMatriz(int numero) {
-        double valorMaximo=(double) Math.pow(numero, 2);
+        double valorMaximo= Math.pow(numero, 2);
         int[][] aux = new int[numero][numero];
         Set<Integer> generados = new HashSet<>();
         for (int i = 0; i < aux.length; i++) {
