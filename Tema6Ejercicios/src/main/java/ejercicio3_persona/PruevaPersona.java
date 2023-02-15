@@ -21,7 +21,7 @@ public class PruevaPersona {
       pro1.aumentarSalario(1000);
       // desde la clase Persona no puedo acceder a subir salario
       
-    
+      
         System.out.println(  p1.toString());
         System.out.println(  e1.toString());
         System.out.println(  pro1.toString());
