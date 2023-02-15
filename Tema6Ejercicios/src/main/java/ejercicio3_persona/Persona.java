@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author Windows10
  */
-public class Persona {
+public class Persona  implements Comparable<Persona>{
     
     private String nombre;
     private String nif;
@@ -82,6 +82,11 @@ public class Persona {
         }
         final Persona other = (Persona) obj;
         return Objects.equals(this.nif, other.nif);
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+       return this.nif.compareToIgnoreCase(o.nif);
     }
     
     
