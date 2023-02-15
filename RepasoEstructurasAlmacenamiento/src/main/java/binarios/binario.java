@@ -79,7 +79,7 @@ public class binario {
     int[][] matriz = generarMatriz(5, 5);
         imprimirMatriz(matriz);
         busquedaBinaria(matriz);
-
+        System.out.println("Matriz de prueba");
         int[][] prueba
                 = {
                     {0, 1, 0, 1, 0},
