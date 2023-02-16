@@ -9,7 +9,7 @@ package ejercicio3_persona;
  * @author nacho
  */
 public class Jardinero extends Empleado {
-    
+
     private int antiguedad;
 
     public Jardinero() {
@@ -31,18 +31,25 @@ public class Jardinero extends Empleado {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-          sb.append(super.toString());
+        sb.append(super.toString());
         sb.append("Jardinero{");
         sb.append("antiguedad=").append(antiguedad);
         sb.append('}');
         return sb.toString();
     }
-    
-    
-    public int compareTo(Jardinero o) {
-       return Integer.compare(antiguedad, o.getAntiguedad());
+
+    @Override
+    public int compareTo(Persona o) {
+//        Jardinero a = (Jardinero)o;
+//      return Integer.compare(antiguedad, a.getAntiguedad());
+
+        if (o instanceof Jardinero) {
+
+            return Integer.compare(this.antiguedad, ((Jardinero) o).getAntiguedad());
+        }
+
+        return -1;
+
     }
-    
-    
-    
+
 }

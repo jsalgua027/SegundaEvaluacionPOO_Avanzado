@@ -15,7 +15,7 @@ public class PruevaPersona {
      */
     public static void main(String[] args) {
       Persona p1 = new Persona("Nacho", "12345F", 23);
-      Empleado e1 = new Empleado(1200, "Pepe", "345L", 25);
+    //  Empleado e1 = new Empleado(1200, "Pepe", "345L", 25);
       Programador pro1 = new Programador(CategoriaProgamador.JUNIOR, 3500, "Ana", "1111H", 18);
       // desde la clase programador puedo acceder al metodo subir salario
       pro1.aumentarSalario(1000);
@@ -23,7 +23,7 @@ public class PruevaPersona {
       
       
         System.out.println(  p1.toString());
-        System.out.println(  e1.toString());
+    //    System.out.println(  e1.toString());
         System.out.println(  pro1.toString());
       
     }

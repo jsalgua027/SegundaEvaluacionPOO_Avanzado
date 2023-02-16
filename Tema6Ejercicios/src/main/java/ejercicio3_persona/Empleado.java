@@ -8,7 +8,7 @@ package ejercicio3_persona;
  *
  * @author Windows10
  */
-public class Empleado extends Persona {
+public   abstract class  Empleado extends Persona {
     
     private double salario;
 
@@ -38,11 +38,10 @@ public class Empleado extends Persona {
         return sb.toString();
     }
     // metodo aumentar salario
-    public void aumentarSalario (double cantidad){
-    double aux= Math.abs(cantidad);
-    this.salario=this.salario+aux;
+    public abstract void aumentarSalario (double cantidad);
+   
     
-    }
+    
     
     
     
