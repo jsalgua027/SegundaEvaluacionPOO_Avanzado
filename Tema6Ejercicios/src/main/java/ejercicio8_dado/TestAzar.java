@@ -17,28 +17,23 @@ public class TestAzar {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      List<Azar> objetosAzar = new ArrayList<>();
-      
-      // como Azar asbtracta no se puede hace new Azar
-      
-      objetosAzar.add(new Moneda()); // conversion implicita
-      objetosAzar.add(new Dado(6)); // conversion implicita
-      
-      
-      
+        List<Azar> objetosAzar = new ArrayList<>();
+
+        // como Azar asbtracta no se puede hace new Azar
+        objetosAzar.add(new Moneda()); // conversion implicita
+        objetosAzar.add(new Dado(6)); // conversion implicita
+
         for (Azar a : objetosAzar) {
-            
-            System.out.println("Lanzamiento "+ a.lanzar());
+
+            System.out.println("Lanzamiento " + a.lanzar());
             // variable eres un dado
-            if(a instanceof Dado){
-            ((Dado)a).metodoDado();// conversion explicita
-            
+            if (a instanceof Dado) {
+                ((Dado) a).metodoDado();// conversion explicita
+
             }
-            
+
         }
-      
-      
-      
+
     }
 
 }
