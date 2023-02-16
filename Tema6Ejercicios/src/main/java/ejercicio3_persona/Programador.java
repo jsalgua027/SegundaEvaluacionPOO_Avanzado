@@ -39,7 +39,14 @@ public class Programador extends Empleado {
     }
     
     
-    
+     @Override
+    public void aumentarSalario(double cantidad) {
+       double can= Math.abs(cantidad*0.4);
+       
+       this.setSalario(this.getSalario()+can);
+       
+    }
+
     
     
 }

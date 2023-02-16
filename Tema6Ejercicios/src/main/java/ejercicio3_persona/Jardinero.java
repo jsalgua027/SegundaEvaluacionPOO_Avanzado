@@ -52,4 +52,12 @@ public class Jardinero extends Empleado {
 
     }
 
+    @Override
+    public void aumentarSalario(double cantidad) {
+       double can= Math.abs(cantidad*0.6);
+       
+       this.setSalario(this.getSalario()+can);
+       
+    }
+
 }
