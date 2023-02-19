@@ -21,7 +21,7 @@ public class Test {
             Character[][] matriz = UtilesLaberinto.generadorLaberinto(numero);
             UtilesLaberinto.imprimirMatirz(matriz);
 
-            System.out.println("***********Genero la Matrix de casillas*****************");
+            System.out.println("***********Genero la Matriz de casillas*****************");
 
             Casilla[][] casillas = UtilesLaberinto.generadorLaberintoCasillas(matriz);
             UtilesLaberinto.imprimirMatirzCasillas(casillas);

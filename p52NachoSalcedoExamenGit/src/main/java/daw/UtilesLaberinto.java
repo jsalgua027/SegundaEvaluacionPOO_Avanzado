@@ -35,30 +35,32 @@ public class UtilesLaberinto {
 
     // divide y venceras!!!! 
     public static char letrasAleatorias() {
-
-        int numAleatorio = ale.nextInt(1, 3);
-        char letra = '.';
-        switch (numAleatorio) {
-            case 1 -> {
-                letra = 'b';
-            }
-
-            case 2 -> {
-                letra = 'c';
-            }
-            default -> {
-            }
-
-        }
-
-        return letra;
+            boolean aleatorio= ale.nextBoolean();
+            
+            return aleatorio?'b':'c';
+//        int numAleatorio = ale.nextInt(1, 3);
+//        char letra = '.';
+//        switch (numAleatorio) {
+//            case 1 -> {
+//                letra = 'b';
+//            }
+//
+//            case 2 -> {
+//                letra = 'c';
+//            }
+//            default -> {
+//            }
+//
+//        }
+//
+//        return letra;
     }
 
     public static void imprimirMatirz(Character[][] aux) {
 
         for (int i = 0; i < aux.length; i++) {
             for (int j = 0; j < aux[i].length; j++) {
-                System.out.print(" " + aux[i][j]);
+                System.out.print(" "+"(" +i+","+j+")"+ aux[i][j]);
             }
             System.out.println(" ");
         }
@@ -93,7 +95,7 @@ public class UtilesLaberinto {
 
         for (int i = 0; i < aux.length; i++) {
             for (int j = 0; j < aux[i].length; j++) {
-                System.out.print(" " + aux[i][j].toString2());
+                System.out.print(" "+"(" +i+","+j+")"+ aux[i][j].toString2());
             }
             System.out.println(" ");
         }

@@ -59,6 +59,8 @@ public class Casilla {
     public String toString2() {
 
         StringBuilder sb = new StringBuilder();
+         sb.append("|").append(fila).append(",");
+         sb.append(columna).append("|");
         sb.append(tipo);
 
         return sb.toString();
