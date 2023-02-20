@@ -80,7 +80,8 @@ public class UtilesLaberinto {
                         // Creo un objeto casilla dependiendo del caracter de la matriz aux
                     matriz[i][j] = new Casilla(i, j, TipoCasilla.CAMINO);
                 }
-                if (aux[i][j] == 'b') {
+            
+             else{
 
                       matriz[i][j] = new Casilla(i, j, TipoCasilla.BOSQUE);
 
