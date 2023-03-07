@@ -28,7 +28,7 @@ public class CuentaCorriente extends Cuenta {
 
         } else {
 
-            super.setSaldo(super.getSaldo() + (super.getSaldo() + (super.getSaldo() * this.INTERES)));
+            super.setSaldo( super.getSaldo() +((super.getSaldo() + this.INTERES)));
 
         }
     }
@@ -40,6 +40,7 @@ public class CuentaCorriente extends Cuenta {
             System.out.println("No se puede retirar esa cantidad, esta por encima del saldo minimo");
         } else {
             System.out.println("Retirada efectuada");
+            super.setSaldo(super.getSaldo() - cantidad);
         }
 
     }

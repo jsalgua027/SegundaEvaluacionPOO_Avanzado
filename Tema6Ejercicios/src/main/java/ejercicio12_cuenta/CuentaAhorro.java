@@ -48,6 +48,7 @@ public class CuentaAhorro extends Cuenta {
     public void retirarSaldo(double cantidad) {
         if (super.getSaldo() - cantidad >= 0) {
             System.out.println("Retirada efectuada");
+              super.setSaldo(super.getSaldo() - cantidad);
         } else {
             System.out.println("No se puede retirar esa cantidad, intentas sacar más de lo que tienes");
 
