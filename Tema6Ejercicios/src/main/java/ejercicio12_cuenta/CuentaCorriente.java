@@ -44,4 +44,18 @@ public class CuentaCorriente extends Cuenta {
 
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+         sb.append(super.toString());
+        sb.append("CuentaCorriente{");
+        sb.append("INTERES=").append(INTERES);
+        sb.append(", saldoMinimo=").append(saldoMinimo);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    
+    
+    
 }

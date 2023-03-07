@@ -9,7 +9,8 @@ package ejercicio12_cuenta;
  * @author Windows10
  */
 public class CuentaAhorro extends Cuenta {
-     private double intereses;
+
+    private double intereses;
     private double comisionAnual;
 
     public CuentaAhorro() {
@@ -39,19 +40,29 @@ public class CuentaAhorro extends Cuenta {
 
     @Override
     public void actualizarSaldo() {
-    super.setSaldo((super.getSaldo()+(super.getSaldo()*this.intereses))-this.comisionAnual);
-       
-       
+        super.setSaldo((super.getSaldo() + (super.getSaldo() * this.intereses)) - this.comisionAnual);
+
     }
 
     @Override
     public void retirarSaldo(double cantidad) {
-          if (super.getSaldo() - cantidad >=0) {
-              System.out.println("Retirada efectuada");
+        if (super.getSaldo() - cantidad >= 0) {
+            System.out.println("Retirada efectuada");
         } else {
-              System.out.println("No se puede retirar esa cantidad, intentas sacar más de lo que tienes");
-          
+            System.out.println("No se puede retirar esa cantidad, intentas sacar más de lo que tienes");
+
         }
     }
-    
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("CuentaAhorro{");
+        sb.append("intereses=").append(intereses);
+        sb.append(", comisionAnual=").append(comisionAnual);
+        sb.append('}');
+        return sb.toString();
+    }
+
 }

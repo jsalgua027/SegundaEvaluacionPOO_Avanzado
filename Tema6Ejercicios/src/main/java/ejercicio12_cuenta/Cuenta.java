@@ -68,6 +68,17 @@ public abstract class Cuenta {
     
     
     public abstract void retirarSaldo(double cantidad);
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cuenta{");
+        sb.append("numeroCuenta=").append(numeroCuenta);
+        sb.append(", saldo=").append(saldo);
+        sb.append(", cliente=").append(cliente);
+        sb.append('}');
+        return sb.toString();
+    }
     
     
     
