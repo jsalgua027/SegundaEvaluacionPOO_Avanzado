@@ -55,6 +55,11 @@ public class CuentaAhorro extends Cuenta {
     }
 
     @Override
+    public void ingresar(double cantidad) {
+      super.setSaldo(super.getSaldo()+cantidad);
+    }
+    
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());

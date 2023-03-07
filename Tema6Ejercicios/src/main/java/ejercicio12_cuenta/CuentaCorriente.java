@@ -55,6 +55,11 @@ public class CuentaCorriente extends Cuenta {
         return sb.toString();
     }
 
+    @Override
+    public void ingresar(double cantidad) {
+      super.setSaldo(super.getSaldo()+cantidad);
+    }
+
     
     
     

@@ -68,6 +68,9 @@ public abstract class Cuenta {
     
     
     public abstract void retirarSaldo(double cantidad);
+    
+    public abstract void ingresar(double cantidad);
+    
 
     @Override
     public String toString() {
