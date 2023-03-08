@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  *
@@ -29,41 +30,39 @@ import java.util.TreeMap;
  */
 public class Prueba {
 
-    public  static Map<String, Integer> apartadoA(List<Vuelo> listaVuelos) {
+    public static Map<String, Integer> apartadoA(List<Vuelo> listaVuelos) {
         Map<String, Integer> aux = new HashMap<>();
 
-        for (Vuelo v : listaVuelos) {
-            aux.put(v.getDestino(), v.getListaPasajeros().size());
+        for (int i = 0; i < listaVuelos.size(); i++) {
+            if (aux.containsKey(listaVuelos.get(i).getDestino())) {
+                aux.replace(listaVuelos.get(i).getDestino(),// seleccionamos el destino del vuelo actual
+                        aux.get(listaVuelos.get(i).getDestino()) // seleccionamos el value ya asociado con esa key 
+                        + listaVuelos.get(i).getListaPasajeros().size());// sumamos al value los pasajeros del vuelo actual
+
+            } else {
+                aux.put(listaVuelos.get(i).getDestino(), listaVuelos.get(i).getListaPasajeros().size());
+            }
+
         }
 
         return aux;
     }
-    
-    
-    public static Map <Integer, Set<Pasajero>> apartadoB(List<Vuelo> listaVuelos){
-       Map<Integer, Set<Pasajero>> aux = new TreeMap<>();
-    
-         
-        
-         
-         
-    
+
+    public static Map<Integer, Set<Pasajero>> apartadoB(List<Vuelo> listaVuelos) {
+        Map<Integer, Set<Pasajero>> aux = new TreeMap<>();
+
         for (Vuelo v : listaVuelos) {
-                 Set<Pasajero>  auxPasajeros = new HashSet<>();
-                 List<Pasajero> lisPajero= v.getListaPasajeros();
-            for (int i = 0; i < listaVuelos.size(); i++) {
-                v.getListaPasajeros();
+            Set<Pasajero> auxPasajeros = new TreeSet<>();
+
+            for (int i = 0; i < v.getListaPasajeros().size(); i++) {
+                auxPasajeros.add(v.getListaPasajeros().get(i));
             }
-            
+            aux.put(v.getCodigo(), auxPasajeros);
         }
-       
-       
-    
-       return aux;
-       
+
+        return aux;
+
     }
-    
-    
 
     public static void main(String[] args) {
 
@@ -84,8 +83,6 @@ public class Prueba {
 
         lista1.add(p1);
         lista1.add(p2);
-        lista1.add(p10);
-        lista1.add(p9);
 
         lista2.add(p2);
         lista2.add(p3);
@@ -105,32 +102,41 @@ public class Prueba {
 
         //  lista de  vuelos 
         List<Vuelo> listaVuelos = new ArrayList<>();
-       
 
-     listaVuelos.add(v1);
-     listaVuelos.add(v2);
-     listaVuelos.add(v3);
-     listaVuelos.add(v4);
-     listaVuelos.add(v5);
-     listaVuelos.add(v6);
-    
-     
-     // imprimo la lista
-     
+        listaVuelos.add(v1);
+        listaVuelos.add(v2);
+        listaVuelos.add(v3);
+        listaVuelos.add(v4);
+        listaVuelos.add(v5);
+        listaVuelos.add(v6);
+
+        // imprimo la lista
         Map<String, Integer> map1 = apartadoA(listaVuelos);
-    
+
         for (String key : map1.keySet()) {
             System.out.println(key);
-            
+
         }
-     
-         for (Integer  value : map1.values()) {
+
+        for (Integer value : map1.values()) {
             System.out.println(value);
-            
+
         }
-     
+
+        System.out.println("***********APARTADO B******************");
+        // imprimo la lista
+        Map<Integer, Set<Pasajero>> map2 = apartadoB(listaVuelos);
+
+        for (Integer key : map2.keySet()) {
+            System.out.println(key);
+
+        }
+
+        for (Set<Pasajero> value : map2.values()) {
+            System.out.println(value);
+
+        }
+
     }
-    
-    
 
 }
