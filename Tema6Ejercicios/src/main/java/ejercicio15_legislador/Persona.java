@@ -9,6 +9,7 @@ package ejercicio15_legislador;
  * @author Windows10
  */
 public class Persona {
+
     private String nombre;
     private String apellidos;
 
@@ -39,14 +40,11 @@ public class Persona {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Persona{");
-        sb.append("nombre=").append(nombre);
-        sb.append(", apellidos=").append(apellidos);
-        sb.append('}');
+
+        sb.append("Nombre=").append(nombre);
+        sb.append(", apellido=").append(apellidos);
+        sb.append(' ');
         return sb.toString();
     }
-    
-    
-    
-    
+
 }
