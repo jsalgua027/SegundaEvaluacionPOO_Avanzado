@@ -10,7 +10,7 @@ package ejercicio12_cuenta;
  */
 public class CuentaCorriente extends Cuenta {
 
-    private final double INTERES = 1.5;
+    public final double INTERES = 1.5;
     private double saldoMinimo;
 
     public CuentaCorriente() {
@@ -21,6 +21,8 @@ public class CuentaCorriente extends Cuenta {
         this.saldoMinimo = saldoMinimo;
     }
 
+    
+    
     @Override
     public void actualizarSaldo() {
         if (super.getSaldo() > 1000) {

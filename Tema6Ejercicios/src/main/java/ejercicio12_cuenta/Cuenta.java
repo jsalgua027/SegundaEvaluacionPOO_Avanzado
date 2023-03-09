@@ -28,7 +28,7 @@ public abstract class Cuenta {
     }
     
     
-    public String numeroCuentaAle(){
+    private String numeroCuentaAle(){
     Set <String> generados = new HashSet<>();
         boolean repetir =false;
         String resultado="";
