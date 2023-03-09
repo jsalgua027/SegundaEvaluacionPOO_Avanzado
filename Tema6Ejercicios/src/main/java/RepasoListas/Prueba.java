@@ -35,7 +35,7 @@ public class Prueba {
 
         for (int i = 0; i < listaVuelos.size(); i++) {
             if (aux.containsKey(listaVuelos.get(i).getDestino())) {
-                aux.replace(listaVuelos.get(i).getDestino(),// seleccionamos el destino del vuelo actual
+                aux.put(listaVuelos.get(i).getDestino(),// seleccionamos el destino del vuelo actual
                         aux.get(listaVuelos.get(i).getDestino()) // seleccionamos el value ya asociado con esa key 
                         + listaVuelos.get(i).getListaPasajeros().size());// sumamos al value los pasajeros del vuelo actual
 
@@ -52,11 +52,11 @@ public class Prueba {
         Map<Integer, Set<Pasajero>> aux = new TreeMap<>();
 
         for (Vuelo v : listaVuelos) {
-            Set<Pasajero> auxPasajeros = new TreeSet<>();
+            Set<Pasajero> auxPasajeros = new TreeSet<>(v.getListaPasajeros()); // esto hace lo mismo que el bucle for
 
-            for (int i = 0; i < v.getListaPasajeros().size(); i++) {
-                auxPasajeros.add(v.getListaPasajeros().get(i));
-            }
+//            for (int i = 0; i < v.getListaPasajeros().size(); i++) {
+//                auxPasajeros.add(v.getListaPasajeros().get(i));
+//            }
             aux.put(v.getCodigo(), auxPasajeros);
         }
 
