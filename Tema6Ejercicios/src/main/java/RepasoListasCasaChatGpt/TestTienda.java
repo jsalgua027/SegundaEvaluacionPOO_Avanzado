@@ -5,8 +5,12 @@
 package RepasoListasCasaChatGpt;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -19,6 +23,9 @@ public class TestTienda {
      */
     public static void main(String[] args) {
      Tienda tienda = new Tienda();
+     
+     Map <LocalDate, Venta> aux = new TreeMap<>();
+     
         Producto producto1 = new Producto("Smartphone", 899.9, 1);
         Producto producto2 = new Producto("Smart TV", 1499.99, 1);
         Producto producto3 = new Producto("Laptop", 1299.99, 1);
@@ -57,13 +64,38 @@ public class TestTienda {
         Venta v2 = new Venta(listaProductos2, LocalDate.of(2022, 2, 4));
         Venta v3 = new Venta(listaProductos3, LocalDate.of(2021, 1, 3));
         
-        tienda.agregarVenta(v1);
-        tienda.agregarVenta(v2);
-        tienda.agregarVenta(v3);
+        aux.put(v1.getFecha(), v1);
+        aux.put(v2.getFecha(), v2);
+        aux.put(v3.getFecha(), v3);
         
-        for (Tienda t : ) {
+        
+        for (Map.Entry<LocalDate, Venta> entry : aux.entrySet()) {
+            LocalDate key = entry.getKey();
+            Venta  val = entry.getValue();
+            
+            System.out.println("La fecha de la venta es:  "
+                    + key.format(DateTimeFormatter.ISO_DATE)+" y los productos son: " + val.getProductos());
             
         }
+        
+        
+        
+        
+//        tienda.agregarVenta(v1);
+//        tienda.agregarVenta(v2);
+//        tienda.agregarVenta(v3);
+//        
+//            for (Map.Entry<LocalDate, Venta> entry : tienda.) {
+//            LocalDate key = entry.getKey();
+//            Venta  val = entry.getValue();
+//            
+//            System.out.println("La fecha de la venta es:  "
+//                    + key.format(DateTimeFormatter.ISO_DATE)+" y los productos son: " + val.getProductos());
+//            
+//        }
+//            
+//        
+        
         
           
         
