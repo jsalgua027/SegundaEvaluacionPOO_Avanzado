@@ -57,7 +57,16 @@ public class TestTienda {
         Venta v2 = new Venta(listaProductos2, LocalDate.of(2022, 2, 4));
         Venta v3 = new Venta(listaProductos3, LocalDate.of(2021, 1, 3));
         
-
+        tienda.agregarVenta(v1);
+        tienda.agregarVenta(v2);
+        tienda.agregarVenta(v3);
+        
+        for (Tienda t : ) {
+            
+        }
+        
+          
+        
     }
 
 }
