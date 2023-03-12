@@ -27,6 +27,15 @@ public class Tienda {
         ventas.put(venta.getFecha(), venta);
     }
 
+    public Map<LocalDate, Venta> getVentas() {
+        return ventas;
+    }
+
+    public void setVentas(Map<LocalDate, Venta> ventas) {
+        this.ventas = ventas;
+    }
+    
+
     public List<Venta> obtenerVentas(LocalDate fechaInicio, LocalDate fechaFin) {
         List<Venta> ventasFiltradas = new ArrayList<Venta>();
         for (LocalDate fechaVenta : ventas.keySet()) {

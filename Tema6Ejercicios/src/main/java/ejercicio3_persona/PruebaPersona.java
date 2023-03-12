@@ -8,7 +8,7 @@ package ejercicio3_persona;
  *
  * @author Windows10
  */
-public class PruevaPersona {
+public class PruebaPersona {
 
     /**
      * @param args the command line arguments

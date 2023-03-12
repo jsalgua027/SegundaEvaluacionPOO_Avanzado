@@ -69,23 +69,7 @@ public class TestTienda {
         aux.put(v3.getFecha(), v3);
         
         
-        for (Map.Entry<LocalDate, Venta> entry : aux.entrySet()) {
-            LocalDate key = entry.getKey();
-            Venta  val = entry.getValue();
-            
-            System.out.println("La fecha de la venta es:  "
-                    + key.format(DateTimeFormatter.ISO_DATE)+" y los productos son: " + val.getProductos());
-            
-        }
-        
-        
-        
-        
-//        tienda.agregarVenta(v1);
-//        tienda.agregarVenta(v2);
-//        tienda.agregarVenta(v3);
-//        
-//            for (Map.Entry<LocalDate, Venta> entry : tienda.) {
+//        for (Map.Entry<LocalDate, Venta> entry : aux.entrySet()) {
 //            LocalDate key = entry.getKey();
 //            Venta  val = entry.getValue();
 //            
@@ -93,8 +77,24 @@ public class TestTienda {
 //                    + key.format(DateTimeFormatter.ISO_DATE)+" y los productos son: " + val.getProductos());
 //            
 //        }
-//            
-//        
+        
+        
+        
+        
+        tienda.agregarVenta(v1);
+        tienda.agregarVenta(v2);
+        tienda.agregarVenta(v3);
+        
+            for (Map.Entry<LocalDate, Venta> entry : tienda.getVentas().entrySet()) {
+            LocalDate key = entry.getKey();
+            Venta  val = entry.getValue();
+            
+            System.out.println("La fecha de la venta es:  "
+                    + key.format(DateTimeFormatter.ISO_DATE)+" y los productos son: " + val.getProductos());
+            
+        }
+            
+        
         
         
           
