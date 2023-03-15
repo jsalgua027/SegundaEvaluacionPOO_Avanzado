@@ -9,22 +9,14 @@ package ej3;
  * @author nacho
  */
 public enum Voz {
-    CONTRATENOR("Masculino"),
-    TENOR("Masculino"),
-    BARITONO("Masculino"),
-    SOPRANO("Femenino"),
-    MEZZOSOPRANO("Femenino"),
-    CONTRALTO("Femenino");
+    CONTRATENOR,
+    TENOR,
+    BARITONO,
+    SOPRANO,
+    MEZZOSOPRANO,
+    CONTRALTO;
     
-    private String tipo;
-
-    private Voz(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
+ 
 
     
     

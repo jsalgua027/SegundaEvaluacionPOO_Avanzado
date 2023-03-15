@@ -33,17 +33,17 @@ public class Ej1 {
     }
     
     
-//   public static Map<String, Desfibrilador> apartadoB(Desfibrilador[] aux){
-//   Map<String, Desfibrilador> auxMap = new TreeMap<>();
-//   List<Desfibrilador> listAux = Arrays.asList(aux);
-//   Iterator<Desfibrilador> it = listAux.iterator();
-//   while (it.hasNext()) {
-//       Integer num = it.next();
-//    auxMap.put(listAux.get(num).getId(), listAux.get(num));
-//   
-//}
-//   
-//   }
+   public static Map<String, Desfibrilador> apartadoB(Desfibrilador[] aux){
+   Map<String, Desfibrilador> auxMap = new TreeMap<>();
+   List<Desfibrilador> listAux = Arrays.asList(aux);
+   Iterator<Desfibrilador> it = listAux.iterator();
+   while (it.hasNext()) {
+       Desfibrilador d = it.next();
+    auxMap.put(listAux.get(num).getId(), listAux.get(num));
+   
+}
+   
+   }
     
     
     public static void main(String[] args) {
