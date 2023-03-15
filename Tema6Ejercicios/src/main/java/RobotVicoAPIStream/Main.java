@@ -49,7 +49,7 @@ public class Main {
         // STREAM!!!!!!!!!!!!
         Stream<Robot> streamRobot = lista.stream();
         Stream<Robot> streamRobotFiltrados = streamRobot.filter(r -> r.vida() >= 50);// filtro segun criterio
-        streamRobotFiltrados.count();
+        streamRobotFiltrados.forEach(System.out::println);
 
         System.out.println("3 Robots con mayor orcentaje de  vida");
 
