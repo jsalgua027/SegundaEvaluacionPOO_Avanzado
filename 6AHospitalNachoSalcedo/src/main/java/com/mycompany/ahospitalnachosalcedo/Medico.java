@@ -8,7 +8,7 @@ package com.mycompany.ahospitalnachosalcedo;
  *
  * @author Windows10
  */
-public class Medico extends Empleado {
+public class Medico extends Empleado  implements Nadadores{
 
     private String especialidad;
 
@@ -47,6 +47,11 @@ public class Medico extends Empleado {
 
             return this.getSalario() * 0.235;
         }
+    }
+
+    @Override
+    public void nadadores() {
+        System.out.println("El medico No es un nadador");
     }
 
 }

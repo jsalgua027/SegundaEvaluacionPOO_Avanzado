@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author Windows10
  */
-public class Paciente extends Persona {
+public class Paciente extends Persona implements Nadadores{
     
       private String numeroHistoria;
 
@@ -45,6 +45,11 @@ public class Paciente extends Persona {
         } else {
             System.out.println("El paciente no se ha curado");
         }
+    }
+
+    @Override
+    public void nadadores() {
+        System.out.println("El paciente SI es un nadador");
     }
     
 }
