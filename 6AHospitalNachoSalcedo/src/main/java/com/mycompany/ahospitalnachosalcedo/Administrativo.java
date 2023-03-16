@@ -30,7 +30,7 @@ public class Administrativo extends Empleado {
 
     public void registrarDocumento(String nombreDocumento) {
 
-        System.out.println("El trabajador " + getNombre() + " " + getApellidos() + " ha hecho el codumento " + nombreDocumento);
+        System.out.println("El Administrativo " + getNombre() + " " + getApellidos() + " ha hecho el documento " + nombreDocumento);
     }
 
     @Override
