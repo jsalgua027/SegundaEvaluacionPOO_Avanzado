@@ -4,6 +4,8 @@
  */
 package com.mycompany.ahospitalnachosalcedo;
 
+import java.util.Objects;
+
 /**
  *
  * @author Windows10
@@ -34,6 +36,32 @@ public abstract class Empleado extends Persona {
         this.salario = salario;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.numeroSeguridadSocial);
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.salario) ^ (Double.doubleToLongBits(this.salario) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+        return Objects.equals(this.numeroSeguridadSocial, other.numeroSeguridadSocial);
+    }
+
+    
+    
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -31,7 +31,7 @@ public class Medico extends Empleado  implements Nadadores{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("NewClass{");
+        sb.append("Medico{");
         sb.append("especialidad=").append(especialidad);
         sb.append('}');
         return sb.toString();

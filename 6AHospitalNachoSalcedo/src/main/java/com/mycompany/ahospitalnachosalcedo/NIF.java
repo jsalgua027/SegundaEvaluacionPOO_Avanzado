@@ -6,6 +6,7 @@ package com.mycompany.ahospitalnachosalcedo;
 
 import java.time.LocalDate;
 import java.time.Year;
+import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
 
 /**
@@ -54,6 +55,33 @@ public class NIF {
         return sb.toString();
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + (int) (this.numero ^ (this.numero >>> 32));
+        hash = 11 * hash + this.letra;
+        hash = 11 * hash + Objects.hashCode(this.fechaCaducidad);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final NIF other = (NIF) obj;
+        return this.numero == other.numero;
+    }
+
+    
+    
+    
     private char calcularLetra() {
         String c = RandomStringUtils.randomAlphabetic(1).toUpperCase();
         char aux = c.charAt(0);

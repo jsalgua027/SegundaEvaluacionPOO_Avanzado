@@ -34,6 +34,18 @@ public class Paciente extends Persona implements Nadadores{
         this.numeroHistoria = numeroHistoria;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Paciente{");
+        sb.append("numeroHistoria=").append(numeroHistoria);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    
+    
+    
     //
     public void tomarMedicina(String medicamento) {
         Random random = new Random();
