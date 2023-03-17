@@ -6,6 +6,7 @@ package ej2;
 
 import daw.Desfibrilador;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -20,11 +21,13 @@ public class MapDesfibrilador {
 
     public MapDesfibrilador(Desfibrilador[] aux, boolean verdad) {
 
-        if (verdad == true) {
+        if (verdad) {
             for (int i = 0; i < aux.length; i++) {
                 this.map.put(aux[i].getId(), aux[i]);
             }
 
+        } else {
+            // creo el hasmap y lo relleno
         }
 
     }
@@ -52,23 +55,24 @@ public class MapDesfibrilador {
     public Boolean estaContenido(Desfibrilador aux) {
         Boolean contenido = false;
 
-        for (Map.Entry<String, Desfibrilador> entry : map.entrySet()) {
-            if (entry.getKey().equals(aux)) {
-
-                contenido = true;
-            } else {
-
-                contenido = false;
-            }
-
-        }
-
-        return contenido;
+//        for (Map.Entry<String, Desfibrilador> entry : map.entrySet()) {
+//            if (entry.getKey().equals(aux)) {
+//
+//                contenido = true;
+//            } else {
+//
+//                contenido = false;
+//            }
+//
+//        }
+//
+//        return contenido;
+        return map.containsKey(aux.getId());
 
     }
 
     //D
-    public  static List<Desfibrilador> devuelvoLista(Map<String, Desfibrilador> aux) {
+    public static List<Desfibrilador> devuelvoLista(Map<String, Desfibrilador> aux) {
 
         List<Desfibrilador> listaAux = new ArrayList<>(aux.values());
 
@@ -76,13 +80,18 @@ public class MapDesfibrilador {
 
     }
 
-    //E pendiente
-    public  Map<String, Integer> devulvoCantidad(String correo) {
+    //E 
+    public Map<String, Integer> devulvoCantidad() {
 
-        Map<String, Integer> mapAux = new TreeMap<>();
+        Map<String, Integer> mapAux = new HashMap<>();
 
-        for (Map.Entry<String, Desfibrilador> entry : this.map.entrySet()) {
+        for (Desfibrilador des : map.values()) {
+            if (mapAux.containsKey(des.getId())) {
+                mapAux.put(des.getEmail(), mapAux.get(des.getEmail()) + 1);
 
+            } else {
+                mapAux.put(des.getEmail(), 1);
+            }
         }
 
         return mapAux;

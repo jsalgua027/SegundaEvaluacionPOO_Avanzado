@@ -24,7 +24,7 @@ public class Ej1 {
     
     public static Map<String, Desfibrilador> apartadoA( Desfibrilador[] aux){
         Map<String, Desfibrilador> auxMap = new TreeMap<>();
-        
+        //Set<Desfibrilador> conjunto
         for (int i = 0; i < aux.length; i++) {
             auxMap.put(aux[i].getId(), aux[i]);
         }

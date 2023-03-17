@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author nacho
  */
-public class Desfibrilador {
+public class Desfibrilador implements Comparable<Desfibrilador>{
     
      private String id;
     private String modelo;
@@ -99,6 +99,11 @@ public class Desfibrilador {
         sb.append(", telefono=").append(telefono);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public int compareTo(Desfibrilador o) {
+      return this.id.compareTo(o.id);
     }
     
 }
