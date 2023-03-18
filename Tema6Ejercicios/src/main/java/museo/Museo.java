@@ -62,11 +62,11 @@ public class Museo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Museo{");
+        sb.append("MUSEO{");
         sb.append("nombre=").append(nombre);
-        sb.append(", direccion=").append(direccion);
-        sb.append(", listaEmpleados=").append(listaEmpleados);
-        sb.append(", listaSalas=").append(listaSalas);
+        sb.append(", direccion= ").append(direccion);
+        sb.append("\nlistaEmpleados=").append(listaEmpleados);
+        sb.append("\nlistaSalas=").append(listaSalas);
         sb.append('}');
         return sb.toString();
     }

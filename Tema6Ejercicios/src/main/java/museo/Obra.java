@@ -76,7 +76,7 @@ public abstract class Obra {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Obra{");
+        sb.append("\nObra{");
         sb.append("id=").append(id);
         sb.append(", autor=").append(autor);
         sb.append(", estilo=").append(estilo);

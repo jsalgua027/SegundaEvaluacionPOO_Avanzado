@@ -72,12 +72,12 @@ public abstract class Sala {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Sala{");
+        sb.append("\nSALA{");
         sb.append("nombreSala=").append(nombreSala);
         sb.append(", codigoSala=").append(codigoSala);
-        sb.append(", listadoObras=").append(listadoObras);
-        sb.append(", senorTemp=").append(senorTemp);
-        sb.append(", senorHum=").append(senorHum);
+        sb.append("\nOBRAS").append(listadoObras);
+        sb.append("\nSenorTemp=").append(senorTemp);
+        sb.append("\nSenorHum=").append(senorHum);
         sb.append('}');
         return sb.toString();
     }

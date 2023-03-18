@@ -39,7 +39,7 @@ public abstract class Empleado implements Comparable<Empleado>{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Empleado{");
+        sb.append("\nEmpleado{");
         sb.append("nif=").append(nif);
         sb.append(", nombre=").append(nombre);
         sb.append('}');

@@ -31,7 +31,7 @@ public  abstract class Sensor {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Sensor{");
+        sb.append("{");
         sb.append("id=").append(id);
         sb.append('}');
         return sb.toString();
