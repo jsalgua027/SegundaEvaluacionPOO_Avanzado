@@ -43,7 +43,7 @@ public class PruebaMuseo {
         List<Obra> listadoObras1 = new ArrayList<>();
         List<Obra> listadoObras2 = new ArrayList<>();
         List<Obra> listadoObras3 = new ArrayList<>();
-       // añado las obras
+        // añado las obras
         listadoObras1.add(o1);
         listadoObras1.add(o2);
         listadoObras1.add(o3);
@@ -59,37 +59,59 @@ public class PruebaMuseo {
         Sala sala1 = new Fija("Correcto", "Sala1", 1, listadoObras1, s4T, s1H);
         Sala sala2 = new Temporal(LocalDate.of(2023, 07, 1), LocalDate.of(2023, 9, 15), "Sala2", 3, listadoObras2, s5T, s2H);
         Sala sala3 = new Fija("Correcto", "Sala3", 1, listadoObras3, s6T, s3H);
-        
+
         // sin usar el metodo lo hago para crear el museo
         List<Sala> listadoSalas = new ArrayList<>();
-        
+
         listadoSalas.add(sala1);
         listadoSalas.add(sala2);
-        
+
         // creo los empleados 4 tres de inicio y uno para usar el metodo
-        
         Empleado eM1 = new Monitor("123456F", "Pepe");
         Empleado eM2 = new Monitor("456478j", "Lucas");
         Empleado eV1 = new Vigilante("34534W", "Antonio");
         Empleado eV2 = new Vigilante("456478j", "Lucas");
-        
-          List<Empleado> listadoEmpleados = new ArrayList<>();
-        
+
+        List<Empleado> listadoEmpleados = new ArrayList<>();
+
         listadoEmpleados.add(eV1);
         listadoEmpleados.add(eV2);
         listadoEmpleados.add(eM2);
         listadoEmpleados.add(eM1);
-       
+
         // creo el museo 
-        
         Museo museo = new Museo("Museo del Prado", "C/ juan lopez, Madrid", listadoEmpleados, listadoSalas);
-        
+
+        System.out.println("El museo del prado está compuesto por");
+        System.out.println(museo.toString());
+        System.out.println("************************************** añado sala y empleado nuevo");
+        //añado la sala 3;añado nuevo empleado
+        museo.añadirSala(sala3);
+        museo.contratar(eV2);
+        System.out.println("El museo del prado está compuesto por");
+        System.out.println(museo.toString());
+
+        System.out.println("****************************Quito un empleado y una sala");
+        museo.despedir(eV1);
+        museo.quitarSala(sala1);
+
         System.out.println("El museo del prado está compuesto por");
         System.out.println(museo.toString());
         
+        System.out.println("Uso el el metodo abstrato de las SALAS*************************HORARIOS ");
+        
+        for (Sala salas : listadoSalas) {
+            salas.horariosSala();
+        }
         
         
-
+        System.out.println("Uso el el metodo abstrato de las OBRAS************************* DESCRIPCION" );
+        System.out.println("Pintura");
+        o6.descripcion();
+        System.out.println("Escultura");
+        o10.descripcion();
+        
+        
     }
-
+           
 }
