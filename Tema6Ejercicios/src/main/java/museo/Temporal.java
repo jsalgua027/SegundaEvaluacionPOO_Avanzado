@@ -16,7 +16,7 @@ public final class Temporal extends Sala implements Comparable<Temporal>{
     private LocalDate fechaIni;
     private LocalDate fechaFin;
 
-    public Temporal(LocalDate fechaIni, LocalDate fechaFin, String nombreSala, int codigoSala, List<Obra> listadoObras, Sensor senorTemp, Sensor senorHum) {
+    public Temporal(LocalDate fechaIni, LocalDate fechaFin, String nombreSala, int codigoSala, List<Obra> listadoObras, Temperatura senorTemp, Humedad senorHum) {
         super(nombreSala, codigoSala, listadoObras, senorTemp, senorHum);
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;

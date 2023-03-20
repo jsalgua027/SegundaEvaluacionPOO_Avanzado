@@ -21,12 +21,12 @@ public abstract class Sala {
    private Sensor senorTemp;
    private Sensor senorHum;;
 
-    public Sala(String nombreSala, int codigoSala, List<Obra> listadoObras, Sensor senorTemp, Sensor senorHum) {
+    public Sala(String nombreSala, int codigoSala, List<Obra> listadoObras, Temperatura sensorTemp, Humedad sensorHum) {
         this.nombreSala = nombreSala;
         this.codigoSala = codigoSala;
         this.listadoObras = listadoObras;
-        this.senorTemp = senorTemp;
-        this.senorHum = senorHum;
+        this.senorTemp = sensorTemp;
+        this.senorHum = sensorHum;
     }
 
     public String getNombreSala() {

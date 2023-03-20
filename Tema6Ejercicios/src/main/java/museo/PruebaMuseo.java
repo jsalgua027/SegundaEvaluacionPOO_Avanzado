@@ -20,12 +20,12 @@ public class PruebaMuseo {
     public static void main(String[] args) {
 
         // voy a crear 6 sensores; 4 para ñas dos salas iniciales y otros dos para la sala que voy agregar usando los metodos
-        Sensor s1H = new Humedad("unoH");
-        Sensor s2H = new Humedad("dosH");
-        Sensor s3H = new Humedad("tresH");
-        Sensor s4T = new Temperatura("cuatroT");
-        Sensor s5T = new Temperatura("cincoT");
-        Sensor s6T = new Temperatura("seisT");
+        Humedad s1H = new Humedad("unoH");
+        Humedad s2H = new Humedad("dosH");
+        Humedad s3H = new Humedad("tresH");
+        Temperatura s4T = new Temperatura("cuatroT");
+        Temperatura s5T = new Temperatura("cincoT");
+        Temperatura s6T = new Temperatura("seisT");
 
         // creo listado de obras 
         Obra o1 = new Pintura(15000, "1", "jjjjjjj", TipoObra.Abstracto);
