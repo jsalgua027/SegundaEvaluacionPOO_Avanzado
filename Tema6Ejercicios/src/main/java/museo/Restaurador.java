@@ -11,6 +11,6 @@ package museo;
 public interface Restaurador {
     
     
- void  restaurar(Obra o);
+ void  restaurar();
     
 }

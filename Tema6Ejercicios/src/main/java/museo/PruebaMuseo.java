@@ -112,6 +112,34 @@ public class PruebaMuseo {
         o10.descripcion();
         
         
+        System.out.println("********************************************Apartado B ****************************************");
+        System.out.println("Agrego dos conservadores");
+        
+        Empleado c1 = new Escultorico("1234", "CCCCC", "Pedro");
+        Empleado c2 = new Pictorico("55555", "789", "Juan");
+        
+        // los contrato
+        museo.contratar(c1);
+        museo.contratar(c2);
+        
+        
+        for (Empleado per : listadoEmpleados) {
+            if (per instanceof Escultorico){
+            
+                ((Escultorico)per).restaurar();
+            
+            }
+            
+             if (per instanceof Pictorico){
+            
+                ((Pictorico)per).restaurar();
+            
+            }
+            
+        }
+        
+        
+        
     }
            
 }
