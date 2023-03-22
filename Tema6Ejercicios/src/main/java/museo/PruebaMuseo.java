@@ -126,13 +126,13 @@ public class PruebaMuseo {
         for (Empleado per : listadoEmpleados) {
             if (per instanceof Escultorico){
             
-                ((Escultorico)per).restaurar();
+                ((Escultorico)per).restaurar(o10);
             
             }
             
              if (per instanceof Pictorico){
             
-                ((Pictorico)per).restaurar();
+                ((Pictorico)per).restaurar(o1);
             
             }
             

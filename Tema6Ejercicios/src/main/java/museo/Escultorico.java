@@ -27,8 +27,11 @@ public class Escultorico extends Conservador {
     
     
      @Override
-    public void restaurar() {
-         System.out.println("Restaura Esculturas");
+    public void restaurar(Obra o) {
+     if (o instanceof Escultura){
+         System.out.println("Es una escultura");
+     
+     }
     }
     
 }

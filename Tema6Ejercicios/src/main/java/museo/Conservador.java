@@ -41,7 +41,7 @@ public class Conservador extends Empleado implements Restaurador {
     }
 
     @Override
-    public void restaurar() {
+    public void restaurar(Obra o) {
 
     }
 

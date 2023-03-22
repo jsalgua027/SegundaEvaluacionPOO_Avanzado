@@ -24,9 +24,11 @@ public class Pictorico extends Conservador {
     }
 
     @Override
-    public void restaurar() {
+    public void restaurar(Obra o) {
+        if (o instanceof Pintura) {
+            System.out.println("Restaura Pinturas");
+        }
 
-        System.out.println("Restaura Pinturas");
     }
 
 }
