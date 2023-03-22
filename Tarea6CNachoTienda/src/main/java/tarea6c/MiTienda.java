@@ -63,7 +63,7 @@ public class MiTienda {
         int posicion = Collections.binarySearch(listaProductos, p5, criterioCodigo);
         System.out.println("Se encuentra en la posicion: " + posicion);
 
-        // 6
+        // 6 Recorre la lista de productos y guarda todos los libros en una lista de libros.
         List<Libro> listaLibros = new ArrayList<>();
 
         for (Producto p : listaProductos) {
@@ -74,7 +74,8 @@ public class MiTienda {
 
         }
 
-        //7
+        //7 Muestra los datos de la lista de libros usando un objeto Iterator. 
+        System.out.println("Muestro lista usando iterator");
         Iterator<Libro> it = listaLibros.iterator();
 
         while (it.hasNext()) {
@@ -83,11 +84,14 @@ public class MiTienda {
 
         }
 
-        // 8
-        System.out.println("Ordenado  por  Isb la lista de lisbros");
+        // 8 Ordena los libros según ISBN, haciendo uso de <<Comparable>>
+        System.out.println("Ordenado  por  Isb la lista de libros y los muestro");
         Comparator<Libro> criterioIsb = (pr1, pr2) -> pr1.getIsbn().compareToIgnoreCase(pr2.getIsbn());
         Collections.sort(listaLibros, criterioIsb);
         listaLibros.forEach(System.out::println);
+
+        //9 Recorre de nuevo la lista de libros y en cada iteración, ejecuta enviar() o descargar() en función del tipo de libro.
+        System.out.println("Recorro lista libros y uso los metdos según tipo de libro");
 
         for (Libro l : listaLibros) {
 
@@ -101,16 +105,29 @@ public class MiTienda {
 
         }
 
-        // 10 comentado
-        
-        
-        //11
-          System.out.println("La lista de libros contiene: "+listaLibros.contains(p6));
-          
-          
-          //12
-          
-        
-    }
+        // 10. Indica las líneas de código donde se realizan conversiones implícitas y/o explícitas. REALIZADO
+        //11 Utiliza el método contains(Object) sobre la lista de libros para comprobar si existe un libro o no existe.
+        System.out.println("La lista de libros contiene: " + listaLibros.contains(p6));
 
+        //12 Usando la lista de productos inicial, crea una nueva lista con todos los objetos que Se Envian.
+        List<SeEnvia> listaObjetos = new ArrayList<>();
+        for (Producto p : listaProductos) {
+
+            if (p instanceof SeEnvia) {
+                listaObjetos.add((SeEnvia) p);
+            }
+        }
+        //13 Recorre la lista de objetos que Se Envian y llama al método de la interfaz.
+        System.out.println("Recorro la nueva lista de objetos y llamo al metodo enviar");
+        for (SeEnvia ob : listaObjetos) {
+            ob.enviar("A una dirección cualquiera");
+        }
+
+        //14.Inventa un método abstracto en Libro que tenga comportamientos diferentes en las subclases. Implementa los métodos en las clases hijas.
+        System.out.println("Recorro la lista de libros y uso el nuevo método tipoLibro()");
+        for (Libro li : listaLibros) {
+            li.tipoLibro();
+        }
+
+    }
 }

@@ -40,6 +40,6 @@ public  abstract  class Libro extends Producto  implements Comparable<Libro>{
        return this.isbn.compareToIgnoreCase(o.getIsbn());
     }
     
-    
+    abstract void tipoLibro();
     
 }

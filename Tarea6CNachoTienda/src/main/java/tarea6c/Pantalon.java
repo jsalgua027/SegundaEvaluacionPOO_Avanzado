@@ -37,7 +37,7 @@ public final  class Pantalon extends Ropa {
 
     @Override
     public void enviar(String direccion) {
-        System.out.println("La direccion de enio del pedido es: "
+        System.out.println("La direccion de envio del pedido es: "
         + direccion+ " y el producto es: "+super.toString());
         
     }
