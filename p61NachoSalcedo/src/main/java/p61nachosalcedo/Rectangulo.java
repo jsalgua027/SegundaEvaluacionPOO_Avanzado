@@ -81,12 +81,12 @@ public final class Rectangulo extends Poligono implements Dibujable, Movible {
     @Override
     public void dibujar() {
         System.out.println("Dibujo rectangulo");
-        
+
         char[][] figura = new char[this.getBase()][this.getAltura()];
-       
-                    for (int i = 0; i < figura.length; i++) {
+
+        for (int i = 0; i < figura.length; i++) {
             for (int j = 0; j < figura[i].length; j++) {
-                if (i == 0 || i ==this.getBase() - 1 || j == 0 || j == this.getAltura() - 1) {
+                if (i == 0 || i == this.getBase() - 1 || j == 0 || j == this.getAltura() - 1) {
                     figura[i][j] = '#';
                 } else {
                     figura[i][j] = ' ';
@@ -100,12 +100,8 @@ public final class Rectangulo extends Poligono implements Dibujable, Movible {
             }
             System.out.println();
         }
-        
-           
-                                  
-          }
-                        
-    
+
+    }
 
     @Override
     public void moverIzq(int x) {
@@ -125,7 +121,7 @@ public final class Rectangulo extends Poligono implements Dibujable, Movible {
 
     @Override
     public void moverArr(int y) {
-      this.getPunto1().setX(+y);
+        this.getPunto1().setX(+y);
         this.getPunto2().setX(+y);
         this.getPunto3().setX(+y);
         this.getPunto4().setX(+y);
@@ -133,7 +129,7 @@ public final class Rectangulo extends Poligono implements Dibujable, Movible {
 
     @Override
     public void moverAbb(int y) {
-          this.getPunto1().setX(-y);
+        this.getPunto1().setX(-y);
         this.getPunto2().setX(-y);
         this.getPunto3().setX(-y);
         this.getPunto4().setX(-y);
