@@ -21,6 +21,11 @@ public final class Rectangulo extends Poligono implements Dibujable, Movible {
         this.punto2 = punto2;
         this.punto3 = punto3;
         this.punto4 = punto4;
+        // esto es lo correcto
+//           this.punto1 = new Point(0,0); // comienzo de abajo izquierda y va en sentido de las agunas del reloj
+//        this.punto2 = new Point(0,altura);
+//        this.punto3 = new Point(base,altura);
+//        this.punto4 = new Point(base,0);
     }
 
     public Point getPunto1() {

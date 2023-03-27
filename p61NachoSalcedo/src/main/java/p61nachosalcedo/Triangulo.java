@@ -73,7 +73,7 @@ public final class Triangulo extends Poligono implements Comparable<Triangulo> {
 
     @Override
     public int compareTo(Triangulo o) {
-        return Integer.compare(this.getBase(), o.getAltura());
+        return Integer.compare(this.getBase(), o.getBase());
     }
 
 }
